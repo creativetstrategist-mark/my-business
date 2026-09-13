@@ -71,6 +71,8 @@ strong{font-weight:700}
 
 /* ------------------------------- shell ------------------------------- */
 .wrap{width:100%;max-width:var(--col);margin-inline:auto;padding-inline:20px}
+/* keep anchored headings clear of the sticky header */
+section[id],main[id]{scroll-margin-top:72px}
 .band{padding-block:clamp(3.5rem,8vw,6rem)}
 .band-paper{background:var(--paper);color:var(--ink)}
 .band-paper-2{background:var(--paper-2);color:var(--ink)}
