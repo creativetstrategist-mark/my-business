@@ -1,98 +1,740 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>My Business — Home</title>
-  <meta name="description" content="Short description of what your business does and who it helps.">
-  <link rel="stylesheet" href="assets/css/styles.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A four-week live intensive teaching media buyers and founders to find angles, write briefs that survive production, and design ad tests they can actually read.">
+<meta name="color-scheme" content="light">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<title>Creative Strategy Intensive</title>
+<style>
+/* ============================================================
+   Creative Strategy Intensive — single committed palette.
+   Deliberately one visual world (volt yellow / ink black), so
+   no theme swap; every colour is painted explicitly.
+   ============================================================ */
+:root{
+  --ink:#111113;
+  --ink-2:#1d1d20;
+  --volt:#ffe81a;
+  --volt-deep:#e6cf00;
+  --paper:#fbf9f2;
+  --paper-2:#f2efe3;
+  --slate:#56524a;
+  --go:#1c7a4b;
+  --flag:#c4402a;
+
+  --col:1080px;
+  --r:14px;
+  --plate:6px;
+
+  --display:"Archivo Black","Arial Black",Impact,sans-serif;
+  --body:"Instrument Sans",ui-sans-serif,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+
+  --step--1:clamp(.78rem,.75rem + .15vw,.85rem);
+  --step-0:clamp(1rem,.96rem + .2vw,1.08rem);
+  --step-1:clamp(1.15rem,1.05rem + .45vw,1.35rem);
+  --step-2:clamp(1.5rem,1.3rem + .9vw,2rem);
+  --step-3:clamp(2rem,1.6rem + 1.9vw,3.1rem);
+  --step-4:clamp(2.6rem,1.9rem + 3.3vw,4.6rem);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:var(--step-0);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.02;letter-spacing:-.015em;text-wrap:balance;margin:0}
+p{margin:0;max-width:65ch}
+ul{margin:0;padding:0;list-style:none}
+a{color:inherit}
+strong{font-weight:700}
+
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:4px}
+.band-ink :focus-visible{outline-color:var(--volt)}
+
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.skip{position:absolute;left:-999px;top:0;z-index:100}
+.skip:focus{left:12px;top:12px;background:var(--volt);color:var(--ink);padding:.7rem 1.1rem;border:2px solid var(--ink);border-radius:8px;font-weight:700}
+
+/* ------------------------------- shell ------------------------------- */
+.wrap{width:100%;max-width:var(--col);margin-inline:auto;padding-inline:20px}
+.band{padding-block:clamp(3.5rem,8vw,6rem)}
+.band-paper{background:var(--paper);color:var(--ink)}
+.band-paper-2{background:var(--paper-2);color:var(--ink)}
+.band-ink{background:var(--ink);color:var(--paper)}
+.band-volt{background:var(--volt);color:var(--ink)}
+
+.eyebrow{
+  font-family:var(--mono);font-weight:700;font-size:var(--step--1);
+  letter-spacing:.14em;text-transform:uppercase;margin:0 0 1rem;
+}
+.band-ink .eyebrow{color:var(--volt)}
+.band-paper .eyebrow,.band-paper-2 .eyebrow{color:var(--slate)}
+
+.lede{font-size:var(--step-1);line-height:1.5;color:var(--slate);margin-top:1.1rem}
+.band-ink .lede{color:#c9c5b8}
+.band-volt .lede{color:#3a3416}
+
+.head{margin-bottom:clamp(2rem,4vw,3rem)}
+.head h2{font-size:var(--step-3)}
+
+/* ------------------------------ buttons ------------------------------ */
+.btn{
+  display:inline-flex;align-items:center;gap:.55rem;
+  font-family:var(--body);font-weight:700;font-size:var(--step-0);
+  text-decoration:none;cursor:pointer;
+  padding:.85rem 1.5rem;border-radius:999px;
+  border:2px solid var(--ink);background:var(--volt);color:var(--ink);
+  transition:transform .18s cubic-bezier(.2,.7,.3,1);
+}
+.btn:hover{transform:translateY(-2px)}
+.btn:active{transform:translateY(0)}
+.btn-ghost{background:transparent;color:inherit;border-color:currentColor}
+.band-ink .btn-ghost{color:var(--paper)}
+.btn-lg{padding:1rem 1.9rem;font-size:var(--step-1)}
+.btn .arw{font-family:var(--mono);font-weight:700}
+
+.ctas{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.8rem}
+.under{font-family:var(--mono);font-size:var(--step--1);color:var(--slate);margin-top:.9rem}
+.band-volt .under{color:#3a3416}
+.band-ink .under{color:#8f8b7e}
+
+/* ------------------------------- header ------------------------------ */
+.top{
+  position:sticky;top:0;z-index:50;
+  background:var(--ink);color:var(--paper);
+  border-bottom:2px solid var(--ink);
+}
+.top-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.7rem}
+.logo{display:flex;align-items:center;gap:.6rem;text-decoration:none;font-family:var(--display);font-size:1rem;letter-spacing:-.01em}
+.mark{
+  width:26px;height:26px;flex:none;border-radius:7px;
+  background:var(--volt);color:var(--ink);
+  display:grid;place-items:center;font-family:var(--display);font-size:.8rem;
+}
+.top nav{display:none;gap:1.6rem;font-size:.93rem}
+.top nav a{text-decoration:none;color:#c9c5b8}
+.top nav a:hover{color:var(--volt)}
+.top .btn{padding:.5rem 1.05rem;font-size:.9rem;border-color:var(--volt)}
+@media (min-width:880px){.top nav{display:flex}}
+
+/* -------------------------------- hero ------------------------------- */
+.hero{background:var(--ink);color:var(--paper);padding-block:clamp(3rem,7vw,5.5rem)}
+.hero h1{font-size:var(--step-4);max-width:15ch}
+.hero .mark-line{color:var(--volt)}
+.hero .lede{max-width:56ch}
+.hero-grid{display:grid;gap:clamp(2.5rem,5vw,3.5rem)}
+@media (min-width:960px){.hero-grid{grid-template-columns:1.15fr .85fr;align-items:center}}
+
+.tag{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-family:var(--mono);font-weight:700;font-size:var(--step--1);
+  letter-spacing:.1em;text-transform:uppercase;
+  background:var(--volt);color:var(--ink);
+  padding:.4rem .85rem;border-radius:999px;margin-bottom:1.3rem;
+}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--ink)}
+
+/* hook-rate panel: illustrative, drawn to a real 0-100% scale */
+.panel{background:var(--paper);color:var(--ink);border-radius:var(--r);padding:1.4rem}
+.panel-h{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;margin-bottom:1.1rem}
+.panel-h span{font-family:var(--mono);font-size:var(--step--1);font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.panel-h em{font-family:var(--mono);font-style:normal;font-size:.72rem;color:var(--slate)}
+.bar-row{margin-bottom:1rem}
+.bar-row:last-of-type{margin-bottom:0}
+.bar-lab{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.8rem;font-weight:700;margin-bottom:.35rem;font-variant-numeric:tabular-nums}
+.bar-lab .who{color:var(--slate);font-weight:500}
+.track{height:12px;border-radius:999px;background:var(--paper-2);border:1px solid #ded9c8;overflow:hidden}
+.fill{height:100%;border-radius:999px;background:var(--ink)}
+.fill.win{background:var(--volt-deep)}
+.scale{display:flex;justify-content:space-between;font-family:var(--mono);font-size:.68rem;color:var(--slate);margin-top:.7rem;border-top:1px solid #ded9c8;padding-top:.4rem}
+.panel-note{font-family:var(--mono);font-size:.7rem;color:var(--slate);margin-top:.9rem;line-height:1.45}
+
+/* ------------------------------- facts ------------------------------- */
+.facts{border-top:2px solid #2c2c30;margin-top:clamp(2.5rem,5vw,3.5rem);padding-top:1.6rem;
+  display:grid;gap:1.2rem 2rem;grid-template-columns:repeat(2,1fr)}
+@media (min-width:760px){.facts{grid-template-columns:repeat(4,1fr)}}
+.fact dt{font-family:var(--mono);font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:#8f8b7e;margin-bottom:.3rem}
+.fact dd{margin:0;font-family:var(--display);font-size:var(--step-1);color:var(--volt)}
+
+/* ------------------------------- cards ------------------------------- */
+.grid{display:grid;gap:calc(var(--plate) + 1rem)}
+@media (min-width:720px){.g-3{grid-template-columns:repeat(3,1fr)}.g-2{grid-template-columns:repeat(2,1fr)}}
+
+/* sticker plate sits on the wrapper so the card itself can transform freely */
+.tile{position:relative;display:flex}
+.tile::before{
+  content:"";position:absolute;inset:0;border-radius:var(--r);
+  background:var(--ink);transform:translate(var(--plate),var(--plate));
+}
+.band-ink .tile::before{background:var(--volt)}
+.card{
+  position:relative;flex:1;display:flex;flex-direction:column;gap:.7rem;
+  background:var(--paper);border:2px solid var(--ink);border-radius:var(--r);
+  padding:1.5rem;transition:transform .22s cubic-bezier(.2,.7,.3,1);
+}
+.band-ink .card{background:var(--ink-2);border-color:var(--volt);color:var(--paper)}
+.band-volt .card{background:var(--paper)}
+.tile:hover .card,.tile:focus-within .card{transform:translate(-3px,-3px)}
+.card h3{font-size:var(--step-1)}
+.card p{color:var(--slate);font-size:.97rem}
+.band-ink .card p{color:#c9c5b8}
+.num{
+  font-family:var(--mono);font-weight:700;font-size:.75rem;letter-spacing:.12em;
+  color:var(--slate);
+}
+.band-ink .num{color:var(--volt)}
+
+/* ------------------------------ outcomes ----------------------------- */
+.checks{display:grid;gap:1.1rem}
+@media (min-width:720px){.checks{grid-template-columns:repeat(2,1fr);gap:1.3rem 2.4rem}}
+.checks li{display:grid;grid-template-columns:auto 1fr;gap:.8rem;align-items:start}
+.tick{
+  width:24px;height:24px;flex:none;border-radius:7px;border:2px solid var(--ink);
+  background:var(--paper);display:grid;place-items:center;font-size:.8rem;font-weight:700;margin-top:.15rem;
+}
+.checks b{display:block;font-weight:700}
+.checks span{color:#3a3416;font-size:.97rem}
+
+/* ----------------------------- curriculum ---------------------------- */
+.weeks{display:grid;gap:calc(var(--plate) + .9rem)}
+.week{display:grid;gap:1rem}
+@media (min-width:820px){.week{grid-template-columns:200px 1fr;gap:2rem;align-items:start}}
+.week-key{display:flex;flex-direction:column;gap:.3rem}
+.week-key .wk{font-family:var(--mono);font-weight:700;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--slate)}
+.week-key h3{font-size:var(--step-2)}
+.week ul{display:grid;gap:.6rem}
+.week li{display:grid;grid-template-columns:auto 1fr;gap:.7rem;color:var(--slate);font-size:.97rem}
+.week li::before{content:"—";font-family:var(--mono);color:var(--ink)}
+
+/* --------------------------------- fit ------------------------------- */
+.fit{display:grid;gap:calc(var(--plate) + 1rem)}
+@media (min-width:820px){.fit{grid-template-columns:1fr 1fr}}
+.fit h3{font-size:var(--step-1);display:flex;align-items:center;gap:.6rem}
+.fit ul{display:grid;gap:.75rem;margin-top:.4rem}
+.fit li{display:grid;grid-template-columns:auto 1fr;gap:.7rem;color:var(--slate);font-size:.97rem}
+.sig{font-family:var(--mono);font-weight:700;line-height:1.5}
+.sig-go{color:var(--go)}
+.sig-no{color:var(--flag)}
+.pill{
+  font-family:var(--mono);font-size:.7rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+  padding:.25rem .6rem;border-radius:999px;border:2px solid currentColor;
+}
+
+/* ------------------------------- proof ------------------------------- */
+.proof-note{
+  font-family:var(--mono);font-size:var(--step--1);color:var(--slate);
+  border:2px dashed #b9b3a0;border-radius:10px;padding:.7rem 1rem;margin-bottom:2rem;max-width:62ch;
+}
+.quotes{display:grid;gap:1.2rem}
+@media (min-width:720px){.quotes{grid-template-columns:repeat(3,1fr)}}
+.quote{
+  background:var(--paper);border:2px dashed #b9b3a0;border-radius:var(--r);
+  padding:1.4rem;display:flex;flex-direction:column;gap:.9rem;
+}
+.quote p{font-size:.97rem;color:var(--slate)}
+.who-row{display:flex;align-items:center;gap:.7rem;margin-top:auto}
+.av{width:34px;height:34px;border-radius:50%;background:var(--paper-2);border:2px solid #b9b3a0;flex:none}
+.who-row div{font-family:var(--mono);font-size:.73rem;line-height:1.35;color:var(--slate)}
+
+/* ------------------------------- pricing ----------------------------- */
+.price-wrap{display:grid;gap:calc(var(--plate) + 1.2rem)}
+@media (min-width:860px){.price-wrap{grid-template-columns:1.05fr .95fr;align-items:start}}
+.price-card{padding:clamp(1.6rem,3vw,2.2rem)}
+.amount{display:flex;align-items:baseline;gap:.6rem;flex-wrap:wrap}
+.amount b{font-family:var(--display);font-size:var(--step-4);line-height:1}
+.amount span{font-family:var(--mono);font-size:.8rem;color:var(--slate)}
+.incl{display:grid;gap:.7rem;margin:1.5rem 0}
+.incl li{display:grid;grid-template-columns:auto 1fr;gap:.7rem;font-size:.97rem;color:var(--slate)}
+.incl li::before{content:"+";font-family:var(--mono);font-weight:700;color:var(--ink)}
+
+/* --------------------------------- faq ------------------------------- */
+.faq{display:grid;gap:.7rem;max-width:800px}
+.faq details{background:var(--ink-2);border:2px solid #34343a;border-radius:12px}
+.faq details[open]{border-color:var(--volt)}
+.faq summary{
+  cursor:pointer;list-style:none;padding:1.05rem 1.3rem;
+  font-weight:700;display:flex;justify-content:space-between;gap:1rem;align-items:center;
+}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--volt);font-size:1.2rem;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq .a{padding:0 1.3rem 1.2rem;color:#c9c5b8;font-size:.97rem}
+
+/* ------------------------------- footer ------------------------------ */
+.foot{background:var(--ink);color:#8f8b7e;padding-block:2.4rem;font-size:.88rem}
+.foot-in{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:center}
+.foot a{color:#c9c5b8;text-decoration:none}
+.foot a:hover{color:var(--volt)}
+
+/* ------------------------------- motion ------------------------------ */
+/* Content is visible by default. The reveal start-state is added only
+   when JS is running, so a no-JS page renders fully. */
+.js .reveal{opacity:0;transform:translateY(18px)}
+.js .reveal.is-in{
+  opacity:1;transform:none;
+  transition:opacity .55s ease,transform .55s cubic-bezier(.2,.7,.3,1);
+  transition-delay:var(--d,0ms);
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .reveal{opacity:1;transform:none}
+  .btn,.card{transition:none}
+  .tile:hover .card,.tile:focus-within .card{transform:none}
+}
+</style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+<a class="skip" href="#main">Skip to content</a>
 
-  <header class="site-header">
-    <div class="wrap header-inner">
-      <a class="brand" href="index.html">My&nbsp;Business</a>
-      <button class="nav-toggle" aria-expanded="false" aria-controls="nav">
-        <span class="sr-only">Menu</span>
-        <span class="bars" aria-hidden="true"></span>
-      </button>
-      <nav id="nav" class="nav">
-        <a href="index.html" aria-current="page">Home</a>
-        <a href="services.html">Services</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-      </nav>
+<header class="top">
+  <div class="wrap top-in">
+    <a class="logo" href="#top"><span class="mark" aria-hidden="true">CS</span>Creative Strategy Intensive</a>
+    <nav aria-label="Sections">
+      <a href="#curriculum">Curriculum</a>
+      <a href="#fit">Who it's for</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn" href="#pricing">Join cohort 03</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============================ HERO ============================ -->
+  <section class="hero" id="top">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div>
+          <p class="tag"><span class="dot" aria-hidden="true"></span>4-week live intensive · cohort 03</p>
+          <h1>Stop shipping 40 variants and <span class="mark-line">hoping one sticks.</span></h1>
+          <p class="lede">
+            Creative Strategy Intensive teaches media buyers and founders to engineer winning
+            ads on purpose — a repeatable system for finding angles, writing briefs your editor
+            can actually execute, and reading test results without fooling yourself.
+          </p>
+          <div class="ctas">
+            <a class="btn btn-lg" href="#pricing">Join cohort 03 <span class="arw" aria-hidden="true">-&gt;</span></a>
+            <a class="btn btn-lg btn-ghost" href="#curriculum">See the curriculum</a>
+          </div>
+          <p class="under">Starts 6 April · 12 seats · live on Zoom, recorded for replay</p>
+        </div>
+
+        <div class="panel">
+          <div class="panel-h">
+            <span>Hook rate, before &amp; after</span>
+            <em>Illustrative</em>
+          </div>
+          <div class="bar-row">
+            <div class="bar-lab"><span class="who">Briefed on vibes</span><span>12%</span></div>
+            <div class="track"><div class="fill" style="width:12%"></div></div>
+          </div>
+          <div class="bar-row">
+            <div class="bar-lab"><span class="who">Briefed on a diagnosed angle</span><span>34%</span></div>
+            <div class="track"><div class="fill win" style="width:34%"></div></div>
+          </div>
+          <div class="scale"><span>0%</span><span>50%</span><span>100%</span></div>
+          <p class="panel-note">
+            3-second video views ÷ impressions. The number most buyers watch and
+            almost nobody briefs against. Week 1 is where you learn to move it.
+          </p>
+        </div>
+      </div>
+
+      <dl class="facts">
+        <div class="fact"><dt>Format</dt><dd>4 weeks, live</dd></div>
+        <div class="fact"><dt>Cohort size</dt><dd>12 seats</dd></div>
+        <div class="fact"><dt>Your ads</dt><dd>6 teardowns</dd></div>
+        <div class="fact"><dt>Keep after</dt><dd>Brief library</dd></div>
+      </dl>
     </div>
-  </header>
+  </section>
 
-  <main id="main">
-    <section class="hero">
-      <div class="wrap">
-        <p class="eyebrow">Your tagline goes here</p>
-        <h1>A clear promise about the result you deliver.</h1>
+  <!-- ========================== THE PROBLEM ======================= -->
+  <section class="band band-paper">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="eyebrow">Sound familiar?</p>
+        <h2>The spend went up. The learning didn't.</h2>
+      </div>
+      <div class="grid g-3">
+        <div class="tile reveal" style="--d:0ms"><article class="card">
+          <p class="num">01</p>
+          <h3>You brief on vibes</h3>
+          <p>The brief says "make it scroll-stopping." Your editor sends back something
+             technically clean that dies at a 12% hook rate, and nobody can say why.</p>
+        </article></div>
+        <div class="tile reveal" style="--d:90ms"><article class="card">
+          <p class="num">02</p>
+          <h3>Winners don't repeat</h3>
+          <p>One static carried all of Q2. You've tried to rebuild it four times. Without a
+             named angle underneath it, you're copying the execution, not the idea.</p>
+        </article></div>
+        <div class="tile reveal" style="--d:180ms"><article class="card">
+          <p class="num">03</p>
+          <h3>Testing is a slot machine</h3>
+          <p>Forty variants a month, no framework for what any of it taught you.
+             Spend climbs, CAC follows, and the next cycle starts from zero.</p>
+        </article></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================== THE SHIFT ======================== -->
+  <section class="band band-ink">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="eyebrow">The shift</p>
+        <h2>Creative strategy isn't taste. It's a system.</h2>
         <p class="lede">
-          One or two sentences explaining who you help and what changes for them.
-          Keep it concrete — name the problem and the outcome.
+          Good strategists aren't guessing better than you. They're running a loop you can
+          learn: diagnose what the market already believes, name the angle, brief it so it
+          survives production, then design a test that can actually be read.
         </p>
-        <div class="actions">
-          <a class="btn btn-primary" href="contact.html">Get in touch</a>
-          <a class="btn btn-ghost" href="services.html">See services</a>
-        </div>
       </div>
-    </section>
-
-    <section class="section">
-      <div class="wrap">
-        <h2>What we do</h2>
-        <div class="grid">
-          <article class="card">
-            <h3>Service one</h3>
-            <p>Describe the service in plain language. Lead with the benefit, not the process.</p>
-          </article>
-          <article class="card">
-            <h3>Service two</h3>
-            <p>Describe the service in plain language. Lead with the benefit, not the process.</p>
-          </article>
-          <article class="card">
-            <h3>Service three</h3>
-            <p>Describe the service in plain language. Lead with the benefit, not the process.</p>
-          </article>
-        </div>
+      <div class="grid g-3">
+        <div class="tile reveal" style="--d:0ms"><article class="card">
+          <h3>Diagnose, don't brainstorm</h3>
+          <p>Ideas come from reviews, sales calls and the comment section — not from a
+             whiteboard at 4pm on a Friday.</p>
+        </article></div>
+        <div class="tile reveal" style="--d:90ms"><article class="card">
+          <h3>Separate angle from execution</h3>
+          <p>One angle, five executions. When you keep those apart, a loss tells you which
+             one failed instead of burning both.</p>
+        </article></div>
+        <div class="tile reveal" style="--d:180ms"><article class="card">
+          <h3>Test so it's readable</h3>
+          <p>Structure the test before it launches. Decide what would change your mind, and
+             at what spend, while you can still be honest about it.</p>
+        </article></div>
       </div>
-    </section>
-
-    <section class="section section-alt">
-      <div class="wrap narrow">
-        <h2>Why clients choose us</h2>
-        <ul class="checks">
-          <li>A specific, provable claim about your work.</li>
-          <li>A second reason, ideally with a number attached.</li>
-          <li>A third reason your competitors can't copy.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section class="cta">
-      <div class="wrap narrow">
-        <h2>Ready to start?</h2>
-        <p>Tell us what you need and we'll reply within one business day.</p>
-        <a class="btn btn-primary" href="contact.html">Contact us</a>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="wrap footer-inner">
-      <p>&copy; <span data-year></span> My Business. All rights reserved.</p>
-      <nav class="footer-nav">
-        <a href="services.html">Services</a>
-        <a href="about.html">About</a>
-        <a href="contact.html">Contact</a>
-      </nav>
     </div>
-  </footer>
+  </section>
 
-  <script src="assets/js/main.js"></script>
+  <!-- ========================== WHAT YOU GET ====================== -->
+  <section class="band band-volt">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="eyebrow">Outcomes</p>
+        <h2>What you'll walk away with</h2>
+      </div>
+      <ul class="checks reveal">
+        <li><span class="tick" aria-hidden="true">&#10003;</span><span><b>An angle bank for your product</b>Twelve to twenty named angles pulled from your own customer language, ranked by how much of the market they speak to.</span></li>
+        <li><span class="tick" aria-hidden="true">&#10003;</span><span><b>Briefs an editor can execute</b>A one-page format that survives the handoff — reference, hook, beat structure, and the one thing that must not change.</span></li>
+        <li><span class="tick" aria-hidden="true">&#10003;</span><span><b>A testing plan with a stop rule</b>What you're testing, what result would change your mind, and the spend at which you'll call it.</span></li>
+        <li><span class="tick" aria-hidden="true">&#10003;</span><span><b>A weekly creative review</b>A 45-minute meeting format that turns last week's numbers into next week's briefs instead of a slide deck nobody reads.</span></li>
+        <li><span class="tick" aria-hidden="true">&#10003;</span><span><b>Six teardowns of your own ads</b>Bring live creative. We diagnose it in front of the cohort — including the ones that are working, so you learn why.</span></li>
+        <li><span class="tick" aria-hidden="true">&#10003;</span><span><b>Language that gets budget approved</b>How to explain a creative bet to a founder or a client in terms of risk and payback, not adjectives.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- =========================== CURRICULUM ======================= -->
+  <section class="band band-paper" id="curriculum">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="eyebrow">Curriculum</p>
+        <h2>Four weeks, in order.</h2>
+        <p class="lede">
+          Each week is one live 90-minute session plus a piece of work on your own account.
+          The order matters — every week takes the previous week's output as its input.
+        </p>
+      </div>
+
+      <div class="weeks">
+        <div class="tile reveal" style="--d:0ms"><article class="card">
+          <div class="week">
+            <div class="week-key">
+              <span class="wk">Week 01</span>
+              <h3>Diagnose</h3>
+            </div>
+            <ul>
+              <li>Mine reviews, support tickets and sales calls for the words customers actually use</li>
+              <li>Map what your market already believes, and what it would have to stop believing to buy</li>
+              <li>Audit your last 90 days of creative and find the pattern under the winners</li>
+              <li><strong>You produce:</strong> a one-page market diagnosis</li>
+            </ul>
+          </div>
+        </article></div>
+
+        <div class="tile reveal" style="--d:80ms"><article class="card">
+          <div class="week">
+            <div class="week-key">
+              <span class="wk">Week 02</span>
+              <h3>Angles</h3>
+            </div>
+            <ul>
+              <li>Turn the diagnosis into named, testable angles — and why naming them is the whole trick</li>
+              <li>Rank angles by market size, proof available and production cost</li>
+              <li>Pressure-test each one against the objection it has to beat</li>
+              <li><strong>You produce:</strong> your angle bank, ranked and ready to brief</li>
+            </ul>
+          </div>
+        </article></div>
+
+        <div class="tile reveal" style="--d:160ms"><article class="card">
+          <div class="week">
+            <div class="week-key">
+              <span class="wk">Week 03</span>
+              <h3>Briefs &amp; production</h3>
+            </div>
+            <ul>
+              <li>The one-page brief format, and the four fields editors say they actually need</li>
+              <li>Hook libraries: writing ten openings for one angle without repeating yourself</li>
+              <li>Working with UGC creators and editors so the intent survives the edit</li>
+              <li><strong>You produce:</strong> three briefs, reviewed live in session</li>
+            </ul>
+          </div>
+        </article></div>
+
+        <div class="tile reveal" style="--d:240ms"><article class="card">
+          <div class="week">
+            <div class="week-key">
+              <span class="wk">Week 04</span>
+              <h3>Test &amp; read</h3>
+            </div>
+            <ul>
+              <li>Structuring a test that isolates the angle from the execution</li>
+              <li>Which metric answers which question — hook rate, hold, CTR, CPA, MER</li>
+              <li>Reading noisy results honestly, and setting the stop rule in advance</li>
+              <li><strong>You produce:</strong> a 30-day testing plan you run the week after</li>
+            </ul>
+          </div>
+        </article></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== FIT =========================== -->
+  <section class="band band-paper-2" id="fit">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="eyebrow">Honest filter</p>
+        <h2>Is this right for you?</h2>
+      </div>
+      <div class="fit">
+        <div class="tile reveal"><article class="card">
+          <h3><span class="pill sig-go">Good fit</span></h3>
+          <ul>
+            <li><span class="sig sig-go" aria-hidden="true">&#10003;</span>You're a media buyer running real spend — roughly $20k a month or more — and creative is now your bottleneck</li>
+            <li><span class="sig sig-go" aria-hidden="true">&#10003;</span>You're a founder briefing freelancers and you can't tell good work from bad until the numbers land</li>
+            <li><span class="sig sig-go" aria-hidden="true">&#10003;</span>You have access to a live ad account and can ship tests during the four weeks</li>
+            <li><span class="sig sig-go" aria-hidden="true">&#10003;</span>You'd rather leave with a system you run than a folder of swipe files</li>
+          </ul>
+        </article></div>
+        <div class="tile reveal" style="--d:90ms"><article class="card">
+          <h3><span class="pill sig-no">Not a fit</span></h3>
+          <ul>
+            <li><span class="sig sig-no" aria-hidden="true">&#10007;</span>You haven't launched yet — come back when you have a product and some customer feedback to mine</li>
+            <li><span class="sig sig-no" aria-hidden="true">&#10007;</span>You want templates to copy without diagnosing your own market first</li>
+            <li><span class="sig sig-no" aria-hidden="true">&#10007;</span>You're looking for media-buying tactics — bid strategy, account structure, attribution setup</li>
+            <li><span class="sig sig-no" aria-hidden="true">&#10007;</span>You can't commit about four hours a week, including the live session</li>
+          </ul>
+        </article></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= PROOF ========================== -->
+  <section class="band band-paper">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="eyebrow">Proof</p>
+        <h2>What past students say</h2>
+      </div>
+      <!-- PLACEHOLDER: swap in real, attributable quotes before launch.
+           The dashed styling is here so an unfilled card is obvious. -->
+      <p class="proof-note reveal">
+        Placeholder section — replace with real quotes and names before this page goes live.
+        Keep the dashed styling until then so nothing here reads as a genuine review.
+      </p>
+      <div class="quotes">
+        <div class="quote reveal" style="--d:0ms">
+          <p>Paste a real student quote here. The most persuasive ones name a number and a timeframe.</p>
+          <div class="who-row"><span class="av" aria-hidden="true"></span><div>Student name<br>Role, company</div></div>
+        </div>
+        <div class="quote reveal" style="--d:90ms">
+          <p>Paste a real student quote here. A sentence on what they were stuck on before works well.</p>
+          <div class="who-row"><span class="av" aria-hidden="true"></span><div>Student name<br>Role, company</div></div>
+        </div>
+        <div class="quote reveal" style="--d:180ms">
+          <p>Paste a real student quote here. Ask permission to use their name and company.</p>
+          <div class="who-row"><span class="av" aria-hidden="true"></span><div>Student name<br>Role, company</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ PRICING ========================= -->
+  <section class="band band-volt" id="pricing">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="eyebrow">Enrolment</p>
+        <h2>One cohort. Twelve seats.</h2>
+      </div>
+      <div class="price-wrap">
+        <!-- PLACEHOLDER: confirm the price and dates before launch. -->
+        <div class="tile reveal"><article class="card price-card">
+          <p class="num">Cohort 03 · starts 6 April</p>
+          <div class="amount"><b>$795</b><span>one payment · or 2 × $420</span></div>
+          <ul class="incl">
+            <li>Four live 90-minute sessions, recorded</li>
+            <li>Six teardowns of your own live creative</li>
+            <li>The brief, angle-bank and test-plan templates</li>
+            <li>Written feedback on your week 03 briefs</li>
+            <li>Cohort channel, kept open after the four weeks</li>
+          </ul>
+          <a class="btn btn-lg" href="#" style="align-self:flex-start">Claim a seat <span class="arw" aria-hidden="true">-&gt;</span></a>
+          <p class="under">Full refund up to the end of week 01. No questions.</p>
+        </article></div>
+
+        <div class="reveal" style="--d:90ms">
+          <h3 style="font-size:var(--step-2);margin-bottom:.9rem">Why it's capped at twelve</h3>
+          <p class="lede" style="margin-top:0">
+            Every seat gets live teardowns of their own ads and written feedback on their briefs.
+            That doesn't scale past a dozen people, so it isn't going to. When a cohort fills,
+            the next one is the next date — there's no waitlist upsell.
+          </p>
+          <p class="lede">
+            Bringing a team? Three or more seats from the same company are booked together so you
+            leave with one shared system rather than three private ones.
+            <a href="#" style="font-weight:700">Email about team seats</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== FAQ =========================== -->
+  <section class="band band-ink" id="faq">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="eyebrow">Questions</p>
+        <h2>Before you enrol</h2>
+      </div>
+      <div class="faq reveal">
+        <details>
+          <summary>How much time does it take each week?</summary>
+          <p class="a">About four hours: one 90-minute live session, plus roughly two hours on the
+            week's work against your own account. The work is the point — it's the thing you leave with.</p>
+        </details>
+        <details>
+          <summary>I can't make the live sessions in my timezone.</summary>
+          <p class="a">Every session is recorded and posted within a day. You'll miss the live teardown
+            discussion, so send your questions ahead and they'll be covered in the session and the recap.</p>
+        </details>
+        <details>
+          <summary>Is this about media buying or creative?</summary>
+          <p class="a">Creative strategy — what to make and why. We touch the account only where it
+            affects how a test is read. If you want bid strategy and account structure, this isn't it.</p>
+        </details>
+        <details>
+          <summary>Do I need a big budget to get value?</summary>
+          <p class="a">You need enough spend to read a test in a reasonable window — around $20k a month
+            is a sensible floor. Below that the diagnosis and briefing weeks still apply, but results
+            will take longer to confirm.</p>
+        </details>
+        <details>
+          <summary>What if it isn't working for me?</summary>
+          <p class="a">Full refund any time up to the end of week 01, no questions asked. You keep the
+            week 01 materials.</p>
+        </details>
+        <details>
+          <summary>Will you sign an NDA to look at my account?</summary>
+          <p class="a">Yes. Teardowns can also be anonymised for the cohort if you'd rather your brand
+            and numbers stayed out of the session.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================== FINAL CTA ======================== -->
+  <section class="band band-volt">
+    <div class="wrap" style="text-align:center">
+      <div class="reveal">
+        <h2 style="font-size:var(--step-3);margin-inline:auto">Four weeks from now, you could be briefing on purpose.</h2>
+        <p class="lede" style="margin-inline:auto;max-width:52ch">
+          Cohort 03 starts 6 April with twelve seats. Bring a live account and the ads
+          you can't explain.
+        </p>
+        <div class="ctas" style="justify-content:center">
+          <a class="btn btn-lg" href="#">Claim a seat <span class="arw" aria-hidden="true">-&gt;</span></a>
+          <a class="btn btn-lg btn-ghost" href="#curriculum">Read the curriculum again</a>
+        </div>
+        <p class="under">Full refund through the end of week 01.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap foot-in">
+    <p>&copy; <span data-year>2026</span> Creative Strategy Intensive</p>
+    <nav><a href="#curriculum">Curriculum</a> · <a href="#pricing">Pricing</a> · <a href="#faq">FAQ</a></nav>
+  </div>
+</footer>
+
+<script>
+/* Enhancements only — the page is complete and readable without this.
+   Three guarantees, in order of importance:
+     1. No JS, or reduced-motion, or no IntersectionObserver -> nothing is
+        ever hidden; the .js class that arms the hidden state is never added.
+     2. Anything already on screen at load reveals immediately, so the first
+        frame (and any thumbnail or screenshot) is never blank.
+     3. A short fallback reveals everything regardless, so a missed observer
+        callback can never leave content permanently invisible. */
+(function () {
+  "use strict";
+  var root = document.documentElement;
+  var reduce = window.matchMedia
+    && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  var year = document.querySelector("[data-year]");
+  if (year) year.textContent = String(new Date().getFullYear());
+
+  if (reduce || !("IntersectionObserver" in window)) return;
+
+  root.classList.add("js");
+  var items = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
+
+  function show(el) { el.classList.add("is-in"); }
+  function showAll() { items.forEach(show); }
+
+  // Reveal whatever is already in view before the observer ever runs.
+  var fold = window.innerHeight * 1.05;
+  items.forEach(function (el) {
+    if (el.getBoundingClientRect().top < fold) show(el);
+  });
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      show(entry.target);
+      io.unobserve(entry.target);
+    });
+  }, { rootMargin: "0px 0px -10% 0px", threshold: 0.05 });
+
+  items.forEach(function (el) {
+    if (!el.classList.contains("is-in")) io.observe(el);
+  });
+
+  setTimeout(showAll, 900);
+})();
+</script>
 </body>
 </html>
