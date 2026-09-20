@@ -1,6 +1,6 @@
 # CSI Batch 3 — section embeds for Systeme.io
 
-Fifteen copy-paste blocks covering the twelve spec sections plus the header,
+Seventeen copy-paste blocks covering every section on the page plus the header,
 sticky mobile CTA and footer. Each file is complete on its own.
 
 | File | Section | Spec ID |
@@ -15,11 +15,13 @@ sticky mobile CTA and footer. Each file is complete on its own.
 | `08-last-live.html` | Last Live Batch (dark band) | `#last-live` |
 | `09-pricing.html` | Pricing | `#pricing` |
 | `10-about.html` | About the Coach | `#about` |
-| `11-testimonials.html` | Testimonials (placeholders) | `#testimonials` |
-| `12-faq.html` | FAQ (accordion) | `#faq` |
-| `13-final-cta.html` | Final CTA | `#final-cta` |
-| `14-sticky-cta.html` | Sticky mobile price + button bar | — |
-| `15-footer.html` | Footer | — |
+| `11-client-quotes.html` | Client testimonials (placeholders) | `#client-testimonials` |
+| `12-testimonials.html` | Student testimonials (placeholders) | `#testimonials` |
+| `13-video.html` | Video testimonials (placeholders) | `#video-testimonials` |
+| `14-faq.html` | FAQ (accordion) | `#faq` |
+| `15-final-cta.html` | Final CTA | `#final-cta` |
+| `16-sticky-cta.html` | Sticky mobile price + button bar | — |
+| `17-footer.html` | Footer | — |
 
 Add them in this order. Sections are independent — skipping one is fine.
 
@@ -57,14 +59,11 @@ you do, the buttons lead nowhere.
 
 | Placeholder | File |
 |---|---|
-| `[CHECKOUT_URL]` | 01, 02, 09, 13, 14 — every button |
-| `[NUMBER]` live sessions / seats | 09-pricing |
-| `[PLATFORM]`, `[ACCESS_DURATION]` | 09-pricing |
-| `[SESSION_REPLAYS]`, `[COMMUNITY_ACCESS_OR_BONUS]` — confirm or remove | 09-pricing |
-| `[MARK_PHOTO]`, `[ADD_CREDIBILITY]` | 10-about |
-| Testimonials ×3 with `[NAME]`, `[ROLE]` | 11-testimonials |
-| `[REPLAY_POLICY]`, `[LIVE_HOURS_AND_WEEKLY_WORKSHEET_TIME]` | 12-faq |
-| `[PAYMENT_OPTIONS]`, `[REFUND_POLICY]` | 12-faq |
+| `[CHECKOUT_URL]` | 01, 02, 09, 15, 16 — every button |
+| `[MARK_PHOTO]` | 10-about |
+| Client quotes ×3 with `[CLIENT_NAME]`, `[ROLE_AND_BRAND]` | 11-client-quotes |
+| Student quotes ×3 with `[NAME]`, `[ROLE]` | 12-testimonials |
+| `[YOUTUBE_ID_1..3]`, `[VIDEO_n_NAME_AND_ROLE]` | 13-video |
 
 Dates are **already filled** from what you confirmed: Batch 3 runs 20–22 October
 2026, early bird ends 13 October 2026. Tell me if you'd rather have those back
@@ -74,7 +73,7 @@ as placeholders.
 
 - Curriculum and FAQ are `<details>` accordions — they work with no JavaScript.
   Module title and one-line description show by default; lessons open on tap.
-- `14-sticky-cta.html` only appears below 780px wide, and adds bottom padding so
+- `16-sticky-cta.html` only appears below 780px wide, and adds bottom padding so
   it never covers the footer. Add it once, anywhere on the page.
 - The `<script>` in each file drives the scroll fade-ups and the footer year.
   Safe on every block; it only initialises a block once. Remove it and
