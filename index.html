@@ -140,11 +140,9 @@ section[id]{scroll-margin-top:70px}
 }
 .dot{width:7px;height:7px;border-radius:50%;background:var(--ink)}
 .urgency{
-  display:flex;gap:.8rem;align-items:flex-start;
   margin-top:1.8rem;padding:1rem 1.2rem;max-width:52ch;
   border:2px solid var(--volt);border-radius:var(--r);background:var(--ink-2);
 }
-.urgency b{color:var(--volt);font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;flex:none;padding-top:.22rem}
 .urgency p{color:var(--paper);font-weight:600}
 .hero .btn{margin-top:1.8rem}
 
@@ -185,6 +183,21 @@ section[id]{scroll-margin-top:70px}
 .mod ul{display:grid;gap:.55rem;padding:0 1.3rem 1.3rem;margin-top:-.15rem}
 .mod li{display:grid;grid-template-columns:auto 1fr;gap:.7rem;color:var(--slate);font-size:.97rem}
 .mod li::before{content:"—";font-family:var(--mono);color:var(--ink)}
+
+/* --------------------------- bonus lessons --------------------------- */
+.bonus-label{
+  font-family:var(--mono);font-weight:700;font-size:.72rem;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--slate);
+  margin:2.25rem 0 .9rem;display:flex;align-items:center;gap:.8rem;
+}
+.bonus-label::after{content:"";flex:1;height:2px;background:var(--ink);opacity:.14}
+.bonuses{display:grid;gap:.7rem}
+.bonus{
+  display:grid;gap:.3rem;background:var(--paper);
+  border:2px solid var(--ink);border-left-width:8px;border-radius:var(--r);
+  padding:1.05rem 1.25rem;
+}
+.bonus-t{font-family:var(--display);font-size:var(--step-1);line-height:1.15}
 
 /* ------------------------------- pricing ----------------------------- */
 .price-wrap{display:grid;gap:calc(var(--plate) + 1.2rem);max-width:620px}
@@ -297,7 +310,6 @@ section[id]{scroll-margin-top:70px}
         numbers: the creative.
       </p>
       <div class="urgency">
-        <b>Last live batch</b>
         <p>This is the final live cohort. Future batches will be recorded-only.</p>
       </div>
       <a class="btn btn-lg" href="[CHECKOUT_URL]">Reserve my seat at &#8369;24,999</a>
@@ -338,7 +350,7 @@ section[id]{scroll-margin-top:70px}
     <div class="wrap">
       <div class="head reveal">
         <p class="eyebrow">Who it's for</p>
-        <h2>CSI is built for you if you are:</h2>
+        <h2>Creative Strategy Intensive is built for you if you are:</h2>
       </div>
       <div class="grid g-4">
         <div class="tile reveal" style="--d:0ms"><article class="card">
@@ -505,6 +517,35 @@ section[id]{scroll-margin-top:70px}
             <li>Creative Sprint Planning Framework</li>
           </ul>
         </details>
+      </div>
+
+      <p class="bonus-label reveal">Bonus lessons</p>
+      <div class="bonuses">
+        <div class="bonus reveal" style="--d:0ms">
+          <span class="mod-n">Bonus 1</span>
+          <span class="bonus-t"><span class="ph">[BONUS_1_TITLE]</span></span>
+          <span class="mod-d"><span class="ph">[BONUS_1_DESCRIPTION]</span></span>
+        </div>
+        <div class="bonus reveal" style="--d:60ms">
+          <span class="mod-n">Bonus 2</span>
+          <span class="bonus-t"><span class="ph">[BONUS_2_TITLE]</span></span>
+          <span class="mod-d"><span class="ph">[BONUS_2_DESCRIPTION]</span></span>
+        </div>
+        <div class="bonus reveal" style="--d:120ms">
+          <span class="mod-n">Bonus 3</span>
+          <span class="bonus-t"><span class="ph">[BONUS_3_TITLE]</span></span>
+          <span class="mod-d"><span class="ph">[BONUS_3_DESCRIPTION]</span></span>
+        </div>
+        <div class="bonus reveal" style="--d:180ms">
+          <span class="mod-n">Bonus 4</span>
+          <span class="bonus-t"><span class="ph">[BONUS_4_TITLE]</span></span>
+          <span class="mod-d"><span class="ph">[BONUS_4_DESCRIPTION]</span></span>
+        </div>
+        <div class="bonus reveal" style="--d:240ms">
+          <span class="mod-n">Bonus 5</span>
+          <span class="bonus-t"><span class="ph">[BONUS_5_TITLE]</span></span>
+          <span class="mod-d"><span class="ph">[BONUS_5_DESCRIPTION]</span></span>
+        </div>
       </div>
     </div>
   </section>
