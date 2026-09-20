@@ -114,6 +114,7 @@ section[id]{scroll-margin-top:70px}
 .btn:active{transform:translateY(0)}
 .btn-lg{padding:1.05rem 2rem;font-size:var(--step-1)}
 .under{font-family:var(--mono);font-size:var(--step--1);color:var(--slate);margin-top:.85rem}
+.under a{text-decoration:underline}
 .band-ink .under{color:#8f8b7e}
 .band-volt .under{color:#3a3416}
 
@@ -266,7 +267,7 @@ section[id]{scroll-margin-top:70px}
 /* ------------------------------- footer ------------------------------ */
 .foot{background:var(--ink);color:#8f8b7e;padding-block:2.2rem;font-size:.88rem}
 .disclaimer{
-  max-width:72ch;padding-bottom:1.5rem;margin-bottom:1.5rem;
+  scroll-margin-top:70px;max-width:72ch;padding-bottom:1.5rem;margin-bottom:1.5rem;
   border-bottom:1px solid #2c2c30;
 }
 .disclaimer b{
@@ -613,6 +614,7 @@ section[id]{scroll-margin-top:70px}
           </ul>
           <a class="btn btn-lg" href="[CHECKOUT_URL]">Reserve my seat at &#8369;24,999</a>
           <p class="under">Seats are limited to keep critique groups small. 15 seats available.</p>
+          <p class="under">Educational program — no guaranteed results. <a href="#disclaimer">Read the full disclaimer</a>.</p>
         </article></div>
       </div>
     </div>
@@ -732,7 +734,7 @@ section[id]{scroll-margin-top:70px}
 
 <footer class="foot">
   <div class="wrap">
-    <div class="disclaimer">
+    <div class="disclaimer" id="disclaimer">
       <b>No results guarantee</b>
       <p>
         Creative Strategy Intensive is an educational program. It teaches frameworks,
