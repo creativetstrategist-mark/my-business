@@ -126,12 +126,12 @@ html{scroll-behavior:smooth!important;-webkit-text-size-adjust:100%!important;}
 .csi .mod ul{display:grid!important;gap:.55rem!important;padding:0 1.3rem 1.3rem!important;margin-top:-.15rem!important;}
 .csi .mod li{display:grid!important;grid-template-columns:auto 1fr!important;gap:.7rem!important;color:var(--slate)!important;font-size:.97rem!important;}
 .csi .mod li::before{content:"—"!important;font-family:var(--mono)!important;color:var(--ink)!important;}
-.csi .bonus-label{font-family:var(--mono)!important;font-weight:700!important;font-size:.72rem!important;letter-spacing:.14em!important;text-transform:uppercase!important;color:var(--slate)!important;margin:2.25rem 0 .9rem!important;display:flex!important;align-items:center!important;gap:.8rem!important;}
-.csi .bonus-label::after{content:""!important;flex:1!important;height:2px!important;background:var(--ink)!important;opacity:.14!important;}
-.csi .bonuses{display:grid!important;gap:.7rem!important;}
-.csi .bonus{display:grid!important;gap:.3rem!important;background:var(--paper)!important;border:2px solid var(--ink)!important;border-left-width:8px!important;border-radius:var(--r)!important;padding:1.05rem 1.25rem!important;}
-.csi .bonus-t{font-family:var(--display)!important;font-size:var(--step-1)!important;line-height:1.15!important;}
-.csi .bonus-value{justify-self:start!important;margin-top:.45rem!important;font-family:var(--mono)!important;font-size:.7rem!important;font-weight:700!important;letter-spacing:.1em!important;text-transform:uppercase!important;background:var(--ink)!important;color:var(--volt)!important;padding:.28rem .7rem!important;border-radius:999px!important;}
+.csi .toolkit{margin-top:2.25rem!important;background:var(--paper)!important;border:2px solid var(--ink)!important;border-left-width:8px!important;border-radius:var(--r)!important;padding:1.4rem 1.5rem!important;}
+.csi .toolkit-h{font-family:var(--display)!important;font-size:var(--step-1)!important;line-height:1.15!important;margin-bottom:.9rem!important;}
+.csi .toolkit-list{display:grid!important;gap:.75rem!important;}
+.csi .toolkit-list li{display:grid!important;grid-template-columns:auto 1fr!important;gap:.7rem!important;color:var(--slate)!important;font-size:.97rem!important;}
+.csi .toolkit-list li::before{content:"+"!important;font-family:var(--mono)!important;font-weight:700!important;color:var(--ink)!important;}
+.csi .toolkit-list b{color:var(--ink)!important;}
 .csi #pricing .head{text-align:center!important;}
 .csi .price-wrap{display:grid!important;gap:calc(var(--plate) + 1.2rem)!important;max-width:620px!important;margin-inline:auto!important;}
 .csi .price-card{text-align:center!important;}
@@ -195,6 +195,7 @@ html{scroll-behavior:smooth!important;-webkit-text-size-adjust:100%!important;}
 .csi .foot-in{display:flex!important;flex-wrap:wrap!important;gap:1rem!important;justify-content:space-between!important;align-items:center!important;}
 .csi .foot a{color:#c9c5b8!important;text-decoration:none!important;}
 .csi .foot a:hover{color:var(--volt)!important;}
+.csi .foot-contact a{color:var(--volt)!important;text-decoration:none!important;border-bottom:1px solid rgba(255,232,26,.35)!important;}
 .csi .sticky-cta{display:none!important;position:fixed!important;left:0!important;right:0!important;bottom:0!important;z-index:60!important;background:var(--ink)!important;border-top:2px solid var(--volt)!important;padding:.7rem 16px!important;gap:.9rem!important;align-items:center!important;justify-content:space-between!important;}
 .csi .sticky-cta .p b{font-family:var(--display)!important;color:var(--volt)!important;font-size:1.15rem!important;display:block!important;line-height:1.1!important;}
 .csi .sticky-cta .p span{font-family:var(--mono)!important;font-size:.66rem!important;letter-spacing:.1em!important;text-transform:uppercase!important;color:#8f8b7e!important;}
@@ -302,37 +303,13 @@ html{overflow-x:clip}
         </details>
       </div>
 
-      <p class="bonus-label reveal">Bonus lessons</p>
-      <div class="bonuses">
-        <div class="bonus reveal" style="--d:0ms">
-          <span class="mod-n">Bonus 1</span>
-          <span class="bonus-t">The Swipe Vault</span>
-          <span class="mod-d">My personal ad library, sorted by industry, format, hook type,
-            and angle.</span>
-          <span class="bonus-value">Value: &#8369;6,500</span>
-        </div>
-        <div class="bonus reveal" style="--d:60ms">
-          <span class="mod-n">Bonus 2</span>
-          <span class="bonus-t">The Creative Forecaster</span>
-          <span class="mod-d">Calculates how many creatives your budget needs, then tracks them
-            and tells you what to iterate, kill, or scale.</span>
-          <span class="bonus-value">Value: &#8369;5,500</span>
-        </div>
-        <div class="bonus reveal" style="--d:120ms">
-          <span class="mod-n">Bonus 3</span>
-          <span class="bonus-t"><span class="ph">[BONUS_3_TITLE]</span></span>
-          <span class="mod-d"><span class="ph">[BONUS_3_DESCRIPTION]</span></span>
-        </div>
-        <div class="bonus reveal" style="--d:180ms">
-          <span class="mod-n">Bonus 4</span>
-          <span class="bonus-t"><span class="ph">[BONUS_4_TITLE]</span></span>
-          <span class="mod-d"><span class="ph">[BONUS_4_DESCRIPTION]</span></span>
-        </div>
-        <div class="bonus reveal" style="--d:240ms">
-          <span class="mod-n">Bonus 5</span>
-          <span class="bonus-t"><span class="ph">[BONUS_5_TITLE]</span></span>
-          <span class="mod-d"><span class="ph">[BONUS_5_DESCRIPTION]</span></span>
-        </div>
+      <div class="toolkit reveal">
+        <p class="toolkit-h">The CSI Toolkit</p>
+        <ul class="toolkit-list">
+          <li><b>Ad swipe file</b> — my working library, organized so you can find a reference fast.</li>
+          <li><b>Creative calculator</b> — turns your ad budget into the number of creatives you need to test.</li>
+          <li><b>Naming convention generator</b> — so your creative data is actually readable in Ads Manager.</li>
+        </ul>
       </div>
     </div>
   </section>

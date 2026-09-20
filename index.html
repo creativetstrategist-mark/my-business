@@ -213,26 +213,17 @@ section[id]{scroll-margin-top:70px}
 .mod li{display:grid;grid-template-columns:auto 1fr;gap:.7rem;color:var(--slate);font-size:.97rem}
 .mod li::before{content:"—";font-family:var(--mono);color:var(--ink)}
 
-/* --------------------------- bonus lessons --------------------------- */
-.bonus-label{
-  font-family:var(--mono);font-weight:700;font-size:.72rem;letter-spacing:.14em;
-  text-transform:uppercase;color:var(--slate);
-  margin:2.25rem 0 .9rem;display:flex;align-items:center;gap:.8rem;
-}
-.bonus-label::after{content:"";flex:1;height:2px;background:var(--ink);opacity:.14}
-.bonuses{display:grid;gap:.7rem}
-.bonus{
-  display:grid;gap:.3rem;background:var(--paper);
+/* ----------------------------- csi toolkit ---------------------------- */
+.toolkit{
+  margin-top:2.25rem;background:var(--paper);
   border:2px solid var(--ink);border-left-width:8px;border-radius:var(--r);
-  padding:1.05rem 1.25rem;
+  padding:1.4rem 1.5rem;
 }
-.bonus-t{font-family:var(--display);font-size:var(--step-1);line-height:1.15}
-.bonus-value{
-  justify-self:start;margin-top:.45rem;
-  font-family:var(--mono);font-size:.7rem;font-weight:700;letter-spacing:.1em;
-  text-transform:uppercase;background:var(--ink);color:var(--volt);
-  padding:.28rem .7rem;border-radius:999px;
-}
+.toolkit-h{font-family:var(--display);font-size:var(--step-1);line-height:1.15;margin-bottom:.9rem}
+.toolkit-list{display:grid;gap:.75rem}
+.toolkit-list li{display:grid;grid-template-columns:auto 1fr;gap:.7rem;color:var(--slate);font-size:.97rem}
+.toolkit-list li::before{content:"+";font-family:var(--mono);font-weight:700;color:var(--ink)}
+.toolkit-list b{color:var(--ink)}
 
 /* ------------------------------- pricing ----------------------------- */
 /* The whole pricing section is centred: heading, card, and everything in
@@ -329,6 +320,7 @@ section[id]{scroll-margin-top:70px}
 .foot-in{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:center}
 .foot a{color:#c9c5b8;text-decoration:none}
 .foot a:hover{color:var(--volt)}
+.foot-contact a{color:var(--volt);text-decoration:none;border-bottom:1px solid rgba(255,232,26,.35)}
 
 /* --------------------------- sticky mobile CTA ----------------------- */
 .sticky-cta{
@@ -586,37 +578,13 @@ section[id]{scroll-margin-top:70px}
         </details>
       </div>
 
-      <p class="bonus-label reveal">Bonus lessons</p>
-      <div class="bonuses">
-        <div class="bonus reveal" style="--d:0ms">
-          <span class="mod-n">Bonus 1</span>
-          <span class="bonus-t">The Swipe Vault</span>
-          <span class="mod-d">My personal ad library, sorted by industry, format, hook type,
-            and angle.</span>
-          <span class="bonus-value">Value: &#8369;6,500</span>
-        </div>
-        <div class="bonus reveal" style="--d:60ms">
-          <span class="mod-n">Bonus 2</span>
-          <span class="bonus-t">The Creative Forecaster</span>
-          <span class="mod-d">Calculates how many creatives your budget needs, then tracks them
-            and tells you what to iterate, kill, or scale.</span>
-          <span class="bonus-value">Value: &#8369;5,500</span>
-        </div>
-        <div class="bonus reveal" style="--d:120ms">
-          <span class="mod-n">Bonus 3</span>
-          <span class="bonus-t"><span class="ph">[BONUS_3_TITLE]</span></span>
-          <span class="mod-d"><span class="ph">[BONUS_3_DESCRIPTION]</span></span>
-        </div>
-        <div class="bonus reveal" style="--d:180ms">
-          <span class="mod-n">Bonus 4</span>
-          <span class="bonus-t"><span class="ph">[BONUS_4_TITLE]</span></span>
-          <span class="mod-d"><span class="ph">[BONUS_4_DESCRIPTION]</span></span>
-        </div>
-        <div class="bonus reveal" style="--d:240ms">
-          <span class="mod-n">Bonus 5</span>
-          <span class="bonus-t"><span class="ph">[BONUS_5_TITLE]</span></span>
-          <span class="mod-d"><span class="ph">[BONUS_5_DESCRIPTION]</span></span>
-        </div>
+      <div class="toolkit reveal">
+        <p class="toolkit-h">The CSI Toolkit</p>
+        <ul class="toolkit-list">
+          <li><b>Ad swipe file</b> — my working library, organized so you can find a reference fast.</li>
+          <li><b>Creative calculator</b> — turns your ad budget into the number of creatives you need to test.</li>
+          <li><b>Naming convention generator</b> — so your creative data is actually readable in Ads Manager.</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -801,10 +769,6 @@ section[id]{scroll-margin-top:70px}
             questions ahead and they'll be covered in the session.</p>
         </details>
         <details>
-          <summary>Is this in English or Tagalog?</summary>
-          <p class="a">Slides and materials are in English. Live discussion is a relaxed mix of English and Tagalog.</p>
-        </details>
-        <details>
           <summary>Can I pay in installments?</summary>
           <p class="a"><span class="ph">[PAYMENT_OPTIONS]</span></p>
         </details>
@@ -853,6 +817,7 @@ section[id]{scroll-margin-top:70px}
     </div>
     <div class="foot-in">
       <p>&copy; <span data-year>2026</span> Creative Strategy Intensive</p>
+      <p class="foot-contact">Questions? <a href="mailto:hello@iammarkamagdayo.com">hello@iammarkamagdayo.com</a></p>
       <nav><a href="#curriculum">Curriculum</a> · <a href="#pricing">Pricing</a> · <a href="#faq">FAQ</a></nav>
     </div>
   </div>
