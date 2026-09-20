@@ -97,6 +97,8 @@ section[id]{scroll-margin-top:70px}
 .prose{display:grid;gap:1.1rem;max-width:62ch}
 .prose p{font-size:var(--step-1);line-height:1.6;color:var(--slate)}
 .band-ink .prose p{color:#c9c5b8}
+.prose .emph{font-weight:700}
+.band-ink .prose .emph{color:var(--paper)}
 .band-volt .prose p{color:#3a3416}
 .prose .kicker{font-family:var(--display);font-size:var(--step-2);color:var(--ink);line-height:1.15;max-width:22ch}
 .band-ink .prose .kicker{color:var(--volt)}
@@ -142,6 +144,10 @@ section[id]{scroll-margin-top:70px}
   padding:.4rem .85rem;border-radius:999px;margin-bottom:1.3rem;
 }
 .dot{width:7px;height:7px;border-radius:50%;background:var(--ink)}
+/* overrides the 65ch paragraph measure so it stays one line on desktop;
+   it still wraps naturally on a phone, where one line cannot fit */
+.trust{font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;color:#8f8b7e;
+  margin-top:.5rem;max-width:none}
 .hero .btn{margin-top:1.8rem}
 
 /* ------------------------------- cards ------------------------------- */
@@ -336,6 +342,7 @@ section[id]{scroll-margin-top:70px}
       </p>
       <a class="btn btn-lg" href="[CHECKOUT_URL]">Reserve my seat at &#8369;24,999</a>
       <p class="under">Early bird price · Regular &#8369;35,000</p>
+      <p class="trust">Lifetime access · 12 months of support · Early bird until 13 October</p>
     </div>
   </section>
 
@@ -584,6 +591,8 @@ section[id]{scroll-margin-top:70px}
           questions in real time about your own work.
         </p>
         <p>If you learn best by doing and getting corrected, this is the batch to join.</p>
+        <p class="emph">Join the last live batch and you keep lifetime access to every recorded
+          version that comes after it, including all future updates.</p>
       </div>
     </div>
   </section>
@@ -605,10 +614,12 @@ section[id]{scroll-margin-top:70px}
           <p><span class="save">You save &#8369;10,000</span></p>
           <p class="under">Early bird ends 13 October 2026 or when seats run out.</p>
           <ul class="incl">
+            <li><span>Lifetime access to the course and all future updates</span></li>
+            <li><span>12 months of support after the batch ends</span></li>
             <li><span>3 days of live sessions on Zoom with Mark</span></li>
             <li><span>Small-group creative critique</span></li>
             <li><span>Full worksheet set with a start-to-finish product capstone</span></li>
-            <li><span>Course access on <span class="ph">[PLATFORM]</span> for <span class="ph">[ACCESS_DURATION]</span></span></li>
+            <li><span>Hosted on <span class="ph">[PLATFORM]</span></span></li>
             <li><span><span class="ph">[SESSION_REPLAYS — confirm or remove]</span></span></li>
             <li><span><span class="ph">[COMMUNITY_ACCESS_OR_BONUS — confirm or remove]</span></span></li>
           </ul>
@@ -680,6 +691,17 @@ section[id]{scroll-margin-top:70px}
         <h2>Frequently asked questions</h2>
       </div>
       <div class="faq reveal">
+        <details>
+          <summary>How long do I have access to the course?</summary>
+          <p class="a">Lifetime. You keep access to the materials and to every future update of
+            Creative Strategy Intensive, including the recorded versions that come after this batch.</p>
+        </details>
+        <details>
+          <summary>What happens after the batch ends?</summary>
+          <p class="a">You get 12 months of support, so you can bring real questions from real
+            accounts as you apply the work.
+            <span class="ph">[SUPPORT_CHANNEL_AND_FORMAT — where support happens and what students can expect]</span></p>
+        </details>
         <details>
           <summary>I'm not a media buyer. Can I still join?</summary>
           <p class="a">Yes. Media buyers will ramp up fastest, but marketers, freelancers, editors, and business owners running their own ads will all get value. Module 1 covers the foundations.</p>
