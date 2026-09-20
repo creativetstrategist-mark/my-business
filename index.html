@@ -110,9 +110,16 @@ section[id]{scroll-margin-top:70px}
   text-decoration:none;cursor:pointer;text-align:center;
   padding:.9rem 1.6rem;border-radius:999px;
   border:2px solid var(--ink);background:var(--volt);color:var(--ink);
-  transition:transform .18s cubic-bezier(.2,.7,.3,1);
+  transition:transform .18s cubic-bezier(.2,.7,.3,1),
+             background-color .18s ease, color .18s ease, border-color .18s ease;
 }
-.btn:hover{transform:translateY(-2px)}
+/* On paper and volt grounds the button inverts to ink, which is the
+   strongest signal available. On an ink ground that would make the
+   primary CTA recede into the background, so those darken instead. */
+.btn:hover{transform:translateY(-2px);background:var(--ink);color:var(--volt);border-color:var(--ink)}
+.band-ink .btn:hover,.top .btn:hover,.sticky-cta .btn:hover{
+  background:var(--volt-deep);color:var(--ink);border-color:var(--volt-deep);
+}
 .btn:active{transform:translateY(0)}
 .btn-lg{padding:1.05rem 2rem;font-size:var(--step-1)}
 .under{font-family:var(--mono);font-size:var(--step--1);color:var(--slate);margin-top:.85rem}
@@ -286,7 +293,7 @@ section[id]{scroll-margin-top:70px}
 .final{text-align:center}
 .final h2{font-size:var(--step-3);margin-inline:auto;max-width:20ch}
 .final .prose{margin-inline:auto;text-align:center}
-.final .prose p{margin-inline:auto}
+.final p{margin-inline:auto}
 .price-line{font-family:var(--mono);font-weight:700;font-size:var(--step-0);margin-top:1.5rem;color:#3a3416}
 .price-line s{text-decoration-thickness:2px}
 
