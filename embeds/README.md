@@ -52,18 +52,21 @@ ground is already yellow, so a yellow highlight would disappear on the hero,
 outcomes, pricing and final CTA bands — magenta sits outside the palette and
 stays findable everywhere. Search the files for `[` to list them.
 
-`[CHECKOUT_URL]` is the exception: it sits in `href="[CHECKOUT_URL]"` and cannot
-be styled. **Find and replace it across every file before publishing** — until
-you do, the buttons lead nowhere.
+The checkout link is no longer a placeholder: every button already points at
+the Xendit checkout.
 
 ### What still needs filling
 
 | Placeholder | File |
 |---|---|
-| `[CHECKOUT_URL]` | 01, 02, 09, 16, 17 — every button |
 | `[CLIENT_YOUTUBE_ID_1..3]`, `[CLIENT_VIDEO_n_NAME_AND_BRAND]` | 12-client-videos |
 | Student quotes ×3 with `[NAME]`, `[ROLE]` | 13-testimonials |
 | `[YOUTUBE_ID_1..3]`, `[VIDEO_n_NAME_AND_ROLE]` | 14-video |
+
+The checkout link is **already filled in** — every button points at
+`https://checkout.xendit.co/od/csi-earlybirdrate`. That link is the early bird
+offer, so it needs swapping for a regular-rate link once early bird closes on
+13 October 2026.
 
 Dates are **already filled** from what you confirmed: Batch 3 runs 20–22 October
 2026, early bird ends 13 October 2026. Tell me if you'd rather have those back
