@@ -11,7 +11,7 @@
 .csi a{text-decoration:none!important;}
 .csi .lede a{text-decoration:underline!important;}
 .csi .was{text-decoration:line-through!important;}
-.csi{--ink:#111113!important;--ink-2:#1d1d20!important;--volt:#ffe81a!important;--volt-deep:#e6cf00!important;--paper:#fbf9f2!important;--paper-2:#f2efe3!important;--slate:#56524a!important;--ph:#c4006b!important;--col:1080px!important;--r:14px!important;--plate:6px!important;--display:"Archivo Black","Arial Black",Impact,sans-serif!important;--body:"Instrument Sans",ui-sans-serif,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif!important;--mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace!important;--step--1:clamp(.78rem,.75rem + .15vw,.85rem)!important;--step-0:clamp(1rem,.96rem + .2vw,1.08rem)!important;--step-1:clamp(1.12rem,1.02rem + .45vw,1.32rem)!important;--step-2:clamp(1.4rem,1.2rem + .9vw,1.9rem)!important;--step-3:clamp(1.9rem,1.5rem + 1.9vw,3rem)!important;--step-4:clamp(2.4rem,1.7rem + 3.3vw,4.4rem)!important;}
+.csi{--ink:#111113!important;--ink-2:#1d1d20!important;--volt:#ffe81a!important;--volt-deep:#e6cf00!important;--paper:#fbf9f2!important;--paper-2:#f2efe3!important;--slate:#56524a!important;--ph:#c4006b!important;--go:#1c7a4b!important;--no:#c4402a!important;--col:1080px!important;--r:14px!important;--plate:6px!important;--display:"Archivo Black","Arial Black",Impact,sans-serif!important;--body:"Instrument Sans",ui-sans-serif,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif!important;--mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace!important;--step--1:clamp(.78rem,.75rem + .15vw,.85rem)!important;--step-0:clamp(1rem,.96rem + .2vw,1.08rem)!important;--step-1:clamp(1.12rem,1.02rem + .45vw,1.32rem)!important;--step-2:clamp(1.4rem,1.2rem + .9vw,1.9rem)!important;--step-3:clamp(1.9rem,1.5rem + 1.9vw,3rem)!important;--step-4:clamp(2.4rem,1.7rem + 3.3vw,4.4rem)!important;}
 .csi *,.csi *::before,.csi *::after{box-sizing:border-box!important;}
 html{scroll-behavior:smooth!important;-webkit-text-size-adjust:100%!important;}
 .csi{margin:0!important;background:var(--paper)!important;color:var(--ink)!important;font-family:var(--body)!important;font-size:var(--step-0)!important;line-height:1.65!important;-webkit-font-smoothing:antialiased!important;}
@@ -91,6 +91,20 @@ html{scroll-behavior:smooth!important;-webkit-text-size-adjust:100%!important;}
 .csi .card h3{font-size:var(--step-1)!important;}
 .csi .card p{color:var(--slate)!important;font-size:.98rem!important;}
 .csi .band-ink .card p{color:#c9c5b8!important;}
+.csi .compare{display:grid!important;gap:calc(var(--plate) + 1rem)!important;}
+@media (min-width:820px){
+  .csi .compare{grid-template-columns:1fr 1fr!important;align-items:start!important;}
+}
+.csi .cmp-h{margin-bottom:.35rem!important;}
+.csi .pill{display:inline-block!important;font-family:var(--mono)!important;font-size:.7rem!important;font-weight:700!important;letter-spacing:.1em!important;text-transform:uppercase!important;padding:.28rem .7rem!important;border-radius:999px!important;border:2px solid currentColor!important;}
+.csi .pill.go{color:var(--go)!important;}
+.csi .pill.no{color:var(--no)!important;}
+.csi .cmp{display:grid!important;gap:.95rem!important;}
+.csi .cmp li{display:grid!important;grid-template-columns:auto 1fr!important;gap:.75rem!important;align-items:start!important;color:var(--slate)!important;font-size:.98rem!important;}
+.csi .cmp b{display:block!important;color:var(--ink)!important;font-weight:700!important;}
+.csi .sig{font-family:var(--mono)!important;font-weight:700!important;line-height:1.6!important;}
+.csi .sig.go{color:var(--go)!important;}
+.csi .sig.no{color:var(--no)!important;}
 .csi .checks{display:grid!important;gap:1rem!important;}
 @media (min-width:760px){
   .csi .checks{grid-template-columns:repeat(2,1fr)!important;gap:1.1rem 2.2rem!important;}
@@ -182,28 +196,26 @@ html{overflow-x:clip}
         <p class="eyebrow">Who it's for</p>
         <h2>Creative Strategy Intensive is built for you if you are:</h2>
       </div>
-      <div class="grid g-4">
-        <div class="tile reveal" style="--d:0ms"><article class="card">
-          <h3>A media buyer</h3>
-          <p>You're great in Ads Manager but feel stuck when performance comes down to creative and not settings.</p>
+      <div class="compare">
+        <div class="tile reveal"><article class="card">
+          <p class="cmp-h"><span class="pill go">This is for you</span></p>
+          <ul class="cmp">
+            <li><span class="sig go" aria-hidden="true">&#10003;</span><span><b>A media buyer</b>You're great in Ads Manager but feel stuck when performance comes down to creative and not settings.</span></li>
+            <li><span class="sig go" aria-hidden="true">&#10003;</span><span><b>A marketer or freelancer</b>You want to move into creative strategy, a role that's harder to replace and easier to charge more for.</span></li>
+            <li><span class="sig go" aria-hidden="true">&#10003;</span><span><b>An agency owner or in-house marketer</b>You're tired of briefing editors with "make it like this one" and hoping it works.</span></li>
+            <li><span class="sig go" aria-hidden="true">&#10003;</span><span><b>A content creator or editor</b>You want to understand <em>why</em> certain ads convert, not just how to make them look good.</span></li>
+          </ul>
         </article></div>
-        <div class="tile reveal" style="--d:70ms"><article class="card">
-          <h3>A marketer or freelancer</h3>
-          <p>You want to move into creative strategy, a role that's harder to replace and easier to charge more for.</p>
-        </article></div>
-        <div class="tile reveal" style="--d:140ms"><article class="card">
-          <h3>An agency owner or in-house marketer</h3>
-          <p>You're tired of briefing editors with "make it like this one" and hoping it works.</p>
-        </article></div>
-        <div class="tile reveal" style="--d:210ms"><article class="card">
-          <h3>A content creator or editor</h3>
-          <p>You want to understand <em>why</em> certain ads convert, not just how to make them look good.</p>
+        <div class="tile reveal" style="--d:80ms"><article class="card">
+          <p class="cmp-h"><span class="pill no">This is not for you</span></p>
+          <ul class="cmp">
+            <li><span class="sig no" aria-hidden="true">&#10007;</span><span>It's not for you if you want a template pack to copy-paste. CSI is about learning how to think, not handing you swipes.</span></li>
+            <li><span class="sig no" aria-hidden="true">&#10007;</span><span class="ph">[NOT_FOR_YOU_2]</span></li>
+            <li><span class="sig no" aria-hidden="true">&#10007;</span><span class="ph">[NOT_FOR_YOU_3]</span></li>
+            <li><span class="sig no" aria-hidden="true">&#10007;</span><span class="ph">[NOT_FOR_YOU_4]</span></li>
+          </ul>
         </article></div>
       </div>
-      <p class="under reveal" style="max-width:62ch">
-        It's not for you if you want a template pack to copy-paste. CSI is about learning how
-        to think, not handing you swipes.
-      </p>
     </div>
   </section>
 </div>

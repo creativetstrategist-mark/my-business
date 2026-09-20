@@ -23,6 +23,8 @@
   --paper-2:#f2efe3;
   --slate:#56524a;
   --ph:#c4006b;            /* placeholder marker — deliberately outside the palette */
+  --go:#1c7a4b;
+  --no:#c4402a;
 
   --col:1080px;
   --r:14px;
@@ -163,6 +165,24 @@ section[id]{scroll-margin-top:70px}
 .card h3{font-size:var(--step-1)}
 .card p{color:var(--slate);font-size:.98rem}
 .band-ink .card p{color:#c9c5b8}
+
+/* ---------------------------- comparison ----------------------------- */
+.compare{display:grid;gap:calc(var(--plate) + 1rem)}
+@media (min-width:820px){.compare{grid-template-columns:1fr 1fr;align-items:start}}
+.cmp-h{margin-bottom:.35rem}
+.pill{
+  display:inline-block;font-family:var(--mono);font-size:.7rem;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;
+  padding:.28rem .7rem;border-radius:999px;border:2px solid currentColor;
+}
+.pill.go{color:var(--go)}
+.pill.no{color:var(--no)}
+.cmp{display:grid;gap:.95rem}
+.cmp li{display:grid;grid-template-columns:auto 1fr;gap:.75rem;align-items:start;color:var(--slate);font-size:.98rem}
+.cmp b{display:block;color:var(--ink);font-weight:700}
+.sig{font-family:var(--mono);font-weight:700;line-height:1.6}
+.sig.go{color:var(--go)}
+.sig.no{color:var(--no)}
 
 /* ------------------------------ outcomes ----------------------------- */
 .checks{display:grid;gap:1rem}
@@ -352,28 +372,26 @@ section[id]{scroll-margin-top:70px}
         <p class="eyebrow">Who it's for</p>
         <h2>Creative Strategy Intensive is built for you if you are:</h2>
       </div>
-      <div class="grid g-4">
-        <div class="tile reveal" style="--d:0ms"><article class="card">
-          <h3>A media buyer</h3>
-          <p>You're great in Ads Manager but feel stuck when performance comes down to creative and not settings.</p>
+      <div class="compare">
+        <div class="tile reveal"><article class="card">
+          <p class="cmp-h"><span class="pill go">This is for you</span></p>
+          <ul class="cmp">
+            <li><span class="sig go" aria-hidden="true">&#10003;</span><span><b>A media buyer</b>You're great in Ads Manager but feel stuck when performance comes down to creative and not settings.</span></li>
+            <li><span class="sig go" aria-hidden="true">&#10003;</span><span><b>A marketer or freelancer</b>You want to move into creative strategy, a role that's harder to replace and easier to charge more for.</span></li>
+            <li><span class="sig go" aria-hidden="true">&#10003;</span><span><b>An agency owner or in-house marketer</b>You're tired of briefing editors with "make it like this one" and hoping it works.</span></li>
+            <li><span class="sig go" aria-hidden="true">&#10003;</span><span><b>A content creator or editor</b>You want to understand <em>why</em> certain ads convert, not just how to make them look good.</span></li>
+          </ul>
         </article></div>
-        <div class="tile reveal" style="--d:70ms"><article class="card">
-          <h3>A marketer or freelancer</h3>
-          <p>You want to move into creative strategy, a role that's harder to replace and easier to charge more for.</p>
-        </article></div>
-        <div class="tile reveal" style="--d:140ms"><article class="card">
-          <h3>An agency owner or in-house marketer</h3>
-          <p>You're tired of briefing editors with "make it like this one" and hoping it works.</p>
-        </article></div>
-        <div class="tile reveal" style="--d:210ms"><article class="card">
-          <h3>A content creator or editor</h3>
-          <p>You want to understand <em>why</em> certain ads convert, not just how to make them look good.</p>
+        <div class="tile reveal" style="--d:80ms"><article class="card">
+          <p class="cmp-h"><span class="pill no">This is not for you</span></p>
+          <ul class="cmp">
+            <li><span class="sig no" aria-hidden="true">&#10007;</span><span>It's not for you if you want a template pack to copy-paste. CSI is about learning how to think, not handing you swipes.</span></li>
+            <li><span class="sig no" aria-hidden="true">&#10007;</span><span class="ph">[NOT_FOR_YOU_2]</span></li>
+            <li><span class="sig no" aria-hidden="true">&#10007;</span><span class="ph">[NOT_FOR_YOU_3]</span></li>
+            <li><span class="sig no" aria-hidden="true">&#10007;</span><span class="ph">[NOT_FOR_YOU_4]</span></li>
+          </ul>
         </article></div>
       </div>
-      <p class="under reveal" style="max-width:62ch">
-        It's not for you if you want a template pack to copy-paste. CSI is about learning how
-        to think, not handing you swipes.
-      </p>
     </div>
   </section>
 
@@ -382,7 +400,7 @@ section[id]{scroll-margin-top:70px}
     <div class="wrap">
       <div class="head reveal">
         <p class="eyebrow">Outcomes</p>
-        <h2>By the end of CSI, you'll be able to:</h2>
+        <h2>By the end of Creative Strategy Intensive, you'll be able to:</h2>
       </div>
       <ul class="checks reveal">
         <li><span class="tick" aria-hidden="true">&#10003;</span><span>Explain <em>why</em> an ad works using real consumer psychology, not gut feel</span></li>
@@ -582,10 +600,10 @@ section[id]{scroll-margin-top:70px}
             <b>&#8369;24,999</b>
             <span class="eb">Early bird</span>
           </div>
-          <p><span class="save">You save &#8369;10,001</span></p>
+          <p><span class="save">You save &#8369;10,000</span></p>
           <p class="under">Early bird ends 13 October 2026 or when seats run out.</p>
           <ul class="incl">
-            <li><span><span class="ph">[NUMBER]</span> live sessions on Zoom with Mark</span></li>
+            <li><span>3 days of live sessions on Zoom with Mark</span></li>
             <li><span>Small-group creative critique</span></li>
             <li><span>Full worksheet set with a start-to-finish product capstone</span></li>
             <li><span>Course access on <span class="ph">[PLATFORM]</span> for <span class="ph">[ACCESS_DURATION]</span></span></li>
@@ -593,7 +611,7 @@ section[id]{scroll-margin-top:70px}
             <li><span><span class="ph">[COMMUNITY_ACCESS_OR_BONUS — confirm or remove]</span></span></li>
           </ul>
           <a class="btn btn-lg" href="[CHECKOUT_URL]">Reserve my seat at &#8369;24,999</a>
-          <p class="under">Seats are limited to keep critique groups small. <span class="ph">[NUMBER]</span> seats available.</p>
+          <p class="under">Seats are limited to keep critique groups small. 15 seats available.</p>
         </article></div>
       </div>
     </div>
