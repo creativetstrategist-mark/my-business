@@ -1,6 +1,6 @@
 # CSI Batch 3 — section embeds for Systeme.io
 
-Seventeen copy-paste blocks covering every section on the page plus the header,
+Eighteen copy-paste blocks covering every section on the page plus the header,
 sticky mobile CTA and footer. Each file is complete on its own.
 
 | File | Section | Spec ID |
@@ -16,12 +16,13 @@ sticky mobile CTA and footer. Each file is complete on its own.
 | `09-pricing.html` | Pricing | `#pricing` |
 | `10-about.html` | About the Coach | `#about` |
 | `11-client-quotes.html` | Client testimonials (placeholders) | `#client-testimonials` |
-| `12-testimonials.html` | Student testimonials (placeholders) | `#testimonials` |
-| `13-video.html` | Video testimonials (placeholders) | `#video-testimonials` |
-| `14-faq.html` | FAQ (accordion) | `#faq` |
-| `15-final-cta.html` | Final CTA | `#final-cta` |
-| `16-sticky-cta.html` | Sticky mobile price + button bar | — |
-| `17-footer.html` | Footer | — |
+| `12-client-videos.html` | Client video clips (placeholders) | `#client-videos` |
+| `13-testimonials.html` | Student testimonials (placeholders) | `#testimonials` |
+| `14-video.html` | Student video testimonials (placeholders) | `#video-testimonials` |
+| `15-faq.html` | FAQ (accordion) | `#faq` |
+| `16-final-cta.html` | Final CTA | `#final-cta` |
+| `17-sticky-cta.html` | Sticky mobile price + button bar | — |
+| `18-footer.html` | Footer | — |
 
 Add them in this order. Sections are independent — skipping one is fine.
 
@@ -59,11 +60,12 @@ you do, the buttons lead nowhere.
 
 | Placeholder | File |
 |---|---|
-| `[CHECKOUT_URL]` | 01, 02, 09, 15, 16 — every button |
+| `[CHECKOUT_URL]` | 01, 02, 09, 16, 17 — every button |
 | `[MARK_PHOTO]` | 10-about |
 | Client quotes ×3 with `[CLIENT_NAME]`, `[ROLE_AND_BRAND]` | 11-client-quotes |
-| Student quotes ×3 with `[NAME]`, `[ROLE]` | 12-testimonials |
-| `[YOUTUBE_ID_1..3]`, `[VIDEO_n_NAME_AND_ROLE]` | 13-video |
+| `[CLIENT_YOUTUBE_ID_1..3]`, `[CLIENT_VIDEO_n_NAME_AND_BRAND]` | 12-client-videos |
+| Student quotes ×3 with `[NAME]`, `[ROLE]` | 13-testimonials |
+| `[YOUTUBE_ID_1..3]`, `[VIDEO_n_NAME_AND_ROLE]` | 14-video |
 
 Dates are **already filled** from what you confirmed: Batch 3 runs 20–22 October
 2026, early bird ends 13 October 2026. Tell me if you'd rather have those back
@@ -73,10 +75,13 @@ as placeholders.
 
 - Curriculum and FAQ are `<details>` accordions — they work with no JavaScript.
   Module title and one-line description show by default; lessons open on tap.
-- `16-sticky-cta.html` only appears below 780px wide, and adds bottom padding so
+- `17-sticky-cta.html` only appears below 780px wide, and adds bottom padding so
   it never covers the footer. Add it once, anywhere on the page.
 - The `<script>` in each file drives the scroll fade-ups and the footer year.
   Safe on every block; it only initialises a block once. Remove it and
   everything still displays, just without motion.
+- The two video blocks are click-to-play. Nothing is requested from YouTube
+  until a visitor clicks a card, and playback uses youtube-nocookie.com. A
+  card whose ID is still a placeholder stays a plain link to YouTube.
 - Google Fonts is the only external request.
 - Reduced-motion preferences are respected automatically.

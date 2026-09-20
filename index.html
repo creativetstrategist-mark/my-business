@@ -681,7 +681,42 @@ section[id]{scroll-margin-top:70px}
     </div>
   </section>
 
-  <!-- ================ 11. STUDENT TESTIMONIALS ==================== -->
+  <!-- =================== 11. CLIENT VIDEO CLIPS =================== -->
+  <section class="band band-paper" id="client-videos">
+    <div class="wrap">
+      <div class="head reveal">
+        <h2>Hear it from clients.</h2>
+      </div>
+      <div class="vids">
+        <figure class="vid reveal" style="--d:0ms">
+          <a class="vid-play" data-yt="[CLIENT_YOUTUBE_ID_1]" data-title="Client testimonial"
+             href="https://www.youtube.com/watch?v=[CLIENT_YOUTUBE_ID_1]">
+            <span class="vid-icon" aria-hidden="true">&#9654;</span>
+            <span class="vid-label"><span class="ph">[CLIENT_YOUTUBE_ID_1]</span></span>
+          </a>
+          <figcaption><span class="ph">[CLIENT_VIDEO_1_NAME_AND_BRAND]</span></figcaption>
+        </figure>
+        <figure class="vid reveal" style="--d:70ms">
+          <a class="vid-play" data-yt="[CLIENT_YOUTUBE_ID_2]" data-title="Client testimonial"
+             href="https://www.youtube.com/watch?v=[CLIENT_YOUTUBE_ID_2]">
+            <span class="vid-icon" aria-hidden="true">&#9654;</span>
+            <span class="vid-label"><span class="ph">[CLIENT_YOUTUBE_ID_2]</span></span>
+          </a>
+          <figcaption><span class="ph">[CLIENT_VIDEO_2_NAME_AND_BRAND]</span></figcaption>
+        </figure>
+        <figure class="vid reveal" style="--d:140ms">
+          <a class="vid-play" data-yt="[CLIENT_YOUTUBE_ID_3]" data-title="Client testimonial"
+             href="https://www.youtube.com/watch?v=[CLIENT_YOUTUBE_ID_3]">
+            <span class="vid-icon" aria-hidden="true">&#9654;</span>
+            <span class="vid-label"><span class="ph">[CLIENT_YOUTUBE_ID_3]</span></span>
+          </a>
+          <figcaption><span class="ph">[CLIENT_VIDEO_3_NAME_AND_BRAND]</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================ 12. STUDENT TESTIMONIALS ==================== -->
   <section class="band band-paper-2" id="testimonials">
     <div class="wrap">
       <div class="head reveal">
@@ -719,7 +754,7 @@ section[id]{scroll-margin-top:70px}
       </div>
       <div class="vids">
         <figure class="vid reveal" style="--d:0ms">
-          <a class="vid-play" data-yt="[YOUTUBE_ID_1]"
+          <a class="vid-play" data-title="Student testimonial" data-yt="[YOUTUBE_ID_1]"
              href="https://www.youtube.com/watch?v=[YOUTUBE_ID_1]">
             <span class="vid-icon" aria-hidden="true">&#9654;</span>
             <span class="vid-label"><span class="ph">[YOUTUBE_ID_1]</span></span>
@@ -727,7 +762,7 @@ section[id]{scroll-margin-top:70px}
           <figcaption><span class="ph">[VIDEO_1_NAME_AND_ROLE]</span></figcaption>
         </figure>
         <figure class="vid reveal" style="--d:70ms">
-          <a class="vid-play" data-yt="[YOUTUBE_ID_2]"
+          <a class="vid-play" data-title="Student testimonial" data-yt="[YOUTUBE_ID_2]"
              href="https://www.youtube.com/watch?v=[YOUTUBE_ID_2]">
             <span class="vid-icon" aria-hidden="true">&#9654;</span>
             <span class="vid-label"><span class="ph">[YOUTUBE_ID_2]</span></span>
@@ -735,7 +770,7 @@ section[id]{scroll-margin-top:70px}
           <figcaption><span class="ph">[VIDEO_2_NAME_AND_ROLE]</span></figcaption>
         </figure>
         <figure class="vid reveal" style="--d:140ms">
-          <a class="vid-play" data-yt="[YOUTUBE_ID_3]"
+          <a class="vid-play" data-title="Student testimonial" data-yt="[YOUTUBE_ID_3]"
              href="https://www.youtube.com/watch?v=[YOUTUBE_ID_3]">
             <span class="vid-icon" aria-hidden="true">&#9654;</span>
             <span class="vid-label"><span class="ph">[YOUTUBE_ID_3]</span></span>
@@ -746,7 +781,7 @@ section[id]{scroll-margin-top:70px}
     </div>
   </section>
 
-  <!-- ============================ 12. FAQ ========================= -->
+  <!-- ============================ 13. FAQ ========================= -->
   <section class="band band-ink" id="faq">
     <div class="wrap">
       <div class="head reveal">
@@ -794,7 +829,7 @@ section[id]{scroll-margin-top:70px}
     </div>
   </section>
 
-  <!-- ========================= 13. FINAL CTA ====================== -->
+  <!-- ========================= 14. FINAL CTA ====================== -->
   <section class="band band-volt final" id="final-cta">
     <div class="wrap">
       <div class="reveal">
@@ -900,7 +935,7 @@ section[id]{scroll-margin-top:70px}
       frame.className = "vid-frame";
       frame.src = "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(id) +
                   "?autoplay=1&rel=0";
-      frame.title = "Student testimonial";
+      frame.title = card.getAttribute("data-title") || "Testimonial video";
       frame.loading = "lazy";
       frame.allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
       frame.allowFullscreen = true;
