@@ -154,6 +154,8 @@ html{scroll-behavior:smooth!important;-webkit-text-size-adjust:100%!important;}
   .csi .about{grid-template-columns:320px 1fr!important;align-items:start!important;}
 }
 .csi .photo{aspect-ratio:4/5!important;max-width:100%!important;border:2px solid var(--ink)!important;border-radius:var(--r)!important;background:var(--paper-2)!important;display:grid!important;place-items:center!important;padding:1.25rem!important;text-align:center!important;}
+.csi .photo:has(img),.csi .photo.filled{padding:0!important;overflow:hidden!important;}
+.csi .photo img{width:100%!important;height:100%!important;object-fit:cover!important;display:block!important;border-radius:calc(var(--r) - 2px)!important;}
 .csi .cred{font-family:var(--mono)!important;font-size:.78rem!important;letter-spacing:.06em!important;color:var(--slate)!important;margin-top:1.4rem!important;padding-top:1rem!important;border-top:2px solid var(--ink)!important;max-width:none!important;}
 .csi .pull{font-family:var(--display)!important;font-size:var(--step-2)!important;line-height:1.2!important;border-left:6px solid var(--volt)!important;padding-left:1.1rem!important;margin:.4rem 0!important;max-width:30ch!important;}
 .csi .quotes{display:grid!important;gap:1.2rem!important;}
