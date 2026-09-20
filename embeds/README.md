@@ -15,7 +15,7 @@ sticky mobile CTA and footer. Each file is complete on its own.
 | `08-last-live.html` | Last Live Batch (dark band) | `#last-live` |
 | `09-pricing.html` | Pricing | `#pricing` |
 | `10-about.html` | About the Coach | `#about` |
-| `11-client-quotes.html` | Client testimonials (placeholders) | `#client-testimonials` |
+| `11-client-quotes.html` | Client testimonials (filled) | `#client-testimonials` |
 | `12-client-videos.html` | Client video clips (placeholders) | `#client-videos` |
 | `13-testimonials.html` | Student testimonials (placeholders) | `#testimonials` |
 | `14-video.html` | Student video testimonials (placeholders) | `#video-testimonials` |
@@ -62,7 +62,6 @@ you do, the buttons lead nowhere.
 |---|---|
 | `[CHECKOUT_URL]` | 01, 02, 09, 16, 17 — every button |
 | `[MARK_PHOTO]` | 10-about |
-| Client quotes ×3 with `[CLIENT_NAME]`, `[ROLE_AND_BRAND]` | 11-client-quotes |
 | `[CLIENT_YOUTUBE_ID_1..3]`, `[CLIENT_VIDEO_n_NAME_AND_BRAND]` | 12-client-videos |
 | Student quotes ×3 with `[NAME]`, `[ROLE]` | 13-testimonials |
 | `[YOUTUBE_ID_1..3]`, `[VIDEO_n_NAME_AND_ROLE]` | 14-video |

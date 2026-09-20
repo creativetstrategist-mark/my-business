@@ -162,6 +162,13 @@ html{scroll-behavior:smooth!important;-webkit-text-size-adjust:100%!important;}
 }
 .csi .quote{background:var(--paper)!important;border:2px dashed var(--ph)!important;border-radius:var(--r)!important;padding:1.4rem!important;display:flex!important;flex-direction:column!important;gap:1rem!important;}
 .csi .who-row{display:flex!important;align-items:center!important;gap:.7rem!important;margin-top:auto!important;}
+.csi .quote.filled{border:2px solid var(--ink)!important;}
+.csi .quote.filled p{font-size:.95rem!important;line-height:1.6!important;color:var(--slate)!important;}
+.csi .who{margin-top:auto!important;padding-top:.9rem!important;border-top:2px solid var(--paper-2)!important;}
+.csi .quote.filled .who p{max-width:none!important;}
+.csi .quote.filled .who-name{font-family:var(--display)!important;font-size:1.02rem!important;color:var(--ink)!important;line-height:1.2!important;}
+.csi .quote.filled .who-role{font-size:.82rem!important;color:var(--slate)!important;line-height:1.45!important;margin-top:.2rem!important;}
+.csi .quote.filled .who-meta{font-family:var(--mono)!important;font-size:.68rem!important;letter-spacing:.06em!important;text-transform:uppercase!important;color:var(--slate)!important;margin-top:.5rem!important;}
 .csi .av{width:38px!important;height:38px!important;border-radius:50%!important;background:#fff0f7!important;border:2px dashed var(--ph)!important;flex:none!important;}
 .csi .vids{display:grid!important;gap:calc(var(--plate) + 1rem)!important;}
 @media (min-width:820px){
@@ -223,17 +230,44 @@ html{overflow-x:clip}
         <h2>What clients say</h2>
       </div>
       <div class="quotes">
-        <div class="quote reveal" style="--d:0ms">
-          <p class="ph-block">[CLIENT_TESTIMONIAL_1 — a brand you run creative for, ideally with a specific result]</p>
-          <div class="who-row"><span class="av" aria-hidden="true"></span><span class="ph">[CLIENT_NAME], [ROLE_AND_BRAND]</span></div>
+        <div class="quote filled reveal" style="--d:0ms">
+          <p>&ldquo;Mark jumped into our team and had an immediate impact. Performance creative
+            is a key driver for our brand and Mark's expertise has helped us streamline this
+            process improving ad performance and enabling us to scale budgets. He is a hard
+            worker able to work autonomously and at a fast pace, always looking to do what's
+            best for the brand. Super happy to have him on board and part our team!&rdquo;</p>
+          <div class="who">
+            <p class="who-name">Luka Maric</p>
+            <p class="who-role">Co-Founder at Dog Friendly Co.</p>
+            <p class="who-meta">LinkedIn recommendation &middot; March 2024 &middot; Client</p>
+          </div>
         </div>
-        <div class="quote reveal" style="--d:80ms">
-          <p class="ph-block">[CLIENT_TESTIMONIAL_2]</p>
-          <div class="who-row"><span class="av" aria-hidden="true"></span><span class="ph">[CLIENT_NAME], [ROLE_AND_BRAND]</span></div>
+        <div class="quote filled reveal" style="--d:80ms">
+          <p>&ldquo;Mark has been a fantastic addition to our team at True Classic. Creative is at
+            the core of everything we do, and Mark joined our team to support all aspects of
+            creative and paid media. He has demonstrated strong analytical capabilities,
+            creative thinking and an impeccable work ethic. He is collaborative and reliable,
+            and is becoming a more important part of our team by the day as we pace to hit
+            $250M in revenue this year. Thanks for all you do, Mark. We are lucky to have
+            you!&rdquo;</p>
+          <div class="who">
+            <p class="who-name">Paige Decker</p>
+            <p class="who-role">Fractional CMO | ex-Meta, AG1, True Classic | Growth &amp; Business Strategy</p>
+            <p class="who-meta">LinkedIn recommendation &middot; July 2023 &middot; Managed Mark directly</p>
+          </div>
         </div>
-        <div class="quote reveal" style="--d:160ms">
-          <p class="ph-block">[CLIENT_TESTIMONIAL_3]</p>
-          <div class="who-row"><span class="av" aria-hidden="true"></span><span class="ph">[CLIENT_NAME], [ROLE_AND_BRAND]</span></div>
+        <div class="quote filled reveal" style="--d:160ms">
+          <p>&ldquo;When we decided to bring creative production fully in house, we knew it was a
+            big lift. Mark stepped up and owned the whole thing. He built every process from
+            scratch, migrated all our assets, and got the engine running better than it did
+            under the agencies, with higher ROAS to show for it. He just gets things done.
+            It's a pleasure working with you Mark, and I'm excited to keep scaling the brand
+            alongside you.&rdquo;</p>
+          <div class="who">
+            <p class="who-name">Andy Reymond</p>
+            <p class="who-role">Scaling DTC Brands across English-Speaking Markets &middot; CRO &middot; A/B Testing &middot; Profit Growth</p>
+            <p class="who-meta">LinkedIn recommendation &middot; August 2026 &middot; Client</p>
+          </div>
         </div>
       </div>
     </div>
