@@ -1,85 +1,83 @@
-# Section embeds for Systeme.io — Creative Strategy Intensive
+# CSI Batch 3 — section embeds for Systeme.io
 
-Twelve copy-paste blocks, one per section. Each file is complete on its own.
+Fifteen copy-paste blocks covering the twelve spec sections plus the header,
+sticky mobile CTA and footer. Each file is complete on its own.
 
-| File | Section |
-|---|---|
-| `01-header.html` | Sticky header + nav |
-| `02-hero.html` | Hero + hook-rate panel |
-| `03-problem.html` | "Sound familiar?" — three pain cards |
-| `04-shift.html` | "Creative strategy isn't taste" (dark band) |
-| `05-outcomes.html` | What you'll walk away with |
-| `06-curriculum.html` | Three days, in order |
-| `07-fit.html` | Good fit / not a fit |
-| `08-proof.html` | Testimonials — **placeholder copy** |
-| `09-pricing.html` | Early bird pricing |
-| `10-faq.html` | FAQ accordion |
-| `11-final-cta.html` | Closing call to action |
-| `12-footer.html` | Footer |
+| File | Section | Spec ID |
+|---|---|---|
+| `01-header.html` | Sticky header + nav | — |
+| `02-hero.html` | Hero | `#hero` |
+| `03-shift.html` | The Shift | `#shift` |
+| `04-for-you.html` | Who It's For | `#for-you` |
+| `05-outcomes.html` | Outcomes | `#outcomes` |
+| `06-format.html` | How It's Different | `#format` |
+| `07-curriculum.html` | Curriculum (accordion) | `#curriculum` |
+| `08-last-live.html` | Last Live Batch (dark band) | `#last-live` |
+| `09-pricing.html` | Pricing | `#pricing` |
+| `10-about.html` | About the Coach | `#about` |
+| `11-testimonials.html` | Testimonials (placeholders) | `#testimonials` |
+| `12-faq.html` | FAQ (accordion) | `#faq` |
+| `13-final-cta.html` | Final CTA | `#final-cta` |
+| `14-sticky-cta.html` | Sticky mobile price + button bar | — |
+| `15-footer.html` | Footer | — |
+
+Add them in this order. Sections are independent — skipping one is fine.
 
 ## Adding one to a Systeme.io page
 
 1. Edit the page, then **Add element → Raw HTML** (under "Advanced").
-2. Open the file here, select all, copy, and paste into that element.
-3. Save, then use **Preview** — the builder canvas does not run the code, so a
-   block often looks plain or empty while editing. Preview shows the truth.
+2. Open the file, select all, copy, paste into that element.
+3. Save, then **Preview** — the builder canvas does not run the code, so a
+   block often looks plain while you are editing. Preview shows the truth.
 
-Add as many or as few as you like, in any order. Sections are independent.
+**Set each row's top and bottom padding to 0.** Systeme.io's default row padding
+shows as a white stripe between the colour bands.
 
-## Two builder settings that matter
-
-**Row padding.** Systeme.io puts padding around every row, which shows as a
-white stripe between the colour bands. For each row holding a block, set
-top and bottom padding to **0** (row settings → Margin & padding) so the
-bands butt against each other.
-
-**Row width.** The blocks break out of Systeme.io's centred column on their own
-so the yellow and black bands reach the screen edges. You do not need a
-full-width row — but if you prefer each section boxed inside the column
-instead, delete these two lines near the end of the `<style>` in each file:
+The blocks break out of Systeme.io's centred column on their own, so the bands
+reach the screen edges. To keep a section boxed inside the column instead,
+delete these two lines near the end of its `<style>`:
 
 ```
 html{overflow-x:clip!important;}
 .csi{width:100vw!important;max-width:100vw!important;margin-inline:calc(50% - 50vw)!important;}
 ```
 
-## Why each file repeats the same CSS
+## Placeholders
 
-Systeme.io gives every Raw HTML element its own box and shares nothing between
-them, so each file carries the whole stylesheet. That is about 22 KB per block.
-It means any block works alone and the order never matters.
+Every unfilled value is wrapped in a **magenta chip or dashed box**. The brand
+ground is already yellow, so a yellow highlight would disappear on the hero,
+outcomes, pricing and final CTA bands — magenta sits outside the palette and
+stays findable everywhere. Search the files for `[` to list them.
 
-If you would rather load the CSS once: copy the `<style>` and `<script>` from
-any one file into **Settings → Custom code → Header** for the page, then delete
-those two tags from all twelve blocks, leaving only the `<div class="csi">…</div>`.
-Faster, at the cost of the blocks depending on that header code.
+`[CHECKOUT_URL]` is the exception: it sits in `href="[CHECKOUT_URL]"` and cannot
+be styled. **Find and replace it across every file before publishing** — until
+you do, the buttons lead nowhere.
 
-## Isolation
+### What still needs filling
 
-Everything sits inside `<div class="csi">` and every rule is scoped to it, so
-these blocks cannot restyle the rest of your Systeme.io page, and your theme
-cannot restyle them. Both directions were tested against a deliberately hostile
-stylesheet forcing heading colours, borders, fonts and letter-spacing with
-`!important`.
+| Placeholder | File |
+|---|---|
+| `[CHECKOUT_URL]` | 01, 02, 09, 13, 14 — every button |
+| `[NUMBER]` live sessions / seats | 09-pricing |
+| `[PLATFORM]`, `[ACCESS_DURATION]` | 09-pricing |
+| `[SESSION_REPLAYS]`, `[COMMUNITY_ACCESS_OR_BONUS]` — confirm or remove | 09-pricing |
+| `[MARK_PHOTO]`, `[ADD_CREDIBILITY]` | 10-about |
+| Testimonials ×3 with `[NAME]`, `[ROLE]` | 11-testimonials |
+| `[REPLAY_POLICY]`, `[LIVE_HOURS_AND_WEEKLY_WORKSHEET_TIME]` | 12-faq |
+| `[PAYMENT_OPTIONS]`, `[REFUND_POLICY]` | 12-faq |
+
+Dates are **already filled** from what you confirmed: Batch 3 runs 20–22 October
+2026, early bird ends 13 October 2026. Tell me if you'd rather have those back
+as placeholders.
 
 ## Notes
 
-- The `<script>` at the bottom drives the scroll fade-ups and the footer year.
-  Safe on every block — it only initialises a block once. If Systeme.io ever
-  strips it, everything still displays; you just lose the motion.
-- Google Fonts is the only external request. Remove the three `<link>` tags and
-  it falls back to system fonts.
+- Curriculum and FAQ are `<details>` accordions — they work with no JavaScript.
+  Module title and one-line description show by default; lessons open on tap.
+- `14-sticky-cta.html` only appears below 780px wide, and adds bottom padding so
+  it never covers the footer. Add it once, anywhere on the page.
+- The `<script>` in each file drives the scroll fade-ups and the footer year.
+  Safe on every block; it only initialises a block once. Remove it and
+  everything still displays, just without motion.
+- Google Fonts is the only external request.
 - Reduced-motion preferences are respected automatically.
-- The sticky header in `01-header.html` may not stick, depending on how
-  Systeme.io wraps the element. If it doesn't, use Systeme.io's own menu
-  element instead and drop this block.
-
-## Before you go live
-
-- `08-proof.html` has placeholder testimonials on dashed borders. Replace with
-  real, attributable quotes, or delete the section.
-- `09-pricing.html` — confirm the early bird rate, the regular rate and the
-  closing date.
-- Dates ("starts 6 April", "closes 23 March") appear in `02-hero.html`,
-  `09-pricing.html` and `11-final-cta.html`.
-- Buttons link to `#`. Point them at your Systeme.io order form URL.
