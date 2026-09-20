@@ -252,6 +252,26 @@ section[id]{scroll-margin-top:70px}
 .who-row{display:flex;align-items:center;gap:.7rem;margin-top:auto}
 .av{width:38px;height:38px;border-radius:50%;background:#fff0f7;border:2px dashed var(--ph);flex:none}
 
+/* ------------------------- video testimonials ------------------------ */
+.vids{display:grid;gap:calc(var(--plate) + 1rem)}
+@media (min-width:820px){.vids{grid-template-columns:repeat(3,1fr)}}
+.vid{margin:0;display:flex;flex-direction:column;gap:.7rem}
+.vid-play{
+  position:relative;display:grid;place-items:center;align-content:center;gap:.7rem;
+  aspect-ratio:16/9;width:100%;max-width:100%;
+  background:var(--ink);border:2px solid var(--ink);border-radius:var(--r);
+  color:var(--paper);text-decoration:none;
+  transition:transform .22s cubic-bezier(.2,.7,.3,1);
+}
+.vid-play:hover{transform:translateY(-3px)}
+.vid-icon{
+  width:54px;height:54px;border-radius:50%;background:var(--volt);color:var(--ink);
+  display:grid;place-items:center;font-size:1.05rem;padding-left:4px;
+}
+.vid-label{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:#c9c5b8}
+.vid-frame{width:100%;aspect-ratio:16/9;border:2px solid var(--ink);border-radius:var(--r);display:block;background:var(--ink)}
+.vid figcaption{font-family:var(--mono);font-size:.78rem;color:var(--slate)}
+
 /* --------------------------------- faq ------------------------------- */
 .faq{display:grid;gap:.7rem;max-width:820px}
 .faq details{background:var(--ink-2);border:2px solid #34343a;border-radius:12px}
@@ -681,6 +701,49 @@ section[id]{scroll-margin-top:70px}
     </div>
   </section>
 
+  <!-- ===================== VIDEO TESTIMONIALS ===================== -->
+  <!--
+    To add a video: replace BOTH copies of [YOUTUBE_ID_n] in a slot with
+    the id from the YouTube URL. For youtube.com/watch?v=dQw4w9WgXcQ the
+    id is dQw4w9WgXcQ. Nothing loads from YouTube until a visitor clicks,
+    so extra slots cost the page nothing. Delete one slot block to remove it,
+    or copy a whole block to add another.
+  -->
+  <section class="band band-paper" id="video-testimonials">
+    <div class="wrap">
+      <div class="head reveal">
+        <p class="eyebrow">Video testimonials</p>
+        <h2>Hear it from past students.</h2>
+      </div>
+      <div class="vids">
+        <figure class="vid reveal" style="--d:0ms">
+          <a class="vid-play" data-yt="[YOUTUBE_ID_1]"
+             href="https://www.youtube.com/watch?v=[YOUTUBE_ID_1]">
+            <span class="vid-icon" aria-hidden="true">&#9654;</span>
+            <span class="vid-label"><span class="ph">[YOUTUBE_ID_1]</span></span>
+          </a>
+          <figcaption><span class="ph">[VIDEO_1_NAME_AND_ROLE]</span></figcaption>
+        </figure>
+        <figure class="vid reveal" style="--d:70ms">
+          <a class="vid-play" data-yt="[YOUTUBE_ID_2]"
+             href="https://www.youtube.com/watch?v=[YOUTUBE_ID_2]">
+            <span class="vid-icon" aria-hidden="true">&#9654;</span>
+            <span class="vid-label"><span class="ph">[YOUTUBE_ID_2]</span></span>
+          </a>
+          <figcaption><span class="ph">[VIDEO_2_NAME_AND_ROLE]</span></figcaption>
+        </figure>
+        <figure class="vid reveal" style="--d:140ms">
+          <a class="vid-play" data-yt="[YOUTUBE_ID_3]"
+             href="https://www.youtube.com/watch?v=[YOUTUBE_ID_3]">
+            <span class="vid-icon" aria-hidden="true">&#9654;</span>
+            <span class="vid-label"><span class="ph">[YOUTUBE_ID_3]</span></span>
+          </a>
+          <figcaption><span class="ph">[VIDEO_3_NAME_AND_ROLE]</span></figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
   <!-- ============================ 11. FAQ ========================= -->
   <section class="band band-ink" id="faq">
     <div class="wrap">
@@ -811,6 +874,35 @@ section[id]{scroll-margin-top:70px}
 
   // Fallback: nothing can stay invisible even if an observer never fires.
   setTimeout(function () { items.forEach(show); }, 900);
+})();
+
+/* Click-to-play YouTube. Nothing is requested from YouTube until a visitor
+   clicks, so the page stays fast however many slots are on it. With JS off,
+   each card is just a link that opens the video on YouTube. */
+(function () {
+  "use strict";
+  var FILLED = /^[A-Za-z0-9_-]{6,20}$/;   // a real id, not a [PLACEHOLDER]
+
+  Array.prototype.forEach.call(document.querySelectorAll(".vid-play"), function (card) {
+    var id = card.getAttribute("data-yt") || "";
+    if (!FILLED.test(id)) return;         // leave unfilled slots as placeholders
+
+    var label = card.querySelector(".vid-label");
+    if (label) { label.textContent = "Play video"; label.classList.remove("ph"); }
+
+    card.addEventListener("click", function (event) {
+      event.preventDefault();
+      var frame = document.createElement("iframe");
+      frame.className = "vid-frame";
+      frame.src = "https://www.youtube-nocookie.com/embed/" + encodeURIComponent(id) +
+                  "?autoplay=1&rel=0";
+      frame.title = "Student testimonial";
+      frame.loading = "lazy";
+      frame.allow = "accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture";
+      frame.allowFullscreen = true;
+      card.replaceWith(frame);
+    });
+  });
 })();
 </script>
 </body>

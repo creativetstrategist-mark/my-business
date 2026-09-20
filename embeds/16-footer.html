@@ -1,4 +1,4 @@
-<!-- Creative Strategy Intensive — Final CTA -->
+<!-- Creative Strategy Intensive — Footer -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
@@ -153,6 +153,17 @@ html{scroll-behavior:smooth!important;-webkit-text-size-adjust:100%!important;}
 .csi .quote{background:var(--paper)!important;border:2px dashed var(--ph)!important;border-radius:var(--r)!important;padding:1.4rem!important;display:flex!important;flex-direction:column!important;gap:1rem!important;}
 .csi .who-row{display:flex!important;align-items:center!important;gap:.7rem!important;margin-top:auto!important;}
 .csi .av{width:38px!important;height:38px!important;border-radius:50%!important;background:#fff0f7!important;border:2px dashed var(--ph)!important;flex:none!important;}
+.csi .vids{display:grid!important;gap:calc(var(--plate) + 1rem)!important;}
+@media (min-width:820px){
+  .csi .vids{grid-template-columns:repeat(3,1fr)!important;}
+}
+.csi .vid{margin:0!important;display:flex!important;flex-direction:column!important;gap:.7rem!important;}
+.csi .vid-play{position:relative!important;display:grid!important;place-items:center!important;align-content:center!important;gap:.7rem!important;aspect-ratio:16/9!important;width:100%!important;max-width:100%!important;background:var(--ink)!important;border:2px solid var(--ink)!important;border-radius:var(--r)!important;color:var(--paper)!important;text-decoration:none!important;transition:transform .22s cubic-bezier(.2,.7,.3,1)!important;}
+.csi .vid-play:hover{transform:translateY(-3px)!important;}
+.csi .vid-icon{width:54px!important;height:54px!important;border-radius:50%!important;background:var(--volt)!important;color:var(--ink)!important;display:grid!important;place-items:center!important;font-size:1.05rem!important;padding-left:4px!important;}
+.csi .vid-label{font-family:var(--mono)!important;font-size:.72rem!important;letter-spacing:.12em!important;text-transform:uppercase!important;color:#c9c5b8!important;}
+.csi .vid-frame{width:100%!important;aspect-ratio:16/9!important;border:2px solid var(--ink)!important;border-radius:var(--r)!important;display:block!important;background:var(--ink)!important;}
+.csi .vid figcaption{font-family:var(--mono)!important;font-size:.78rem!important;color:var(--slate)!important;}
 .csi .faq{display:grid!important;gap:.7rem!important;max-width:820px!important;}
 .csi .faq details{background:var(--ink-2)!important;border:2px solid #34343a!important;border-radius:12px!important;}
 .csi .faq details[open]{border-color:var(--volt)!important;}
@@ -194,23 +205,24 @@ html{overflow-x:clip}
 .csi{width:100vw!important;max-width:100vw!important;margin-inline:calc(50% - 50vw)!important;}
 </style>
 <div class="csi">
-<section class="band band-volt final" id="final-cta">
-    <div class="wrap">
-      <div class="reveal">
-        <h2>The algorithm got smarter. Your creative strategy has to catch up.</h2>
-        <div class="prose">
-          <p>
-            Join the final live batch of the Creative Strategy Intensive and learn to build ads
-            with intention, not luck.
-          </p>
-        </div>
-        <p class="price-line">
-          Early Bird: &#8369;24,999 · Regular <s>&#8369;35,000</s> · Batch 3 starts 20 October 2026
-        </p>
-        <p><a class="btn btn-lg" href="[CHECKOUT_URL]" style="margin-top:1.4rem">Reserve my seat now</a></p>
-      </div>
+<footer class="foot">
+  <div class="wrap">
+    <div class="disclaimer" id="disclaimer">
+      <b>No results guarantee</b>
+      <p>
+        Creative Strategy Intensive is an educational program. It teaches frameworks,
+        judgment and process — not hacks, and not a promise of specific results. What you
+        get out of it depends on your product, your market, your budget and the work you
+        put in. Nothing on this page should be read as a guarantee of revenue, ROAS or
+        any other performance outcome.
+      </p>
     </div>
-  </section>
+    <div class="foot-in">
+      <p>&copy; <span data-year>2026</span> Creative Strategy Intensive · Per Click Digital</p>
+      <nav><a href="#curriculum">Curriculum</a> · <a href="#pricing">Pricing</a> · <a href="#faq">FAQ</a></nav>
+    </div>
+  </div>
+</footer>
 </div>
 <script>
 /* Reveal + year for any Creative Strategy Intensive embed on this page.
