@@ -202,7 +202,15 @@ section[id]{scroll-margin-top:70px}
 /* ----------------------------- curriculum ---------------------------- */
 .mods{display:grid;gap:.85rem}
 .mod{border:2px solid var(--ink);border-radius:var(--r);background:var(--paper);overflow:hidden}
-.mod summary{cursor:pointer;list-style:none;padding:1.15rem 1.3rem;display:grid;gap:.3rem}
+.mod summary{cursor:pointer;list-style:none;padding:1.15rem 1.3rem;display:grid;gap:.3rem;transition:background-color .18s ease,color .18s ease}
+/* Hover paints the whole row volt. Guarded by hover:hover so a tap on a
+   phone does not leave a module stuck in the hover colour. */
+@media (hover:hover){
+  .mod summary:hover{background:var(--volt)}
+  .mod summary:hover .mod-n,.mod summary:hover .mod-d{color:#3a3416}
+}
+.mod summary:focus-visible{background:var(--volt)}
+.mod summary:focus-visible .mod-n,.mod summary:focus-visible .mod-d{color:#3a3416}
 .mod summary::-webkit-details-marker{display:none}
 .mod-n{font-family:var(--mono);font-weight:700;font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--slate)}
 .mod-t{display:flex;justify-content:space-between;align-items:center;gap:1rem;font-family:var(--display);font-size:var(--step-1);line-height:1.15}
@@ -212,17 +220,6 @@ section[id]{scroll-margin-top:70px}
 .mod ul{display:grid;gap:.55rem;padding:0 1.3rem 1.3rem;margin-top:-.15rem}
 .mod li{display:grid;grid-template-columns:auto 1fr;gap:.7rem;color:var(--slate);font-size:.97rem}
 .mod li::before{content:"—";font-family:var(--mono);color:var(--ink)}
-
-/* ----------------------------- csi toolkit ---------------------------- */
-.toolkit{
-  margin-top:2.25rem;background:var(--paper);
-  border:2px solid var(--ink);border-left-width:8px;border-radius:var(--r);
-  padding:1.4rem 1.5rem;
-}
-.toolkit-list{display:grid;gap:.75rem}
-.toolkit-list li{display:grid;grid-template-columns:auto 1fr;gap:.7rem;color:var(--slate);font-size:.97rem}
-.toolkit-list li::before{content:"+";font-family:var(--mono);font-weight:700;color:var(--ink)}
-.toolkit-list b{color:var(--ink)}
 
 /* ------------------------------- pricing ----------------------------- */
 /* The whole pricing section is centred: heading, card, and everything in
@@ -577,12 +574,6 @@ section[id]{scroll-margin-top:70px}
         </details>
       </div>
 
-      <div class="toolkit reveal">
-        <ul class="toolkit-list">
-          <li><span><b>Creative calculator</b> — turns your ad budget into the number of creatives you need to test.</span></li>
-          <li><span><b>Naming convention generator</b> — so your creative data is actually readable in Ads Manager.</span></li>
-        </ul>
-      </div>
     </div>
   </section>
 
