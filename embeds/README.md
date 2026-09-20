@@ -61,7 +61,6 @@ you do, the buttons lead nowhere.
 | Placeholder | File |
 |---|---|
 | `[CHECKOUT_URL]` | 01, 02, 09, 16, 17 — every button |
-| `[MARK_PHOTO]` | 10-about |
 | `[CLIENT_YOUTUBE_ID_1..3]`, `[CLIENT_VIDEO_n_NAME_AND_BRAND]` | 12-client-videos |
 | Student quotes ×3 with `[NAME]`, `[ROLE]` | 13-testimonials |
 | `[YOUTUBE_ID_1..3]`, `[VIDEO_n_NAME_AND_ROLE]` | 14-video |
