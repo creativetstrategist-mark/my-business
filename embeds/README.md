@@ -1,6 +1,6 @@
 # CSI Batch 3 — section embeds for Systeme.io
 
-Eighteen copy-paste blocks covering every section on the page plus the header,
+Eighteen copy-paste blocks, plus one optional variant, covering every section on the page plus the header,
 sticky mobile CTA and footer. Each file is complete on its own.
 
 | File | Section | Spec ID |
@@ -23,6 +23,7 @@ sticky mobile CTA and footer. Each file is complete on its own.
 | `16-final-cta.html` | Final CTA | `#final-cta` |
 | `17-sticky-cta.html` | Sticky mobile price + button bar | — |
 | `18-footer.html` | Footer | — |
+| `19-student-header.html` | Student testimonials, heading only (optional) | `#testimonials` |
 
 Add them in this order. Sections are independent — skipping one is fine.
 
