@@ -24,6 +24,7 @@ sticky mobile CTA and footer. Each file is complete on its own.
 | `17-sticky-cta.html` | Sticky mobile price + button bar | — |
 | `18-footer.html` | Footer | — |
 | `19-student-header.html` | Student testimonials, heading only (optional) | `#testimonials` |
+| `20-header-fixed.html` | Header + nav, pinned to the viewport (use instead of 01) | — |
 
 Add them in this order. Sections are independent — skipping one is fine.
 
