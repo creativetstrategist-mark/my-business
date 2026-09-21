@@ -17,7 +17,7 @@ sticky mobile CTA and footer. Each file is complete on its own.
 | `10-about.html` | About the Coach | `#about` |
 | `11-client-quotes.html` | Client testimonials (filled) | `#client-testimonials` |
 | `12-client-videos.html` | Client video clips (placeholders) | `#client-videos` |
-| `13-testimonials.html` | Student testimonials (placeholders) | `#testimonials` |
+| `13-testimonials.html` | Student testimonials (filled) | `#testimonials` |
 | `14-video.html` | Student video testimonials (placeholders) | `#video-testimonials` |
 | `15-faq.html` | FAQ (accordion) | `#faq` |
 | `16-final-cta.html` | Final CTA | `#final-cta` |
@@ -61,7 +61,6 @@ the Xendit checkout.
 | Placeholder | File |
 |---|---|
 | `[CLIENT_YOUTUBE_ID_1..3]`, `[CLIENT_VIDEO_n_NAME_AND_BRAND]` | 12-client-videos |
-| Student quotes ×3 with `[NAME]`, `[ROLE]` | 13-testimonials |
 | `[YOUTUBE_ID_1..3]`, `[VIDEO_n_NAME_AND_ROLE]` | 14-video |
 
 The checkout link is **already filled in** — every button points at
