@@ -258,7 +258,11 @@ section[id]{scroll-margin-top:70px}
    squares off on narrow screens. */
 @media (max-width:560px){.photo{aspect-ratio:1/1}}
 .cred{font-family:var(--mono);font-size:.78rem;letter-spacing:.06em;color:var(--slate);
-  margin-top:1.4rem;padding-top:1rem;border-top:2px solid var(--ink);max-width:none}
+  margin-top:1.4rem;padding-top:1rem;border-top:2px solid var(--ink);max-width:none;
+  display:grid;gap:.5rem}
+.cred li{display:grid;grid-template-columns:auto 1fr;gap:.6rem;line-height:1.5}
+.cred li::before{content:"+";font-weight:700;color:var(--ink)}
+.cred i{font-style:italic;color:var(--ink)}
 .pull{
   font-family:var(--display);font-size:var(--step-2);line-height:1.2;
   border-left:6px solid var(--volt);padding-left:1.1rem;margin:.4rem 0;max-width:30ch;
@@ -682,7 +686,11 @@ section[id]{scroll-margin-top:70px}
             </p>
           </div>
           <p class="pull">"AI can collect the data, but the strategist is the brain. CSI trains the brain."</p>
-          <p class="cred">Featured at Motion Creative Summit · 4+ years running DTC creative strategy.</p>
+          <ul class="cred">
+            <li><span>Featured at Motion's Creative Strategy Summit 2024</span></li>
+            <li><span>Featured in Motion's 2024 edition, <i>The Rise of the Creative Strategist</i></span></li>
+            <li><span>4+ years running DTC creative strategy</span></li>
+          </ul>
         </div>
       </div>
     </div>

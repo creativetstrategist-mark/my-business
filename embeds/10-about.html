@@ -159,7 +159,10 @@ html{scroll-behavior:smooth!important;-webkit-text-size-adjust:100%!important;}
 @media (max-width:560px){
   .csi .photo{aspect-ratio:1/1!important;}
 }
-.csi .cred{font-family:var(--mono)!important;font-size:.78rem!important;letter-spacing:.06em!important;color:var(--slate)!important;margin-top:1.4rem!important;padding-top:1rem!important;border-top:2px solid var(--ink)!important;max-width:none!important;}
+.csi .cred{font-family:var(--mono)!important;font-size:.78rem!important;letter-spacing:.06em!important;color:var(--slate)!important;margin-top:1.4rem!important;padding-top:1rem!important;border-top:2px solid var(--ink)!important;max-width:none!important;display:grid!important;gap:.5rem!important;}
+.csi .cred li{display:grid!important;grid-template-columns:auto 1fr!important;gap:.6rem!important;line-height:1.5!important;}
+.csi .cred li::before{content:"+"!important;font-weight:700!important;color:var(--ink)!important;}
+.csi .cred i{font-style:italic!important;color:var(--ink)!important;}
 .csi .pull{font-family:var(--display)!important;font-size:var(--step-2)!important;line-height:1.2!important;border-left:6px solid var(--volt)!important;padding-left:1.1rem!important;margin:.4rem 0!important;max-width:30ch!important;}
 .csi .quotes{display:grid!important;gap:1.2rem!important;}
 @media (min-width:820px){
@@ -255,7 +258,11 @@ html{overflow-x:clip}
             </p>
           </div>
           <p class="pull">"AI can collect the data, but the strategist is the brain. CSI trains the brain."</p>
-          <p class="cred">Featured at Motion Creative Summit · 4+ years running DTC creative strategy.</p>
+          <ul class="cred">
+            <li><span>Featured at Motion's Creative Strategy Summit 2024</span></li>
+            <li><span>Featured in Motion's 2024 edition, <i>The Rise of the Creative Strategist</i></span></li>
+            <li><span>4+ years running DTC creative strategy</span></li>
+          </ul>
         </div>
       </div>
     </div>
