@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A one-day live masterclass for media buyers and marketers who want to stop waiting on creative and start directing it. Thursday, October 15, 2026, 7:00 PM PHT, live on Zoom. &#8369;999.">
+<meta name="color-scheme" content="light">
+<meta property="og:title" content="Meta Automated the Targeting. The Only Lever Left Is Creative.">
+<meta property="og:description" content="A one-day live masterclass for media buyers and marketers who want to stop waiting on creative and start directing it. 15 October 2026, 7:00 PM PHT, live on Zoom.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
+<title>Creative Strategy Masterclass</title>
+
+<!-- ===========================================================
+     ONE THING LEFT TO FILL: the checkout link.
+     Every button on this page points at PASTE_XENDIT_CHECKOUT_URL_HERE.
+     Swap all of them at once:
+       sed -i 's|PASTE_XENDIT_CHECKOUT_URL_HERE|https://checkout.xendit.co/od/your-link|g' masterclass.html
+     =========================================================== -->
+<style>
+/* ============================================================
+   CSI Batch 3 — one committed visual world (volt / ink / paper).
+   Single theme on purpose; every colour is painted explicitly.
+   ============================================================ */
+:root{
+  --ink:#111113;
+  --ink-2:#1d1d20;
+  --volt:#ffe81a;
+  --volt-deep:#e6cf00;
+  --paper:#fbf9f2;
+  --paper-2:#f2efe3;
+  --slate:#56524a;
+  --ph:#c4006b;            /* placeholder marker — deliberately outside the palette */
+  --go:#1c7a4b;
+  --no:#c4402a;
+
+  --col:1080px;
+  --r:14px;
+  --plate:6px;
+
+  --display:"Archivo Black","Arial Black",Impact,sans-serif;
+  --body:"Instrument Sans",ui-sans-serif,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+
+  --step--1:clamp(.78rem,.75rem + .15vw,.85rem);
+  --step-0:clamp(1rem,.96rem + .2vw,1.08rem);
+  --step-1:clamp(1.12rem,1.02rem + .45vw,1.32rem);
+  --step-2:clamp(1.4rem,1.2rem + .9vw,1.9rem);
+  --step-3:clamp(1.9rem,1.5rem + 1.9vw,3rem);
+  --step-4:clamp(2.4rem,1.7rem + 3.3vw,4.4rem);
+}
+
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--body);font-size:var(--step-0);line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.05;letter-spacing:-.015em;text-wrap:balance;margin:0}
+p{margin:0;max-width:65ch}
+ul{margin:0;padding:0;list-style:none}
+a{color:inherit}
+strong,b{font-weight:700}
+img{max-width:100%;height:auto;display:block}
+
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:4px}
+.band-ink :focus-visible,.sticky-cta :focus-visible{outline-color:var(--volt)}
+
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.skip{position:absolute;left:-999px;top:0;z-index:100}
+.skip:focus{left:12px;top:12px;background:var(--volt);color:var(--ink);padding:.7rem 1.1rem;border:2px solid var(--ink);border-radius:8px;font-weight:700}
+
+/* --------------------------- placeholders ---------------------------- */
+/* The brand ground is already yellow, so a yellow highlight would vanish
+   on half the page. This magenta sits outside the palette instead, so
+   every unfilled value is findable on paper, ink and volt alike. */
+.ph{
+  display:inline-block;max-width:100%;overflow-wrap:anywhere;font-family:var(--mono);font-size:.82em;font-weight:700;
+  background:var(--ph);color:#fff;border-radius:6px;
+  padding:.1em .45em;letter-spacing:.02em;
+  box-decoration-break:clone;-webkit-box-decoration-break:clone;
+}
+.ph-block{
+  display:block;font-family:var(--mono);font-size:.9rem;font-weight:700;
+  color:var(--ph);background:#fff0f7;border:2px dashed var(--ph);
+  border-radius:10px;padding:.85rem 1rem;
+}
+
+/* ------------------------------- shell ------------------------------- */
+.wrap{width:100%;max-width:var(--col);margin-inline:auto;padding-inline:20px}
+section[id]{scroll-margin-top:70px}
+.band{padding-block:clamp(3.25rem,8vw,5.5rem)}
+.band-paper{background:var(--paper);color:var(--ink)}
+.band-paper-2{background:var(--paper-2);color:var(--ink)}
+.band-ink{background:var(--ink);color:var(--paper)}
+.band-volt{background:var(--volt);color:var(--ink)}
+
+.eyebrow{font-family:var(--mono);font-weight:700;font-size:var(--step--1);letter-spacing:.14em;text-transform:uppercase;margin:0 0 1rem}
+.band-ink .eyebrow{color:var(--volt)}
+.band-paper .eyebrow,.band-paper-2 .eyebrow{color:var(--slate)}
+
+.head{margin-bottom:clamp(1.75rem,4vw,2.75rem)}
+.head h2{font-size:var(--step-3)}
+.prose{display:grid;gap:1.1rem;max-width:62ch}
+.prose p{font-size:var(--step-1);line-height:1.6;color:var(--slate)}
+.band-ink .prose p{color:#c9c5b8}
+.prose .emph{font-weight:700}
+.band-ink .prose .emph{color:var(--paper)}
+.band-volt .prose p{color:#3a3416}
+.prose .kicker{font-family:var(--display);font-size:var(--step-2);color:var(--ink);line-height:1.15;max-width:22ch}
+.band-ink .prose .kicker{color:var(--volt)}
+
+/* ------------------------------ buttons ------------------------------ */
+.btn{
+  display:inline-flex;align-items:center;gap:.55rem;
+  font-family:var(--body);font-weight:700;font-size:var(--step-0);
+  text-decoration:none;cursor:pointer;text-align:center;
+  padding:.9rem 1.6rem;border-radius:999px;
+  border:2px solid var(--ink);background:var(--volt);color:var(--ink);
+  transition:transform .18s cubic-bezier(.2,.7,.3,1),
+             background-color .18s ease, color .18s ease, border-color .18s ease;
+}
+/* On paper and volt grounds the button inverts to ink, which is the
+   strongest signal available. On an ink ground that would make the
+   primary CTA recede into the background, so those darken instead. */
+.btn:hover{transform:translateY(-2px);background:var(--ink);color:var(--volt);border-color:var(--ink)}
+.band-ink .btn:hover,.top .btn:hover,.sticky-cta .btn:hover{
+  background:var(--volt-deep);color:var(--ink);border-color:var(--volt-deep);
+}
+.btn:active{transform:translateY(0)}
+.btn-lg{padding:1.05rem 2rem;font-size:var(--step-1)}
+.under{font-family:var(--mono);font-size:var(--step--1);color:var(--slate);margin-top:.85rem}
+.under a{text-decoration:underline}
+.band-ink .under{color:#8f8b7e}
+.band-volt .under{color:#3a3416}
+
+/* ------------------------------- header ------------------------------ */
+.top{position:sticky;top:0;z-index:50;background:var(--ink);color:var(--paper);border-bottom:2px solid var(--ink)}
+.top-in{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.65rem}
+.logo{display:flex;align-items:center;gap:.6rem;text-decoration:none;font-family:var(--display);font-size:.95rem;letter-spacing:-.01em;padding-block:.55rem}
+.mark{width:26px;height:26px;flex:none;border-radius:7px;background:var(--volt);color:var(--ink);display:grid;place-items:center;font-family:var(--display);font-size:.78rem}
+.top nav{display:none;gap:1.5rem;font-size:.92rem}
+.top nav a{text-decoration:none;color:#c9c5b8}
+.top nav a:hover{color:var(--volt)}
+.top .btn{padding:.5rem 1.05rem;font-size:.88rem;border-color:var(--volt)}
+@media (min-width:900px){.top nav{display:flex}}
+@media (max-width:560px){.top .btn{display:none}}
+
+/* -------------------------------- hero ------------------------------- */
+.hero{padding-block:clamp(2.75rem,7vw,5rem)}
+.hero h1{font-size:var(--step-4);max-width:16ch;margin-bottom:1.2rem}
+.hero .subhead{font-size:var(--step-1);line-height:1.55;color:#c9c5b8;max-width:58ch}
+.hero .subhead strong{color:var(--paper)}
+.badge{
+  display:inline-flex;align-items:center;gap:.5rem;
+  font-family:var(--mono);font-weight:700;font-size:var(--step--1);
+  letter-spacing:.1em;text-transform:uppercase;
+  background:var(--volt);color:var(--ink);
+  padding:.4rem .85rem;border-radius:999px;margin-bottom:1.3rem;
+}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--ink)}
+/* overrides the 65ch paragraph measure so it stays one line on desktop;
+   it still wraps naturally on a phone, where one line cannot fit */
+.trust{font-family:var(--mono);font-size:.78rem;letter-spacing:.06em;color:#8f8b7e;
+  margin-top:.5rem;max-width:none}
+.hero .btn{margin-top:1.8rem}
+
+/* ------------------------------- cards ------------------------------- */
+.grid{display:grid;gap:calc(var(--plate) + 1rem)}
+@media (min-width:640px){.g-2{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:900px){.g-4{grid-template-columns:repeat(2,1fr)}}
+.tile{position:relative;display:flex}
+.tile::before{content:"";position:absolute;inset:0;border-radius:var(--r);background:var(--ink);transform:translate(var(--plate),var(--plate))}
+.band-ink .tile::before{background:var(--volt)}
+.card{
+  position:relative;flex:1;display:flex;flex-direction:column;gap:.6rem;
+  background:var(--paper);border:2px solid var(--ink);border-radius:var(--r);
+  padding:1.5rem;transition:transform .22s cubic-bezier(.2,.7,.3,1);
+}
+.band-ink .card{background:var(--ink-2);border-color:var(--volt);color:var(--paper)}
+.tile:hover .card,.tile:focus-within .card{transform:translate(-3px,-3px)}
+.card h3{font-size:var(--step-1)}
+.card p{color:var(--slate);font-size:.98rem}
+.band-ink .card p{color:#c9c5b8}
+
+/* ---------------------------- comparison ----------------------------- */
+.compare{display:grid;gap:calc(var(--plate) + 1rem)}
+@media (min-width:820px){.compare{grid-template-columns:1fr 1fr;align-items:start}}
+.cmp-h{margin-bottom:.35rem}
+.pill{
+  display:inline-block;font-family:var(--mono);font-size:.78rem;font-weight:700;
+  letter-spacing:.1em;text-transform:uppercase;
+  padding:.28rem .7rem;border-radius:999px;border:2px solid currentColor;
+}
+.pill.go{color:var(--go)}
+.pill.no{color:var(--no)}
+.cmp{display:grid;gap:.95rem}
+.cmp li{display:grid;grid-template-columns:auto 1fr;gap:.75rem;align-items:start;color:var(--slate);font-size:.98rem}
+.sig{font-family:var(--mono);font-weight:700;line-height:1.6}
+.sig.go{color:var(--go)}
+.sig.no{color:var(--no)}
+
+/* ------------------------------ outcomes ----------------------------- */
+.checks{display:grid;gap:1rem}
+@media (min-width:760px){.checks{grid-template-columns:repeat(2,1fr);gap:1.1rem 2.2rem}}
+.checks li{display:grid;grid-template-columns:auto 1fr;gap:.85rem;align-items:start;font-size:1rem;color:#3a3416}
+.tick{width:24px;height:24px;flex:none;border-radius:7px;border:2px solid var(--ink);background:var(--paper);display:grid;place-items:center;font-size:.78rem;font-weight:700;margin-top:.2rem}
+
+/* ----------------------------- curriculum ---------------------------- */
+.mods{display:grid;gap:.85rem}
+.mod{border:2px solid var(--ink);border-radius:var(--r);background:var(--paper);overflow:hidden}
+.mod summary{cursor:pointer;list-style:none;padding:1.15rem 1.3rem;display:grid;gap:.3rem;transition:background-color .18s ease,color .18s ease}
+/* Hover paints the whole row volt. Guarded by hover:hover so a tap on a
+   phone does not leave a module stuck in the hover colour. */
+@media (hover:hover){
+  .mod summary:hover{background:var(--volt)}
+  .mod summary:hover .mod-n,.mod summary:hover .mod-d{color:#3a3416}
+}
+.mod summary:focus-visible{background:var(--volt)}
+.mod summary:focus-visible .mod-n,.mod summary:focus-visible .mod-d{color:#3a3416}
+.mod summary::-webkit-details-marker{display:none}
+.mod-n{font-family:var(--mono);font-weight:700;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--slate)}
+.mod-t{display:flex;justify-content:space-between;align-items:center;gap:1rem;font-family:var(--display);font-size:var(--step-1);line-height:1.15}
+.mod-t::after{content:"+";font-family:var(--mono);font-weight:700;color:var(--ink);font-size:1.3rem;line-height:1;flex:none}
+.mod[open] .mod-t::after{content:"–"}
+.mod-d{color:var(--slate);font-size:.97rem;max-width:60ch}
+.mod ul{display:grid;gap:.55rem;padding:0 1.3rem 1.3rem;margin-top:-.15rem}
+.mod li{display:grid;grid-template-columns:auto 1fr;gap:.7rem;color:var(--slate);font-size:.97rem}
+.mod li::before{content:"—";font-family:var(--mono);color:var(--ink)}
+
+/* ------------------------------- pricing ----------------------------- */
+/* The whole pricing section is centred: heading, card, and everything in
+   the card except the included list, which reads badly centred because
+   the eye loses the left edge it scans down. */
+#pricing .head{text-align:center}
+.price-wrap{display:grid;gap:calc(var(--plate) + 1.2rem);max-width:620px;margin-inline:auto}
+.price-card{text-align:center}
+.price-card p{margin-inline:auto}
+.price-card .amount{justify-content:center}
+.price-card .eb-row{justify-content:center}
+.price-card .incl{text-align:left}
+.price-card{padding:clamp(1.6rem,3vw,2.2rem)}
+.was{font-family:var(--mono);font-size:var(--step-1);color:var(--slate);text-decoration:line-through;text-decoration-thickness:2px;font-variant-numeric:tabular-nums}
+.amount{display:flex;align-items:baseline;gap:.7rem;flex-wrap:wrap;margin:.35rem 0 .6rem}
+.amount b{font-family:var(--display);font-size:var(--step-4);line-height:1;font-variant-numeric:tabular-nums}
+.amount .eb{font-family:var(--mono);font-size:.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--slate)}
+.save{display:inline-block;font-family:var(--mono);font-size:.78rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--ink);color:var(--volt);padding:.3rem .7rem;border-radius:999px}
+.incl{display:grid;gap:.65rem;margin:1.5rem 0}
+.incl li{display:grid;grid-template-columns:auto 1fr;gap:.7rem;font-size:.98rem;color:var(--slate)}
+.incl li::before{content:"+";font-family:var(--mono);font-weight:700;color:var(--ink)}
+.price-card .btn{align-self:center;margin-top:.4rem}
+
+/* -------------------------------- about ------------------------------ */
+.about{display:grid;gap:clamp(1.75rem,4vw,2.75rem)}
+@media (min-width:820px){.about{grid-template-columns:320px 1fr;align-items:start}}
+.photo{
+  aspect-ratio:4/5;max-width:100%;border:2px solid var(--ink);border-radius:var(--r);
+  background:var(--paper-2);display:grid;place-items:center;padding:1.25rem;text-align:center;
+}
+/* Drop an <img> in and the frame becomes the photo. The .filled class does the
+   same job for browsers without :has(). */
+.photo:has(img),.photo.filled{padding:0;overflow:hidden}
+.photo img{width:100%;height:100%;object-fit:cover;display:block;border-radius:calc(var(--r) - 2px)}
+/* A 4:5 portrait eats most of a phone screen before the bio starts, so it
+   squares off on narrow screens. */
+@media (max-width:560px){.photo{aspect-ratio:1/1}}
+.cred{font-family:var(--mono);font-size:.78rem;letter-spacing:.06em;color:var(--slate);
+  margin-top:1.4rem;padding-top:1rem;border-top:2px solid var(--ink);max-width:none;
+  display:grid;gap:.5rem}
+.cred li{display:grid;grid-template-columns:auto 1fr;gap:.6rem;line-height:1.5}
+.cred li::before{content:"+";font-weight:700;color:var(--ink)}
+.cred i{font-style:italic;color:var(--ink)}
+/* ------------------------- as featured in ---------------------------- */
+/* Two covers from someone else's brand world, so they sit in plain frames
+   and stay small — a credit, not a banner. */
+.feat{margin-top:1.6rem}
+.feat-h{font-family:var(--mono);font-size:.78rem;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--slate);margin-bottom:.85rem}
+.feat-row{display:flex;flex-wrap:wrap;gap:1.1rem}
+.feat-item{margin:0;width:150px;max-width:44%}
+.feat-item img{width:100%;height:auto;border:2px solid var(--ink);border-radius:10px;background:var(--paper-2)}
+.feat-item figcaption{font-family:var(--mono);font-size:.76rem;line-height:1.4;color:var(--slate);margin-top:.5rem}
+.pull{
+  font-family:var(--display);font-size:var(--step-2);line-height:1.2;
+  border-left:6px solid var(--volt);padding-left:1.1rem;margin:.4rem 0;max-width:30ch;
+}
+
+/* ---------------------------- testimonials --------------------------- */
+.quotes{display:grid;gap:1.2rem}
+@media (min-width:820px){.quotes{grid-template-columns:repeat(3,1fr)}}
+/* four quotes read better two-up than squeezed into four columns */
+@media (min-width:760px){.quotes-2{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:820px){.quotes-2{grid-template-columns:repeat(2,1fr)}}
+.who-av{display:grid;grid-template-columns:auto 1fr;gap:.8rem;align-items:center}
+.av-img{width:48px;height:48px;border-radius:50%;object-fit:cover;border:2px solid var(--ink);flex:none}
+.quote{background:var(--paper);border:2px dashed var(--ph);border-radius:var(--r);padding:1.4rem;display:flex;flex-direction:column;gap:1rem}
+.who-row{display:flex;align-items:center;gap:.7rem;margin-top:auto}
+/* A filled quote is real copy, so it drops the dashed placeholder frame. */
+.quote.filled{border:2px solid var(--ink)}
+.quote.filled p{font-size:.95rem;line-height:1.6;color:var(--slate)}
+.who{margin-top:auto;padding-top:.9rem;border-top:2px solid var(--paper-2)}
+/* These sit inside .quote.filled p, so they have to out-specify it. */
+.quote.filled .who p{max-width:none}
+.quote.filled .who-name{font-family:var(--display);font-size:1.02rem;color:var(--ink);line-height:1.2}
+.quote.filled .who-role{font-size:.82rem;color:var(--slate);line-height:1.45;margin-top:.2rem}
+.quote.filled .who-meta{font-family:var(--mono);font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);margin-top:.5rem}
+.av{width:38px;height:38px;border-radius:50%;background:#fff0f7;border:2px dashed var(--ph);flex:none}
+
+/* ------------------------- video testimonials ------------------------ */
+.vids{display:grid;gap:calc(var(--plate) + 1rem)}
+@media (min-width:820px){.vids{grid-template-columns:repeat(3,1fr)}}
+.vid{margin:0;display:flex;flex-direction:column;gap:.7rem}
+.vid-play{
+  position:relative;display:grid;place-items:center;align-content:center;gap:.7rem;
+  aspect-ratio:16/9;width:100%;max-width:100%;
+  background:var(--ink);border:2px solid var(--ink);border-radius:var(--r);
+  color:var(--paper);text-decoration:none;
+  transition:transform .22s cubic-bezier(.2,.7,.3,1);
+}
+.vid-play:hover{transform:translateY(-3px)}
+.vid-icon{
+  width:54px;height:54px;border-radius:50%;background:var(--volt);color:var(--ink);
+  display:grid;place-items:center;font-size:1.05rem;padding-left:4px;
+}
+.vid-label{font-family:var(--mono);font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:#c9c5b8}
+.vid-frame{width:100%;aspect-ratio:16/9;border:2px solid var(--ink);border-radius:var(--r);display:block;background:var(--ink)}
+.vid figcaption{font-family:var(--mono);font-size:.78rem;color:var(--slate)}
+
+/* --------------------------------- faq ------------------------------- */
+.faq{display:grid;gap:.7rem;max-width:820px}
+.faq details{background:var(--ink-2);border:2px solid #34343a;border-radius:12px}
+.faq details[open]{border-color:var(--volt)}
+.faq summary{cursor:pointer;list-style:none;padding:1.05rem 1.3rem;font-weight:700;display:flex;justify-content:space-between;gap:1rem;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:var(--mono);color:var(--volt);font-size:1.2rem;line-height:1;flex:none}
+.faq details[open] summary::after{content:"–"}
+.faq .a{padding:0 1.3rem 1.2rem;color:#c9c5b8;font-size:.98rem}
+
+/* ----------------------------- final cta ----------------------------- */
+.final{text-align:center}
+.final h2{font-size:var(--step-3);margin-inline:auto;max-width:none;margin-bottom:1.35rem}
+.final h2 span{display:block}
+.final .prose{margin-inline:auto;text-align:center}
+.final p{margin-inline:auto}
+.price-line{font-family:var(--mono);font-weight:700;font-size:var(--step-0);margin-top:1.5rem;color:#3a3416}
+.price-line s{text-decoration-thickness:2px}
+
+/* ------------------------------- footer ------------------------------ */
+.foot{background:var(--ink);color:#8f8b7e;padding-block:2.2rem;font-size:.88rem}
+.disclaimer{
+  scroll-margin-top:70px;max-width:72ch;padding-bottom:1.5rem;margin-bottom:1.5rem;
+  border-bottom:1px solid #2c2c30;
+}
+.disclaimer b{
+  display:block;margin-bottom:.4rem;color:var(--volt);
+  font-family:var(--mono);font-size:.78rem;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;
+}
+.disclaimer p{color:#c9c5b8;font-size:.92rem;line-height:1.6}
+.foot-in{display:flex;flex-wrap:wrap;gap:1rem;justify-content:space-between;align-items:center}
+/* Footer links are the smallest targets on the page, so they carry their own
+   padding to reach the ~44px a thumb needs. */
+.foot-in a{display:inline-block;padding-block:.62rem}
+.foot a{color:#c9c5b8;text-decoration:none}
+.foot a:hover{color:var(--volt)}
+.foot-contact a{color:var(--volt);text-decoration:none;border-bottom:1px solid rgba(255,232,26,.35)}
+
+/* --------------------------- sticky mobile CTA ----------------------- */
+.sticky-cta{
+  display:none;position:fixed;left:0;right:0;bottom:0;z-index:60;
+  background:var(--ink);border-top:2px solid var(--volt);
+  /* the inset keeps the bar above the iPhone home indicator */
+  padding:.7rem 16px calc(.7rem + env(safe-area-inset-bottom, 0px));
+  gap:.9rem;align-items:center;justify-content:space-between;
+}
+.sticky-cta .p b{font-family:var(--display);color:var(--volt);font-size:1.15rem;display:block;line-height:1.1}
+.sticky-cta .p span{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:#8f8b7e}
+/* Wrapping the label would make the bar taller than the space reserved for it
+   below, so the button stays on one line and shrinks its padding instead. */
+.sticky-cta .btn{padding:.7rem 1.1rem;font-size:.92rem;border-color:var(--volt);white-space:nowrap;flex:none}
+@media (max-width:780px){
+  .sticky-cta{display:flex}
+  body{padding-bottom:calc(104px + env(safe-area-inset-bottom, 0px))}
+}
+@media (max-width:400px){
+  /* tighter bar on small phones: the price label needs two lines here, so the
+     vertical padding gives some of it back */
+  .sticky-cta{padding-block:.5rem;padding-inline:12px;gap:.6rem}
+  .sticky-cta .p span{line-height:1.3}
+  .sticky-cta .btn{padding:.65rem .9rem;font-size:.88rem}
+}
+
+/* ------------------------------- motion ------------------------------ */
+/* Nothing is hidden unless JS is running and motion is allowed. */
+.js .reveal{opacity:0;transform:translateY(18px)}
+.js .reveal.is-in{opacity:1;transform:none;transition:opacity .55s ease,transform .55s cubic-bezier(.2,.7,.3,1);transition-delay:var(--d,0ms)}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .reveal{opacity:1;transform:none}
+  .btn,.card{transition:none}
+  .tile:hover .card,.tile:focus-within .card{transform:none}
+}
+
+/* =============== additions for the masterclass page only ==============
+   Everything above is the shared design system, lifted from index.html
+   so the two pages stay one brand. Only the blocks this page introduces
+   are defined below.
+   ====================================================================== */
+
+/* --------------------------- the details card ------------------------ */
+#details .head{text-align:center}
+/* A label/value list inside the centred price card. The list itself is
+   centred as a block but stays left-aligned inside, so the eye keeps the
+   left edge it scans down. */
+.facts{
+  display:grid;gap:.85rem;margin:1.1rem 0 1.5rem;margin-inline:auto;
+  text-align:left;width:fit-content;max-width:100%;
+}
+.facts li{display:grid;grid-template-columns:6.5rem 1fr;gap:.9rem;align-items:baseline;font-size:1rem;color:var(--slate)}
+.facts .k{font-family:var(--mono);font-size:.74rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink)}
+/* Two columns of 6.5rem + text do not fit a small phone, so the label
+   sits above its value there instead of squeezing it. */
+@media (max-width:520px){.facts li{grid-template-columns:1fr;gap:.1rem}}
+
+/* ------------------------- live-exercise rows ------------------------ */
+/* Inside a curriculum module, the exercise is the payload — it reads as a
+   label rather than another dash item. */
+.mod li.ex::before{content:"\25B8";color:var(--ink)}
+.mod li.ex b{font-family:var(--mono);font-size:.74rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);display:block;margin-bottom:.15rem}
+
+/* ------------------------------ one-liner ---------------------------- */
+/* The single sentence that carries a section on its own. */
+.solo{font-family:var(--display);font-size:var(--step-2);line-height:1.2;max-width:34ch;margin:0}
+.band-ink .solo{color:var(--volt)}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap top-in">
+    <a class="logo" href="#hero"><span class="mark" aria-hidden="true">CS</span>Creative Strategy Masterclass</a>
+    <nav aria-label="Sections">
+      <a href="#curriculum">What we'll cover</a>
+      <a href="#for-you">Who it's for</a>
+      <a href="#details">Details</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn" href="PASTE_XENDIT_CHECKOUT_URL_HERE">Save my seat</a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============================= 1. HERO ============================ -->
+  <section class="band band-ink hero" id="hero">
+    <div class="wrap">
+      <p class="badge"><span class="dot" aria-hidden="true"></span>Live masterclass &middot; 15 October 2026</p>
+      <h1>Meta automated the targeting. The only lever left is creative.</h1>
+      <p class="subhead">
+        A one-day live masterclass for media buyers and marketers who want to stop waiting
+        on creative and start directing it. You'll learn the same system Mark uses on real
+        client accounts, <strong>practiced live on your own ads.</strong>
+      </p>
+      <a class="btn btn-lg" href="PASTE_XENDIT_CHECKOUT_URL_HERE">Save my seat &mdash; &#8369;999</a>
+      <p class="trust">Thursday, October 15, 2026 &middot; 7:00 PM PHT &middot; Live on Zoom</p>
+    </div>
+  </section>
+
+  <!-- =========================== 2. THE PROBLEM ======================= -->
+  <section class="band band-paper" id="problem">
+    <div class="wrap">
+      <div class="head reveal">
+        <h2>You can read the dashboard. You just can't fix what it's telling you.</h2>
+      </div>
+      <div class="prose reveal">
+        <p>
+          You know when an ad is dying. You can see the hook rate drop and the CPA climb.
+          Then you're stuck asking for &ldquo;new creatives&rdquo; and hoping the next batch
+          performs.
+        </p>
+        <p>
+          You refresh the ads, but nothing really changes: same angles, same results.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ 3. THE SHIFT ======================== -->
+  <section class="band band-ink" id="shift">
+    <div class="wrap">
+      <!-- This band continues the argument above, so it carries no visible
+           heading. A screen-reader-only one keeps it reachable when someone
+           navigates the page by heading. -->
+      <h2 class="sr">Why creative is the lever that matters now</h2>
+      <div class="prose reveal">
+        <p>
+          Your media buying skills are fine. The problem is that Meta's automation now
+          handles most of the targeting, and <span class="emph">the creative itself does the
+          job targeting used to do.</span>
+        </p>
+        <p>
+          The marketers who'll be most valuable in the next few years aren't the ones with
+          the cleverest campaign structures. They're the ones who know what to make, why
+          it'll work, and how to read the results.
+        </p>
+        <p class="kicker">That's creative strategy, and it's a skill you can learn.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================== 4. CURRICULUM ======================== -->
+  <section class="band band-paper-2" id="curriculum">
+    <div class="wrap">
+      <div class="head reveal">
+        <h2>What we'll cover in one evening</h2>
+      </div>
+      <div class="mods reveal">
+        <details class="mod">
+          <summary>
+            <span class="mod-n">Module 1</span>
+            <span class="mod-t">The State of Creative Strategy</span>
+            <span class="mod-d">Why the role is shifting from media buyer to Creative Operator, and where you stand right now.</span>
+          </summary>
+          <ul>
+            <li class="ex"><span><b>Live exercise</b>Place yourself on the map, and name the one skill gap standing between you and the role.</span></li>
+          </ul>
+        </details>
+        <details class="mod">
+          <summary>
+            <span class="mod-n">Module 2</span>
+            <span class="mod-t">Consumer Psychology</span>
+            <span class="mod-d">Awareness levels, and why most ad accounts only speak to people who already know the product.</span>
+          </summary>
+          <ul>
+            <li class="ex"><span><b>Live exercise</b>Audit your own ads live, and find the awareness level your account has been ignoring.</span></li>
+          </ul>
+        </details>
+        <details class="mod">
+          <summary>
+            <span class="mod-n">Module 3</span>
+            <span class="mod-t">Creative Fundamentals</span>
+            <span class="mod-d">How winning ads are built.</span>
+          </summary>
+          <ul>
+            <li class="ex"><span><b>Live exercise</b>Break down a real ad piece by piece, so you can model what's working instead of copying it.</span></li>
+          </ul>
+        </details>
+        <details class="mod">
+          <summary>
+            <span class="mod-n">Module 4</span>
+            <span class="mod-t">Research: Findings vs. Insights</span>
+            <span class="mod-d">The difference that separates average strategists from great ones. &ldquo;People like the portability&rdquo; is a finding, and you can't build an ad on a finding.</span>
+          </summary>
+          <ul>
+            <li class="ex"><span><b>Live exercise</b>Take real customer reviews and turn them into an insight you can actually use.</span></li>
+          </ul>
+        </details>
+        <details class="mod">
+          <summary>
+            <span class="mod-n">Module 5</span>
+            <span class="mod-t">Ideation</span>
+            <span class="mod-d">How to turn one insight into multiple ad angles, so you never run out of ideas worth testing.</span>
+          </summary>
+          <ul>
+            <li class="ex"><span><b>Live exercise</b>Spin your insight from Module 4 into a set of angles ready to brief.</span></li>
+          </ul>
+        </details>
+        <details class="mod">
+          <summary>
+            <span class="mod-n">Module 6</span>
+            <span class="mod-t">KPI Metrics</span>
+            <span class="mod-d">How to read your numbers and tell whether the hook, the body, or the offer failed, so your next creative fixes the right thing.</span>
+          </summary>
+          <ul>
+            <li class="ex"><span><b>Live exercise</b>Diagnose one of your own underperforming ads and decide what to change first.</span></li>
+          </ul>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ 5. OUTCOMES ========================= -->
+  <section class="band band-volt" id="outcomes">
+    <div class="wrap">
+      <div class="head reveal">
+        <h2>This isn't a &ldquo;watch and take notes&rdquo; webinar.</h2>
+      </div>
+      <div class="prose reveal">
+        <p>
+          Every module includes a live exercise using your own brand or ad account.
+          You'll leave with:
+        </p>
+      </div>
+      <ul class="checks reveal" style="margin-top:1.6rem">
+        <li><span class="tick" aria-hidden="true">&#10003;</span><span>An awareness audit of your current ads</span></li>
+        <li><span class="tick" aria-hidden="true">&#10003;</span><span>A breakdown of a winning ad you can model</span></li>
+        <li><span class="tick" aria-hidden="true">&#10003;</span><span>At least one real customer insight</span></li>
+        <li><span class="tick" aria-hidden="true">&#10003;</span><span>3&ndash;5 fresh angles ready to brief</span></li>
+        <li><span class="tick" aria-hidden="true">&#10003;</span><span>A diagnostic for your next underperforming ad</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- =========================== 6. WHO IT'S FOR ====================== -->
+  <section class="band band-paper-2" id="for-you">
+    <div class="wrap">
+      <div class="head reveal">
+        <h2>Is this for you?</h2>
+      </div>
+      <div class="compare">
+        <div class="tile reveal"><article class="card">
+          <p class="cmp-h"><span class="pill go">This is for you if</span></p>
+          <ul class="cmp">
+            <li><span class="sig go" aria-hidden="true">&#10003;</span><span>You're a media buyer who wants to move into creative strategy.</span></li>
+            <li><span class="sig go" aria-hidden="true">&#10003;</span><span>You run ads for clients or your own brand and you're tired of guessing what to make.</span></li>
+            <li><span class="sig go" aria-hidden="true">&#10003;</span><span>You want to be the person in the room who directs creative, not just reports on it.</span></li>
+          </ul>
+        </article></div>
+        <div class="tile reveal" style="--d:80ms"><article class="card">
+          <p class="cmp-h"><span class="pill no">This isn't for you if</span></p>
+          <ul class="cmp">
+            <li><span class="sig no" aria-hidden="true">&#10007;</span><span>You're looking for hacks or &ldquo;secret settings.&rdquo;</span></li>
+            <li><span class="sig no" aria-hidden="true">&#10007;</span><span>You don't run or manage Meta ads yet.</span></li>
+          </ul>
+        </article></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================= 7. HOST =========================== -->
+  <section class="band band-paper" id="about">
+    <div class="wrap">
+      <div class="about">
+        <div class="reveal">
+          <div class="photo filled">
+            <img src="assets/mark.jpg" width="900" height="1125" loading="lazy" decoding="async"
+                 alt="Mark Alvin Magdayo">
+          </div>
+        </div>
+        <div class="reveal" style="--d:80ms">
+          <p class="eyebrow">Your host</p>
+          <h2 style="font-size:var(--step-3);margin-bottom:1.1rem">Mark Alvin Magdayo</h2>
+          <div class="prose">
+            <p>
+              Mark runs Per Click Digital, a performance creative agency managing Meta ad
+              accounts for DTC brands. He works as an embedded creative operator who owns the
+              creative from research and hook through performance analysis.
+            </p>
+            <p>
+              He doesn't teach theory. <span class="emph">He teaches what he does on client
+              accounts every week.</span>
+            </p>
+          </div>
+          <ul class="cred">
+            <li><span>Featured at Motion's Creative Strategy Summit 2024</span></li>
+            <li><span>Featured in Motion's 2024 edition, <i>The Rise of the Creative Strategist</i></span></li>
+            <li><span>4+ years running DTC creative strategy</span></li>
+          </ul>
+          <div class="feat">
+            <p class="feat-h">As featured in</p>
+            <div class="feat-row">
+              <figure class="feat-item">
+                <img src="assets/motion-book.jpg" width="440" height="564" loading="lazy" decoding="async"
+                     alt="Cover of Motion's 2024 edition, The Rise of the Creative Strategist">
+                <figcaption>Motion's 2024 edition</figcaption>
+              </figure>
+              <figure class="feat-item">
+                <img src="assets/motion-summit.jpg" width="520" height="649" loading="lazy" decoding="async"
+                     alt="Speaker line-up for Motion's Creative Strategy Summit 2024">
+                <figcaption>Creative Strategy Summit 2024</figcaption>
+              </figure>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================= 8. TESTIMONIALS ======================== -->
+  <section class="band band-paper-2" id="testimonials">
+    <div class="wrap">
+      <div class="head reveal">
+        <h2>What past students say</h2>
+      </div>
+      <div class="quotes quotes-2">
+        <div class="quote filled reveal" style="--d:0ms">
+          <p>&ldquo;Recommended! Solid learnings &amp; no gate keeping sa mga Creative strategies, pang international level!! Super worth it!!&rdquo;</p>
+          <div class="who who-av">
+            <img class="av-img" src="assets/avatars/avatar1.jpg" width="160" height="160"
+                 loading="lazy" decoding="async" alt="">
+            <div>
+              <p class="who-name">Kyle Suarez</p>
+              <p class="who-role">Meta ads &amp; Creative Strategist</p>
+            </div>
+          </div>
+        </div>
+        <div class="quote filled reveal" style="--d:70ms">
+          <p>&ldquo;Worth it ang workshop, honestly, ino-overthink ko before ang step by step process ko sa ad creative, pero ngayon it will only take me 3 hours para makagawa ng 10 creative strategy for my clients. Good Investment for Full Time Freelancer like me.&rdquo;</p>
+          <div class="who who-av">
+            <img class="av-img" src="assets/avatars/avatar2.jpg" width="160" height="160"
+                 loading="lazy" decoding="async" alt="">
+            <div>
+              <p class="who-name">Chan Dom Llego</p>
+              <p class="who-role">Meta ads &amp; Creative Strategist</p>
+            </div>
+          </div>
+        </div>
+        <div class="quote filled reveal" style="--d:140ms">
+          <p>&ldquo;Super thankful to Coach <b>Mark Alvin Magdayo</b> for generously sharing his expertise as a Creative Strategist! Sobrang sulit because we got exclusive access sa ACTUAL process niya&mdash;including his creative library, the exact framework he uses to craft performance creatives that actually convert, at kung paano gumawa ng ads based on consumer behavior.&rdquo;</p>
+          <div class="who who-av">
+            <img class="av-img" src="assets/avatars/avatar3.jpg" width="160" height="160"
+                 loading="lazy" decoding="async" alt="">
+            <div>
+              <p class="who-name">Diana Zaballero</p>
+              <p class="who-role">Meta ads &amp; Creative Strategist</p>
+            </div>
+          </div>
+        </div>
+        <div class="quote filled reveal" style="--d:210ms">
+          <p>&ldquo;Thank you for existing coach! Sana marami pa kaming maturuan mo. I have doubt sa pagiging creative strategist pero di naman pala ganun kaoverwhelming basta may coach kang matuturuan ka ng maayos at generous pa, no gatekeeping.&rdquo;</p>
+          <div class="who who-av">
+            <img class="av-img" src="assets/avatars/avatar4.jpg" width="160" height="160"
+                 loading="lazy" decoding="async" alt="">
+            <div>
+              <p class="who-name">Angelica Bello</p>
+              <p class="who-role">SMM &amp; Creative Strategist</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================ 9. DETAILS ========================== -->
+  <section class="band band-volt" id="details">
+    <div class="wrap">
+      <div class="head reveal">
+        <h2>The details</h2>
+      </div>
+      <div class="price-wrap">
+        <div class="tile reveal"><article class="card price-card">
+          <div class="amount">
+            <b>&#8369;999</b>
+          </div>
+          <ul class="facts">
+            <li><span class="k">Date</span><span>Thursday, October 15, 2026</span></li>
+            <li><span class="k">Time</span><span>7:00 PM PHT</span></li>
+            <li><span class="k">Where</span><span>Live on Zoom</span></li>
+            <li><span class="k">Replay</span><span>Included &mdash; attendees get 7 days of access</span></li>
+          </ul>
+          <a class="btn btn-lg" href="PASTE_XENDIT_CHECKOUT_URL_HERE">Save my seat &mdash; &#8369;999</a>
+          <p class="under">Bring your own brand or ad account &mdash; the exercises are built around it.</p>
+          <p class="under">Educational masterclass &mdash; no guaranteed results. <a href="#disclaimer">Read the full disclaimer</a>.</p>
+        </article></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== 10. FAQ =========================== -->
+  <section class="band band-ink" id="faq">
+    <div class="wrap">
+      <div class="head reveal">
+        <h2>FAQ</h2>
+      </div>
+      <div class="faq reveal">
+        <details>
+          <summary>Is this beginner-friendly?</summary>
+          <p class="a">It's built for people already running or managing Meta ads. You don't
+            need any creative strategy experience. That's what we're building.</p>
+        </details>
+        <details>
+          <summary>Do I need my own ad account?</summary>
+          <p class="a">It helps, since the exercises are designed around your own ads. If you
+            don't have one, you can follow along with the example brand we use throughout the
+            session.</p>
+        </details>
+        <details>
+          <summary>Will there be a replay?</summary>
+          <p class="a">Yes. Attendees get access to the replay for 7 days after the session,
+            so you can go back over the exercises while they're still fresh.</p>
+        </details>
+        <details>
+          <summary>Is this a sales pitch for something bigger?</summary>
+          <p class="a">To be honest: this masterclass is an overview of CSI (Creative Strategy
+            Intensive), Mark's full program. You'll get real, usable value on the night either
+            way. At the end, Mark will share how CSI works for anyone who wants the complete
+            system. No pressure, and no bait-and-switch.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================== 11. FINAL CTA ======================== -->
+  <section class="band band-volt final" id="final-cta">
+    <div class="wrap">
+      <div class="reveal">
+        <h2><span>The marketers who understand creative</span> <span>will lead the next era of paid social.</span></h2>
+        <div class="prose">
+          <p>The others will keep asking for &ldquo;new ads.&rdquo;</p>
+        </div>
+        <p class="price-line">
+          &#8369;999 &middot; Thursday, October 15, 2026 &middot; 7:00 PM PHT &middot; Live on Zoom
+        </p>
+        <p><a class="btn btn-lg" href="PASTE_XENDIT_CHECKOUT_URL_HERE" style="margin-top:1.4rem">Save my seat &mdash; &#8369;999</a></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="disclaimer" id="disclaimer">
+      <b>No results guarantee</b>
+      <p>
+        This masterclass is educational. It teaches frameworks, judgment and process &mdash;
+        not hacks, and not a promise of specific results. What you get out of it depends on
+        your product, your market, your budget and the work you put in. Nothing on this page
+        should be read as a guarantee of revenue, ROAS or any other performance outcome.
+      </p>
+    </div>
+    <div class="foot-in">
+      <p>&copy; <span data-year>2026</span> Mark Alvin Magdayo</p>
+      <p class="foot-contact">Questions? <a href="mailto:hello@iammarkamagdayo.com">hello@iammarkamagdayo.com</a></p>
+      <nav><a href="#curriculum">What we'll cover</a> &middot; <a href="#details">Details</a> &middot; <a href="#faq">FAQ</a></nav>
+    </div>
+  </div>
+</footer>
+
+<div class="sticky-cta">
+  <div class="p"><b>&#8369;999</b><span>15 Oct &middot; 7PM PHT</span></div>
+  <a class="btn" href="PASTE_XENDIT_CHECKOUT_URL_HERE">Save my seat</a>
+</div>
+<script>
+/* Enhancements only. The page is complete and readable without this:
+   the .js class that arms the hidden reveal state is never added unless
+   JS runs and reduced-motion is off. */
+(function () {
+  "use strict";
+  var root = document.documentElement;
+  var y = document.querySelector("[data-year]");
+  if (y) y.textContent = String(new Date().getFullYear());
+
+  var reduce = window.matchMedia
+    && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (reduce || !("IntersectionObserver" in window)) return;
+
+  root.classList.add("js");
+  var items = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
+  function show(el) { el.classList.add("is-in"); }
+
+  // Anything already on screen reveals immediately, so the first frame
+  // (and any thumbnail or screenshot) is never blank.
+  var fold = window.innerHeight * 1.05;
+  items.forEach(function (el) {
+    if (el.getBoundingClientRect().top < fold) show(el);
+  });
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      show(entry.target);
+      io.unobserve(entry.target);
+    });
+  }, { rootMargin: "0px 0px -10% 0px", threshold: 0.05 });
+
+  items.forEach(function (el) {
+    if (!el.classList.contains("is-in")) io.observe(el);
+  });
+
+  // Fallback: nothing can stay invisible even if an observer never fires.
+  setTimeout(function () { items.forEach(show); }, 900);
+})();
+</script>
+</body>
+</html>

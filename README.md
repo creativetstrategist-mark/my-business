@@ -7,6 +7,7 @@ no dependencies. Open a file, edit it, refresh the browser.
 
 ```
 index.html            Home
+masterclass.html      Masterclass landing page (15 Oct 2026) — see below
 services.html         Services
 about.html            About
 contact.html          Contact (form is not wired up yet — see below)
@@ -17,6 +18,23 @@ assets/img/           Put images here
 .nojekyll             Tells GitHub Pages to serve files as-is
 .github/workflows/    Auto-deploy to GitHub Pages on push to main
 ```
+
+## The masterclass landing page
+
+`masterclass.html` is the landing page for the one-evening live masterclass on
+15 October 2026 (₱999). It is self-contained — all styling and script are
+inline — and reuses the same design system as `index.html`, so the two pages
+read as one brand. Images are referenced from `assets/`, not inlined.
+
+**One thing is still unfilled: the checkout link.** Every button points at
+`PASTE_XENDIT_CHECKOUT_URL_HERE`. Swap them all at once:
+
+```bash
+sed -i 's|PASTE_XENDIT_CHECKOUT_URL_HERE|https://checkout.xendit.co/od/your-link|g' masterclass.html
+```
+
+Once pushed, the page is live at
+`https://creativetstrategist-mark.github.io/my-business/masterclass.html`.
 
 ## Running it locally
 
