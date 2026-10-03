@@ -1,4 +1,4 @@
-<!-- Creative Strategy Masterclass — Hero -->
+<!-- Creative Strategy Masterclass — What we will cover (cards) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
@@ -259,6 +259,23 @@ html{scroll-behavior:smooth!important;-webkit-text-size-adjust:100%!important;}
 @media (max-width:520px){
   .csi .facts li{grid-template-columns:1fr!important;gap:.1rem!important;}
 }
+.csi .announce{display:flex!important;align-items:center!important;justify-content:center!important;gap:.6rem!important;flex-wrap:wrap!important;background:var(--volt)!important;color:var(--ink)!important;text-decoration:none!important;font-family:var(--mono)!important;font-weight:700!important;font-size:var(--step--1)!important;letter-spacing:.1em!important;text-transform:uppercase!important;padding:.7rem 20px!important;text-align:center!important;border-bottom:2px solid var(--ink)!important;}
+.csi .announce:hover{background:var(--volt-deep)!important;}
+.csi .mod-grid{display:grid!important;gap:calc(var(--plate) + 1rem)!important;}
+@media (min-width:700px){
+  .csi .mod-grid{grid-template-columns:repeat(2,1fr)!important;}
+}
+@media (min-width:1000px){
+  .csi .mod-grid{grid-template-columns:repeat(3,1fr)!important;}
+}
+.csi .mod-card .m-n{font-family:var(--mono)!important;font-weight:700!important;font-size:.74rem!important;letter-spacing:.14em!important;text-transform:uppercase!important;color:var(--slate)!important;}
+.csi .mod-card h3{font-size:var(--step-1)!important;margin-top:.15rem!important;}
+.csi .mod-card .m-x{margin-top:auto!important;padding-top:.9rem!important;border-top:2px solid var(--paper-2)!important;font-size:.9rem!important;color:var(--slate)!important;}
+.csi .mod-card .m-x b{display:block!important;font-family:var(--mono)!important;font-size:.72rem!important;font-weight:700!important;letter-spacing:.12em!important;text-transform:uppercase!important;color:var(--ink)!important;margin-bottom:.25rem!important;}
+.csi .scarce{text-align:center!important;}
+.csi .scarce .chip{display:inline-flex!important;align-items:center!important;gap:.5rem!important;font-family:var(--mono)!important;font-weight:700!important;font-size:var(--step--1)!important;letter-spacing:.12em!important;text-transform:uppercase!important;background:var(--volt)!important;color:var(--ink)!important;padding:.4rem .9rem!important;border-radius:999px!important;margin-bottom:1.1rem!important;}
+.csi .scarce h2{font-size:var(--step-3)!important;max-width:20ch!important;margin-inline:auto!important;}
+.csi .scarce p{margin-inline:auto!important;margin-top:1rem!important;color:#c9c5b8!important;max-width:52ch!important;}
 .csi .hero{text-align:center!important;}
 .csi .hero h1,.csi .hero .subhead,.csi .hero .trust{margin-inline:auto!important;}
 .csi .solo{font-family:var(--display)!important;font-size:var(--step-2)!important;line-height:1.2!important;max-width:34ch!important;margin:0!important;}
@@ -267,12 +284,49 @@ html{overflow-x:clip}
 .csi{width:100vw!important;max-width:100vw!important;margin-inline:calc(50% - 50vw)!important;}
 </style>
 <div class="csi">
-<section class="band band-ink hero" id="hero">
+<section class="band band-paper-2" id="curriculum">
   <div class="wrap">
-    <p class="badge"><span class="dot" aria-hidden="true"></span>Live masterclass &middot; 15 October 2026</p>
-    <h1>Meta automated the targeting. The only lever left is creative.</h1>
-    <a class="btn btn-lg" href="PASTE_XENDIT_CHECKOUT_URL_HERE">Save my seat</a>
-    <p class="trust">Thursday, October 15, 2026 &middot; 7:00 PM PHT &middot; Live on Zoom</p>
+    <div class="head reveal">
+      <h2>What we&rsquo;ll cover in one evening</h2>
+    </div>
+    <div class="mod-grid">
+      <div class="tile reveal" style="--d:0ms"><article class="card mod-card">
+        <p class="m-n">Module 1</p>
+        <h3>The State of Creative Strategy</h3>
+        <p>Why the role is shifting from media buyer to Creative Operator, and where you stand right now.</p>
+        <p class="m-x"><b>Live exercise</b>Place yourself on the map, and name the one skill gap standing between you and the role.</p>
+      </article></div>
+      <div class="tile reveal" style="--d:60ms"><article class="card mod-card">
+        <p class="m-n">Module 2</p>
+        <h3>Consumer Psychology</h3>
+        <p>Awareness levels, and why most ad accounts only speak to people who already know the product.</p>
+        <p class="m-x"><b>Live exercise</b>Audit your own ads live, and find the awareness level your account has been ignoring.</p>
+      </article></div>
+      <div class="tile reveal" style="--d:120ms"><article class="card mod-card">
+        <p class="m-n">Module 3</p>
+        <h3>Creative Fundamentals</h3>
+        <p>How winning ads are built, piece by piece.</p>
+        <p class="m-x"><b>Live exercise</b>Break down a real ad, so you can model what works instead of copying it.</p>
+      </article></div>
+      <div class="tile reveal" style="--d:180ms"><article class="card mod-card">
+        <p class="m-n">Module 4</p>
+        <h3>Research: Findings vs. Insights</h3>
+        <p>The difference that separates average strategists from great ones. &ldquo;People like the portability&rdquo; is a finding, and you can&rsquo;t build an ad on a finding.</p>
+        <p class="m-x"><b>Live exercise</b>Take real customer reviews and turn them into an insight you can actually use.</p>
+      </article></div>
+      <div class="tile reveal" style="--d:240ms"><article class="card mod-card">
+        <p class="m-n">Module 5</p>
+        <h3>Ideation</h3>
+        <p>How to turn one insight into multiple ad angles, so you never run out of ideas worth testing.</p>
+        <p class="m-x"><b>Live exercise</b>Spin your insight from Module 4 into a set of angles ready to brief.</p>
+      </article></div>
+      <div class="tile reveal" style="--d:300ms"><article class="card mod-card">
+        <p class="m-n">Module 6</p>
+        <h3>KPI Metrics</h3>
+        <p>How to read your numbers and tell whether the hook, the body, or the offer failed, so your next creative fixes the right thing.</p>
+        <p class="m-x"><b>Live exercise</b>Diagnose one of your own underperforming ads and decide what to change first.</p>
+      </article></div>
+    </div>
   </div>
 </section>
 </div>

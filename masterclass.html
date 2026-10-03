@@ -425,6 +425,44 @@ section[id]{scroll-margin-top:1rem}
    sits above its value there instead of squeezing it. */
 @media (max-width:520px){.facts li{grid-template-columns:1fr;gap:.1rem}}
 
+/* ------------------------- announcement bar -------------------------- */
+/* The only thing above the hero now that the nav header is gone, so it
+   carries the offer rather than links: one line, the whole strip clickable. */
+.announce{
+  display:flex;align-items:center;justify-content:center;gap:.6rem;flex-wrap:wrap;
+  background:var(--volt);color:var(--ink);text-decoration:none;
+  font-family:var(--mono);font-weight:700;font-size:var(--step--1);
+  letter-spacing:.1em;text-transform:uppercase;
+  padding:.7rem 20px;text-align:center;border-bottom:2px solid var(--ink);
+}
+.announce:hover{background:var(--volt-deep)}
+.announce .go{font-weight:700}
+
+/* --------------------------- module cards ---------------------------- */
+/* The curriculum reads as six objects rather than a list to open, so the
+   evening looks like six things you get and not one more accordion. */
+.mod-grid{display:grid;gap:calc(var(--plate) + 1rem)}
+@media (min-width:700px){.mod-grid{grid-template-columns:repeat(2,1fr)}}
+@media (min-width:1000px){.mod-grid{grid-template-columns:repeat(3,1fr)}}
+.mod-card .m-n{font-family:var(--mono);font-weight:700;font-size:.74rem;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--slate)}
+.mod-card h3{font-size:var(--step-1);margin-top:.15rem}
+.mod-card .m-x{margin-top:auto;padding-top:.9rem;border-top:2px solid var(--paper-2);
+  font-size:.9rem;color:var(--slate)}
+.mod-card .m-x b{display:block;font-family:var(--mono);font-size:.72rem;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--ink);margin-bottom:.25rem}
+
+/* --------------------------- scarcity band --------------------------- */
+/* A real limit, stated once. No countdown, no invented price rise. */
+.scarce{text-align:center}
+.scarce .chip{display:inline-flex;align-items:center;gap:.5rem;
+  font-family:var(--mono);font-weight:700;font-size:var(--step--1);
+  letter-spacing:.12em;text-transform:uppercase;
+  background:var(--volt);color:var(--ink);padding:.4rem .9rem;border-radius:999px;
+  margin-bottom:1.1rem}
+.scarce h2{font-size:var(--step-3);max-width:20ch;margin-inline:auto}
+.scarce p{margin-inline:auto;margin-top:1rem;color:#c9c5b8;max-width:52ch}
+
 /* -------------------------- centred hero ----------------------------- */
 /* The hero is the one centred band on the page; everything below it stays
    left-aligned, so the centring reads as emphasis rather than a default.
@@ -442,6 +480,11 @@ section[id]{scroll-margin-top:1rem}
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
+
+<a class="announce" href="#seats">
+  <span>Only <span class="ph">[SEAT_COUNT]</span> seats for the live session</span>
+  <span class="go" aria-hidden="true">&rarr;</span>
+</a>
 
 <main id="main">
 
@@ -497,6 +540,53 @@ section[id]{scroll-margin-top:1rem}
     </div>
   </section>
 
+
+  <!-- ========================== 4. CURRICULUM ======================== -->
+  <section class="band band-paper-2" id="curriculum">
+    <div class="wrap">
+      <div class="head reveal">
+        <h2>What we&rsquo;ll cover in one evening</h2>
+      </div>
+      <div class="mod-grid">
+        <div class="tile reveal" style="--d:0ms"><article class="card mod-card">
+          <p class="m-n">Module 1</p>
+          <h3>The State of Creative Strategy</h3>
+          <p>Why the role is shifting from media buyer to Creative Operator, and where you stand right now.</p>
+          <p class="m-x"><b>Live exercise</b>Place yourself on the map, and name the one skill gap standing between you and the role.</p>
+        </article></div>
+        <div class="tile reveal" style="--d:60ms"><article class="card mod-card">
+          <p class="m-n">Module 2</p>
+          <h3>Consumer Psychology</h3>
+          <p>Awareness levels, and why most ad accounts only speak to people who already know the product.</p>
+          <p class="m-x"><b>Live exercise</b>Audit your own ads live, and find the awareness level your account has been ignoring.</p>
+        </article></div>
+        <div class="tile reveal" style="--d:120ms"><article class="card mod-card">
+          <p class="m-n">Module 3</p>
+          <h3>Creative Fundamentals</h3>
+          <p>How winning ads are built, piece by piece.</p>
+          <p class="m-x"><b>Live exercise</b>Break down a real ad, so you can model what works instead of copying it.</p>
+        </article></div>
+        <div class="tile reveal" style="--d:180ms"><article class="card mod-card">
+          <p class="m-n">Module 4</p>
+          <h3>Research: Findings vs. Insights</h3>
+          <p>The difference that separates average strategists from great ones. &ldquo;People like the portability&rdquo; is a finding, and you can&rsquo;t build an ad on a finding.</p>
+          <p class="m-x"><b>Live exercise</b>Take real customer reviews and turn them into an insight you can actually use.</p>
+        </article></div>
+        <div class="tile reveal" style="--d:240ms"><article class="card mod-card">
+          <p class="m-n">Module 5</p>
+          <h3>Ideation</h3>
+          <p>How to turn one insight into multiple ad angles, so you never run out of ideas worth testing.</p>
+          <p class="m-x"><b>Live exercise</b>Spin your insight from Module 4 into a set of angles ready to brief.</p>
+        </article></div>
+        <div class="tile reveal" style="--d:300ms"><article class="card mod-card">
+          <p class="m-n">Module 6</p>
+          <h3>KPI Metrics</h3>
+          <p>How to read your numbers and tell whether the hook, the body, or the offer failed, so your next creative fixes the right thing.</p>
+          <p class="m-x"><b>Live exercise</b>Diagnose one of your own underperforming ads and decide what to change first.</p>
+        </article></div>
+      </div>
+    </div>
+  </section>
 
   <!-- ============================ 5. OUTCOMES ========================= -->
   <section class="band band-volt" id="outcomes">
@@ -650,6 +740,19 @@ section[id]{scroll-margin-top:1rem}
     </div>
   </section>
 
+  <!-- =========================== 9. SEATS ============================ -->
+  <section class="band band-ink scarce" id="seats">
+    <div class="wrap">
+      <div class="reveal">
+        <p class="chip"><span class="dot" aria-hidden="true"></span>Limited seats</p>
+        <h2>This one is capped at <span class="ph">[SEAT_COUNT]</span> seats.</h2>
+        <p>Every module runs an exercise on your own ads, and that only works in a
+          room small enough to get to people. When the seats are gone, the room is
+          full &mdash; there is no waitlist for the night.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- ============================ 9. DETAILS ========================== -->
   <section class="band band-volt" id="details">
     <div class="wrap">
@@ -740,7 +843,7 @@ section[id]{scroll-margin-top:1rem}
     <div class="foot-in">
       <p>&copy; <span data-year>2026</span> Mark Alvin Magdayo</p>
       <p class="foot-contact">Questions? <a href="mailto:hello@iammarkamagdayo.com">hello@iammarkamagdayo.com</a></p>
-      <nav><a href="#outcomes">What you get</a> &middot; <a href="#details">Details</a> &middot; <a href="#faq">FAQ</a></nav>
+      <nav><a href="#curriculum">What we'll cover</a> &middot; <a href="#outcomes">What you get</a> &middot; <a href="#details">Details</a> &middot; <a href="#faq">FAQ</a></nav>
     </div>
   </div>
 </footer>
