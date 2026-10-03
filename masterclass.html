@@ -91,7 +91,7 @@ img{max-width:100%;height:auto;display:block}
 
 /* ------------------------------- shell ------------------------------- */
 .wrap{width:100%;max-width:var(--col);margin-inline:auto;padding-inline:20px}
-section[id]{scroll-margin-top:70px}
+section[id]{scroll-margin-top:1rem}
 .band{padding-block:clamp(3.25rem,8vw,5.5rem)}
 .band-paper{background:var(--paper);color:var(--ink)}
 .band-paper-2{background:var(--paper-2);color:var(--ink)}
@@ -425,11 +425,13 @@ section[id]{scroll-margin-top:70px}
    sits above its value there instead of squeezing it. */
 @media (max-width:520px){.facts li{grid-template-columns:1fr;gap:.1rem}}
 
-/* ------------------------- live-exercise rows ------------------------ */
-/* Inside a curriculum module, the exercise is the payload — it reads as a
-   label rather than another dash item. */
-.mod li.ex::before{content:"\25B8";color:var(--ink)}
-.mod li.ex b{font-family:var(--mono);font-size:.74rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink);display:block;margin-bottom:.15rem}
+/* -------------------------- centred hero ----------------------------- */
+/* The hero is the one centred band on the page; everything below it stays
+   left-aligned, so the centring reads as emphasis rather than a default.
+   The measures stay as they are and the blocks are centred instead, so the
+   line lengths that make the copy readable are not touched. */
+.hero{text-align:center}
+.hero h1,.hero .subhead,.hero .trust{margin-inline:auto}
 
 /* ------------------------------ one-liner ---------------------------- */
 /* The single sentence that carries a section on its own. */
@@ -440,18 +442,6 @@ section[id]{scroll-margin-top:70px}
 <body>
 <a class="skip" href="#main">Skip to content</a>
 
-<header class="top">
-  <div class="wrap top-in">
-    <a class="logo" href="#hero"><span class="mark" aria-hidden="true">CS</span>Creative Strategy Masterclass</a>
-    <nav aria-label="Sections">
-      <a href="#curriculum">What we'll cover</a>
-      <a href="#for-you">Who it's for</a>
-      <a href="#details">Details</a>
-      <a href="#faq">FAQ</a>
-    </nav>
-    <a class="btn" href="PASTE_XENDIT_CHECKOUT_URL_HERE">Save my seat</a>
-  </div>
-</header>
 
 <main id="main">
 
@@ -465,7 +455,7 @@ section[id]{scroll-margin-top:70px}
         on creative and start directing it. You'll learn the same system Mark uses on real
         client accounts, <strong>practiced live on your own ads.</strong>
       </p>
-      <a class="btn btn-lg" href="PASTE_XENDIT_CHECKOUT_URL_HERE">Save my seat &mdash; &#8369;999</a>
+      <a class="btn btn-lg" href="PASTE_XENDIT_CHECKOUT_URL_HERE">Save my seat</a>
       <p class="trust">Thursday, October 15, 2026 &middot; 7:00 PM PHT &middot; Live on Zoom</p>
     </div>
   </section>
@@ -512,76 +502,6 @@ section[id]{scroll-margin-top:70px}
     </div>
   </section>
 
-  <!-- =========================== 4. CURRICULUM ======================== -->
-  <section class="band band-paper-2" id="curriculum">
-    <div class="wrap">
-      <div class="head reveal">
-        <h2>What we'll cover in one evening</h2>
-      </div>
-      <div class="mods reveal">
-        <details class="mod">
-          <summary>
-            <span class="mod-n">Module 1</span>
-            <span class="mod-t">The State of Creative Strategy</span>
-            <span class="mod-d">Why the role is shifting from media buyer to Creative Operator, and where you stand right now.</span>
-          </summary>
-          <ul>
-            <li class="ex"><span><b>Live exercise</b>Place yourself on the map, and name the one skill gap standing between you and the role.</span></li>
-          </ul>
-        </details>
-        <details class="mod">
-          <summary>
-            <span class="mod-n">Module 2</span>
-            <span class="mod-t">Consumer Psychology</span>
-            <span class="mod-d">Awareness levels, and why most ad accounts only speak to people who already know the product.</span>
-          </summary>
-          <ul>
-            <li class="ex"><span><b>Live exercise</b>Audit your own ads live, and find the awareness level your account has been ignoring.</span></li>
-          </ul>
-        </details>
-        <details class="mod">
-          <summary>
-            <span class="mod-n">Module 3</span>
-            <span class="mod-t">Creative Fundamentals</span>
-            <span class="mod-d">How winning ads are built.</span>
-          </summary>
-          <ul>
-            <li class="ex"><span><b>Live exercise</b>Break down a real ad piece by piece, so you can model what's working instead of copying it.</span></li>
-          </ul>
-        </details>
-        <details class="mod">
-          <summary>
-            <span class="mod-n">Module 4</span>
-            <span class="mod-t">Research: Findings vs. Insights</span>
-            <span class="mod-d">The difference that separates average strategists from great ones. &ldquo;People like the portability&rdquo; is a finding, and you can't build an ad on a finding.</span>
-          </summary>
-          <ul>
-            <li class="ex"><span><b>Live exercise</b>Take real customer reviews and turn them into an insight you can actually use.</span></li>
-          </ul>
-        </details>
-        <details class="mod">
-          <summary>
-            <span class="mod-n">Module 5</span>
-            <span class="mod-t">Ideation</span>
-            <span class="mod-d">How to turn one insight into multiple ad angles, so you never run out of ideas worth testing.</span>
-          </summary>
-          <ul>
-            <li class="ex"><span><b>Live exercise</b>Spin your insight from Module 4 into a set of angles ready to brief.</span></li>
-          </ul>
-        </details>
-        <details class="mod">
-          <summary>
-            <span class="mod-n">Module 6</span>
-            <span class="mod-t">KPI Metrics</span>
-            <span class="mod-d">How to read your numbers and tell whether the hook, the body, or the offer failed, so your next creative fixes the right thing.</span>
-          </summary>
-          <ul>
-            <li class="ex"><span><b>Live exercise</b>Diagnose one of your own underperforming ads and decide what to change first.</span></li>
-          </ul>
-        </details>
-      </div>
-    </div>
-  </section>
 
   <!-- ============================ 5. OUTCOMES ========================= -->
   <section class="band band-volt" id="outcomes">
@@ -825,7 +745,7 @@ section[id]{scroll-margin-top:70px}
     <div class="foot-in">
       <p>&copy; <span data-year>2026</span> Mark Alvin Magdayo</p>
       <p class="foot-contact">Questions? <a href="mailto:hello@iammarkamagdayo.com">hello@iammarkamagdayo.com</a></p>
-      <nav><a href="#curriculum">What we'll cover</a> &middot; <a href="#details">Details</a> &middot; <a href="#faq">FAQ</a></nav>
+      <nav><a href="#outcomes">What you get</a> &middot; <a href="#details">Details</a> &middot; <a href="#faq">FAQ</a></nav>
     </div>
   </div>
 </footer>

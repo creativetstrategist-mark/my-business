@@ -22,7 +22,8 @@ assets/img/           Put images here
 ## The masterclass landing page
 
 `masterclass.html` is the landing page for the one-evening live masterclass on
-15 October 2026 (₱999). It is self-contained — all styling and script are
+15 October 2026 (₱999). It has no nav header and no curriculum section — both
+were cut on review — and the hero is centred. It is self-contained — all styling and script are
 inline — and reuses the same design system as `index.html`, so the two pages
 read as one brand. Images are referenced from `assets/`, not inlined.
 
