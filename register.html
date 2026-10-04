@@ -3,27 +3,30 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="The Meta Ads Creative Strategy Workshop &mdash; a one-day live workshop for media buyers and marketers who want to stop waiting on creative and start directing it. Thursday, October 15, 2026, 7:00 PM PHT, live on Zoom. &#8369;999.">
+<meta name="description" content="Register for The Meta Ads Creative Strategy Workshop — Thursday, October 15, 2026, 7:00 PM PHT, live on Zoom.">
 <meta name="color-scheme" content="light">
-<meta property="og:title" content="The Meta Ads Creative Strategy Workshop">
-<meta property="og:description" content="The Meta Ads Creative Strategy Workshop &mdash; a one-day live workshop. 15 October 2026, 7:00 PM PHT, live on Zoom.">
-<meta property="og:type" content="website">
+<meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
-<title>The Meta Ads Creative Strategy Workshop</title>
+<title>Register — The Meta Ads Creative Strategy Workshop</title>
 
 <!-- ===========================================================
-     Every button goes to register.html, which takes the name and
-     email and then sends people on to payment. Nothing here points
-     at the checkout directly.
+     TWO VALUES TO FILL, and the page says so on screen until
+     both are done, so it cannot be shipped half-wired:
 
-     register.html is the file that still needs its two values; this
-     one is complete. The Systeme.io blocks in embeds-masterclass/
-     carry PASTE_REGISTRATION_URL_HERE instead, because there the
-     registration page lives at a URL, not next door.
+       PASTE_FORM_ENDPOINT_HERE   where the name and email are sent
+       PASTE_CHECKOUT_URL_HERE    where the person goes afterwards
+
+     A static page cannot store a lead by itself. The form posts to
+     a service (Systeme.io, Formspree, Basin) which saves the row and
+     then forwards to the checkout URL in the hidden _next field.
+
+       sed -i 's|PASTE_FORM_ENDPOINT_HERE|https://...|g; \
+               s|PASTE_CHECKOUT_URL_HERE|https://checkout.xendit.co/od/...|g' register.html
      =========================================================== -->
 <style>
+
 /* ============================================================
    CSI Batch 3 — one committed visual world (volt / ink / paper).
    Single theme on purpose; every colour is painted explicitly.
@@ -486,419 +489,178 @@ section[id]{scroll-margin-top:1rem}
 /* The single sentence that carries a section on its own. */
 .solo{font-family:var(--display);font-size:var(--step-2);line-height:1.2;max-width:34ch;margin:0}
 .band-ink .solo{color:var(--volt)}
+
+/* ============== additions for the registration page only ==============
+   Everything above is the workshop page's design system, lifted verbatim so
+   the two pages are one brand. Only the form is new.
+   ====================================================================== */
+
+/* A registration page has one job, so it gets one centred column and
+   nothing to click but the button. */
+.reg-wrap{min-height:100%;display:grid;place-items:center;padding-block:clamp(2rem,6vw,4rem)}
+.reg{width:100%;max-width:560px;margin-inline:auto;padding-inline:20px}
+.reg-head{text-align:center;margin-bottom:clamp(1.5rem,4vw,2.25rem)}
+.reg-head h1{font-size:var(--step-3);margin-bottom:.9rem}
+.reg-head .lede{color:#c9c5b8;max-width:46ch;margin-inline:auto}
+
+.card-form{
+  background:var(--paper);border:2px solid var(--ink);border-radius:var(--r);
+  padding:clamp(1.4rem,4vw,2rem);display:grid;gap:1.1rem;
+}
+.field{display:grid;gap:.4rem}
+.field label{font-family:var(--mono);font-size:.74rem;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--ink)}
+.field input{
+  font-family:var(--body);font-size:var(--step-0);color:var(--ink);
+  background:var(--paper-2);border:2px solid var(--ink);border-radius:10px;
+  padding:.8rem .9rem;width:100%;
+}
+.field input::placeholder{color:#8f8b7e}
+.field input:focus-visible{outline:3px solid var(--volt);outline-offset:2px}
+/* A field that failed validation says so next to itself, not in a dialog. */
+.field.bad input{border-color:var(--no)}
+.field .err{font-size:.82rem;color:var(--no);min-height:0}
+.field .err:empty{display:none}
+
+.card-form .btn{width:100%;justify-content:center;margin-top:.3rem}
+.fine{font-family:var(--mono);font-size:.74rem;line-height:1.6;color:var(--slate);text-align:center}
+.when{
+  display:flex;gap:.5rem;justify-content:center;flex-wrap:wrap;
+  font-family:var(--mono);font-size:.76rem;letter-spacing:.06em;
+  color:#8f8b7e;margin-top:1.2rem;text-align:center;
+}
+.back{display:block;text-align:center;margin-top:1.4rem;font-size:.86rem;color:#8f8b7e}
+.back a{color:var(--volt);text-decoration:none;border-bottom:1px solid rgba(167,139,250,.35)}
+
+/* Shown only while a placeholder is still in the file. It is deliberately
+   loud: shipping this page unwired would collect nothing. */
+.unwired{
+  margin-bottom:1.4rem;border:2px dashed var(--ph);background:#fff0f7;color:#6b0038;
+  border-radius:10px;padding:.9rem 1rem;font-size:.9rem;line-height:1.55;
+}
+.unwired b{display:block;font-family:var(--mono);font-size:.74rem;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--ph);margin-bottom:.3rem}
+.unwired code{font-family:var(--mono);font-size:.85em;background:#ffd9ec;
+  padding:.05em .35em;border-radius:4px}
 </style>
 </head>
-<body>
-<a class="skip" href="#main">Skip to content</a>
+<body class="band-ink">
+<a class="skip" href="#reg-form">Skip to the form</a>
 
+<main class="reg-wrap">
+  <div class="reg">
 
-<a class="announce" href="#seats">
-  <span>Limited seats for the live session</span>
-  <span class="go" aria-hidden="true">&rarr;</span>
-</a>
-
-<main id="main">
-
-  <!-- ============================= 1. HERO ============================ -->
-  <section class="band band-ink hero" id="hero">
-    <div class="wrap">
-      <p class="badge"><span class="dot" aria-hidden="true"></span>Live workshop &middot; 15 October 2026</p>
-      <h1>The Meta Ads Creative Strategy Workshop</h1>
-      <p class="hero-line">Meta automated the targeting. The only lever left is creative.</p>
-      <a class="btn btn-lg" href="register.html">Save my seat</a>
-      <p class="trust">Thursday, October 15, 2026 &middot; 7:00 PM PHT &middot; Live on Zoom</p>
+    <div class="unwired" id="unwired" hidden>
+      <b>Not connected yet</b>
+      <span id="unwired-text"></span>
     </div>
-  </section>
 
-  <!-- =========================== 2. THE PROBLEM ======================= -->
-  <section class="band band-paper" id="problem">
-    <div class="wrap">
-      <div class="head reveal">
-        <h2>You can read the dashboard. You just can't fix what it's telling you.</h2>
-      </div>
-      <div class="prose reveal">
-        <p>
-          You know when an ad is dying. You can see the hook rate drop and the CPA climb.
-          Then you're stuck asking for &ldquo;new creatives&rdquo; and hoping the next batch
-          performs.
-        </p>
-        <p>
-          You refresh the ads, but nothing really changes: same angles, same results.
-        </p>
-      </div>
+    <div class="reg-head">
+      <p class="eyebrow">Live workshop &middot; 15 October 2026</p>
+      <h1>Save your seat</h1>
+      <p class="lede">Your details first, then payment on the next step. The Zoom
+        link goes to the email you enter here.</p>
     </div>
-  </section>
 
-  <!-- ============================ 3. THE SHIFT ======================== -->
-  <section class="band band-ink" id="shift">
-    <div class="wrap">
-      <!-- This band continues the argument above, so it carries no visible
-           heading. A screen-reader-only one keeps it reachable when someone
-           navigates the page by heading. -->
-      <h2 class="sr">Why creative is the lever that matters now</h2>
-      <div class="prose reveal">
-        <p>
-          Your media buying skills are fine. The problem is that Meta's automation now
-          handles most of the targeting, and <span class="emph">the creative itself does the
-          job targeting used to do.</span>
-        </p>
-        <p>
-          The marketers who'll be most valuable in the next few years aren't the ones with
-          the cleverest campaign structures. They're the ones who know what to make, why
-          it'll work, and how to read the results.
-        </p>
-        <p class="kicker">That's creative strategy, and it's a skill you can learn.</p>
-      </div>
-    </div>
-  </section>
+    <form class="card-form" id="reg-form" method="POST"
+          action="PASTE_FORM_ENDPOINT_HERE" novalidate>
+      <!-- the form service sends people here once the row is saved -->
+      <input type="hidden" name="_next" value="PASTE_CHECKOUT_URL_HERE">
+      <input type="hidden" name="_subject" value="Workshop registration">
+      <!-- a bot trap: real people never fill a field they cannot see -->
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"
+             style="position:absolute;left:-9999px" aria-hidden="true">
 
+      <div class="field" id="f-name">
+        <label for="name">Your name</label>
+        <input id="name" name="name" type="text" autocomplete="name"
+               placeholder="Juan dela Cruz" required>
+        <p class="err" id="e-name" aria-live="polite"></p>
+      </div>
 
-  <!-- ========================== 4. CURRICULUM ======================== -->
-  <section class="band band-paper-2" id="curriculum">
-    <div class="wrap">
-      <div class="head reveal">
-        <h2>What you&rsquo;ll learn</h2>
+      <div class="field" id="f-email">
+        <label for="email">Email address</label>
+        <input id="email" name="email" type="email" autocomplete="email"
+               inputmode="email" placeholder="you@example.com" required>
+        <p class="err" id="e-email" aria-live="polite"></p>
       </div>
-      <div class="mod-grid">
-        <div class="tile reveal" style="--d:0ms"><article class="card mod-card">
-          <p class="m-n">01</p>
-          <h3>Where the job is going, and where you stand</h3>
-          <p>The role is shifting from media buyer to Creative Operator. You&rsquo;ll see what that role actually owns, and which parts of it you are already doing without calling it that.</p>
-          <p class="m-x"><b>Live exercise</b>Place yourself on the map, and name the one gap between you and the role.</p>
-        </article></div>
-        <div class="tile reveal" style="--d:60ms"><article class="card mod-card">
-          <p class="m-n">02</p>
-          <h3>Why your ads only speak to people who already know you</h3>
-          <p>Most accounts talk to one kind of buyer and never notice. Awareness levels are how you find the ones you have been skipping.</p>
-          <p class="m-x"><b>Live exercise</b>Audit your own ads live, and find the awareness level your account ignores.</p>
-        </article></div>
-        <div class="tile reveal" style="--d:120ms"><article class="card mod-card">
-          <p class="m-n">03</p>
-          <h3>How a winning ad is actually built</h3>
-          <p>Hook, body, offer: the parts a working ad is made of, and how they fit together, so you can rebuild them on purpose instead of by feel.</p>
-          <p class="m-x"><b>Live exercise</b>Break down a real ad, so you can model what works instead of copying it.</p>
-        </article></div>
-        <div class="tile reveal" style="--d:180ms"><article class="card mod-card">
-          <p class="m-n">04</p>
-          <h3>How to turn customer reviews into an insight</h3>
-          <p>&ldquo;People like the portability&rdquo; is a finding, and you cannot build an ad on a finding. This difference is what separates an average strategist from a good one.</p>
-          <p class="m-x"><b>Live exercise</b>Take real customer reviews and turn them into an insight you can use.</p>
-        </article></div>
-        <div class="tile reveal" style="--d:240ms"><article class="card mod-card">
-          <p class="m-n">05</p>
-          <h3>How to get a queue of angles from one insight</h3>
-          <p>One insight should give you more than one ad. This is how you turn it into a list worth testing rather than a single idea you hope lands.</p>
-          <p class="m-x"><b>Live exercise</b>Spin the insight you just built into a set of angles ready to brief.</p>
-        </article></div>
-        <div class="tile reveal" style="--d:300ms"><article class="card mod-card">
-          <p class="m-n">06</p>
-          <h3>How to tell whether the hook, the body or the offer failed</h3>
-          <p>Read the numbers so your next creative fixes the one thing that broke, instead of changing everything at once and learning nothing.</p>
-          <p class="m-x"><b>Live exercise</b>Diagnose one of your own underperforming ads and decide what to change first.</p>
-        </article></div>
-      </div>
-    </div>
-  </section>
 
-  <!-- ============================ 5. OUTCOMES ========================= -->
-  <section class="band band-volt" id="outcomes">
-    <div class="wrap">
-      <div class="head reveal">
-        <h2>This isn't a &ldquo;watch and take notes&rdquo; webinar.</h2>
-      </div>
-      <div class="prose reveal">
-        <p>
-          Every section includes a live exercise. You'll leave with:
-        </p>
-      </div>
-      <ul class="checks reveal" style="margin-top:1.6rem">
-        <li><span class="tick" aria-hidden="true">&#10003;</span><span>An awareness audit of your current ads</span></li>
-        <li><span class="tick" aria-hidden="true">&#10003;</span><span>A breakdown of a winning ad you can model</span></li>
-        <li><span class="tick" aria-hidden="true">&#10003;</span><span>At least one real customer insight</span></li>
-        <li><span class="tick" aria-hidden="true">&#10003;</span><span>3&ndash;5 fresh angles ready to brief</span></li>
-        <li><span class="tick" aria-hidden="true">&#10003;</span><span>A diagnostic for your next underperforming ad</span></li>
-      </ul>
-    </div>
-  </section>
+      <button class="btn btn-lg" type="submit">Continue to payment &mdash; &#8369;999</button>
 
-  <!-- =========================== 6. WHO IT'S FOR ====================== -->
-  <section class="band band-paper-2" id="for-you">
-    <div class="wrap">
-      <div class="head reveal">
-        <h2>Is this for you?</h2>
-      </div>
-      <div class="compare">
-        <div class="tile reveal"><article class="card">
-          <p class="cmp-h"><span class="pill go">This is for you if</span></p>
-          <ul class="cmp">
-            <li><span class="sig go" aria-hidden="true">&#10003;</span><span>You're a media buyer who wants to move into creative strategy.</span></li>
-            <li><span class="sig go" aria-hidden="true">&#10003;</span><span>You run ads for clients or your own brand and you're tired of guessing what to make.</span></li>
-            <li><span class="sig go" aria-hidden="true">&#10003;</span><span>You want to be the person in the room who directs creative, not just reports on it.</span></li>
-          </ul>
-        </article></div>
-        <div class="tile reveal" style="--d:80ms"><article class="card">
-          <p class="cmp-h"><span class="pill no">This isn't for you if</span></p>
-          <ul class="cmp">
-            <li><span class="sig no" aria-hidden="true">&#10007;</span><span>You're looking for hacks or &ldquo;secret settings.&rdquo;</span></li>
-            <li><span class="sig no" aria-hidden="true">&#10007;</span><span>You don't run or manage Meta ads yet.</span></li>
-          </ul>
-        </article></div>
-      </div>
-    </div>
-  </section>
+      <p class="fine">Your seat is confirmed once payment goes through.
+        Seats are limited.</p>
+    </form>
 
-  <!-- ============================= 7. HOST =========================== -->
-  <section class="band band-paper" id="about">
-    <div class="wrap">
-      <div class="about">
-        <div class="reveal">
-          <div class="photo filled">
-            <img src="assets/mark.jpg" width="900" height="1125" loading="lazy" decoding="async"
-                 alt="Mark Alvin Magdayo">
-          </div>
-        </div>
-        <div class="reveal" style="--d:80ms">
-          <p class="eyebrow">Your host</p>
-          <h2 style="font-size:var(--step-3);margin-bottom:1.1rem">Mark Alvin Magdayo</h2>
-          <div class="prose">
-            <p>
-              I'm a performance creative strategist, operator and consultant, helping 8&ndash;9
-              figure brands with direct response creative strategy. I don't just teach creative
-              strategy. <span class="emph">I do it every week for clients.</span>
-            </p>
-            <p>
-              Everything in this workshop comes from real accounts: the frameworks I use to
-              research, the way I brief editors, and the sprint system I use to decide what
-              gets made next.
-            </p>
-          </div>
-          <ul class="cred">
-            <li><span>Featured at Motion's Creative Strategy Summit 2024</span></li>
-            <li><span>Featured in Motion's 2024 edition, <i>The Rise of the Creative Strategist</i></span></li>
-            <li><span>4+ years running DTC creative strategy</span></li>
-          </ul>
-          <div class="feat">
-            <p class="feat-h">As featured in</p>
-            <div class="feat-row">
-              <figure class="feat-item">
-                <img src="assets/motion-book.jpg" width="440" height="564" loading="lazy" decoding="async"
-                     alt="Cover of Motion's 2024 edition, The Rise of the Creative Strategist">
-                <figcaption>Motion's 2024 edition</figcaption>
-              </figure>
-              <figure class="feat-item">
-                <img src="assets/motion-summit.jpg" width="520" height="649" loading="lazy" decoding="async"
-                     alt="Speaker line-up for Motion's Creative Strategy Summit 2024">
-                <figcaption>Creative Strategy Summit 2024</figcaption>
-              </figure>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    <p class="when">
+      <span>Thursday, October 15, 2026</span>
+      <span aria-hidden="true">&middot;</span>
+      <span>7:00 PM PHT</span>
+      <span aria-hidden="true">&middot;</span>
+      <span>Live on Zoom</span>
+    </p>
 
-  <!-- ========================= 8. TESTIMONIALS ======================== -->
-  <section class="band band-paper-2" id="testimonials">
-    <div class="wrap">
-      <div class="head reveal">
-        <h2>What past students say</h2>
-      </div>
-      <div class="quotes quotes-2">
-        <div class="quote filled reveal" style="--d:0ms">
-          <p>&ldquo;Recommended! Solid learnings &amp; no gate keeping sa mga Creative strategies, pang international level!! Super worth it!!&rdquo;</p>
-          <div class="who who-av">
-            <img class="av-img" src="assets/avatars/avatar1.jpg" width="160" height="160"
-                 loading="lazy" decoding="async" alt="">
-            <div>
-              <p class="who-name">Kyle Suarez</p>
-              <p class="who-role">Meta ads &amp; Creative Strategist</p>
-            </div>
-          </div>
-        </div>
-        <div class="quote filled reveal" style="--d:70ms">
-          <p>&ldquo;Worth it ang workshop, honestly, ino-overthink ko before ang step by step process ko sa ad creative, pero ngayon it will only take me 3 hours para makagawa ng 10 creative strategy for my clients. Good Investment for Full Time Freelancer like me.&rdquo;</p>
-          <div class="who who-av">
-            <img class="av-img" src="assets/avatars/avatar2.jpg" width="160" height="160"
-                 loading="lazy" decoding="async" alt="">
-            <div>
-              <p class="who-name">Chan Dom Llego</p>
-              <p class="who-role">Meta ads &amp; Creative Strategist</p>
-            </div>
-          </div>
-        </div>
-        <div class="quote filled reveal" style="--d:140ms">
-          <p>&ldquo;Super thankful to Coach <b>Mark Alvin Magdayo</b> for generously sharing his expertise as a Creative Strategist! Sobrang sulit because we got exclusive access sa ACTUAL process niya&mdash;including his creative library, the exact framework he uses to craft performance creatives that actually convert, at kung paano gumawa ng ads based on consumer behavior.&rdquo;</p>
-          <div class="who who-av">
-            <img class="av-img" src="assets/avatars/avatar3.jpg" width="160" height="160"
-                 loading="lazy" decoding="async" alt="">
-            <div>
-              <p class="who-name">Diana Zaballero</p>
-              <p class="who-role">Meta ads &amp; Creative Strategist</p>
-            </div>
-          </div>
-        </div>
-        <div class="quote filled reveal" style="--d:210ms">
-          <p>&ldquo;Thank you for existing coach! Sana marami pa kaming maturuan mo. I have doubt sa pagiging creative strategist pero di naman pala ganun kaoverwhelming basta may coach kang matuturuan ka ng maayos at generous pa, no gatekeeping.&rdquo;</p>
-          <div class="who who-av">
-            <img class="av-img" src="assets/avatars/avatar4.jpg" width="160" height="160"
-                 loading="lazy" decoding="async" alt="">
-            <div>
-              <p class="who-name">Angelica Bello</p>
-              <p class="who-role">SMM &amp; Creative Strategist</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================== 9. SEATS ============================ -->
-  <section class="band band-ink scarce" id="seats">
-    <div class="wrap">
-      <div class="reveal">
-        <h2 class="sr">Limited seats</h2>
-        <p class="chip"><span class="dot" aria-hidden="true"></span>Limited seats</p>
-        <p>Every section runs an exercise on your own ads, and that only works in a
-          room small enough to get to people. When the seats are gone, the room is
-          full &mdash; there is no waitlist for the night.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================ 9. DETAILS ========================== -->
-  <section class="band band-volt" id="details">
-    <div class="wrap">
-      <h2 class="sr">The details</h2>
-      <div class="price-wrap">
-        <div class="tile reveal"><article class="card price-card">
-          <div class="amount">
-            <b>&#8369;999</b>
-          </div>
-          <ul class="facts">
-            <li><span class="k">Date</span><span>Thursday, October 15, 2026</span></li>
-            <li><span class="k">Time</span><span>7:00 PM PHT</span></li>
-            <li><span class="k">Where</span><span>Live on Zoom</span></li>
-            <li><span class="k">Replay</span><span>Included &mdash; attendees get 7 days of access</span></li>
-          </ul>
-          <a class="btn btn-lg" href="register.html">Save my seat &mdash; &#8369;999</a>
-        </article></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ============================== 10. FAQ =========================== -->
-  <section class="band band-ink" id="faq">
-    <div class="wrap">
-      <div class="head reveal">
-        <h2>FAQ</h2>
-      </div>
-      <div class="faq reveal">
-        <details>
-          <summary>Is this beginner-friendly?</summary>
-          <p class="a">It's built for people already running or managing Meta ads. You don't
-            need any creative strategy experience. That's what we're building.</p>
-        </details>
-        <details>
-          <summary>Do I need my own ad account?</summary>
-          <p class="a">It helps, since the exercises are designed around your own ads. If you
-            don't have one, you can follow along with the example brand we use throughout the
-            session.</p>
-        </details>
-        <details>
-          <summary>Will there be a replay?</summary>
-          <p class="a">Yes. Attendees get access to the replay for 7 days after the session,
-            so you can go back over the exercises while they're still fresh.</p>
-        </details>
-        <details>
-          <summary>Is this a sales pitch for something bigger?</summary>
-          <p class="a">To be honest: this workshop is an overview of CSI (Creative Strategy
-            Intensive), my full program. You'll get real, usable value on the night either
-            way. At the end, I'll share how CSI works for anyone who wants the complete
-            system. No pressure, and no bait-and-switch.</p>
-        </details>
-      </div>
-    </div>
-  </section>
-
-  <!-- =========================== 11. FINAL CTA ======================== -->
-  <section class="band band-volt final" id="final-cta">
-    <div class="wrap">
-      <div class="reveal">
-        <h2><span>The marketers who understand creative</span> <span>will lead the next era of paid social.</span></h2>
-        <div class="prose">
-          <p>The others will keep asking for &ldquo;new ads.&rdquo;</p>
-        </div>
-        <p class="price-line">
-          &#8369;999 &middot; Thursday, October 15, 2026 &middot; 7:00 PM PHT &middot; Live on Zoom
-        </p>
-        <p><a class="btn btn-lg" href="register.html" style="margin-top:1.4rem">Save my seat &mdash; &#8369;999</a></p>
-      </div>
-    </div>
-  </section>
+    <p class="back"><a href="masterclass.html">Back to the workshop details</a></p>
+  </div>
 </main>
 
-<footer class="foot">
-  <div class="wrap">
-    <div class="disclaimer" id="disclaimer">
-      <b>No results guarantee</b>
-      <p>
-        This workshop is educational. It teaches frameworks, judgment and process &mdash;
-        not hacks, and not a promise of specific results. What you get out of it depends on
-        your product, your market, your budget and the work you put in. Nothing on this page
-        should be read as a guarantee of revenue, ROAS or any other performance outcome.
-      </p>
-    </div>
-    <div class="foot-in">
-      <p>&copy; <span data-year>2026</span> Mark Alvin Magdayo</p>
-      <p class="foot-contact">Questions? <a href="mailto:hello@iammarkamagdayo.com">hello@iammarkamagdayo.com</a></p>
-      <nav><a href="#curriculum">What you'll learn</a> &middot; <a href="#outcomes">What you get</a> &middot; <a href="#details">Details</a> &middot; <a href="#faq">FAQ</a></nav>
-    </div>
-  </div>
-</footer>
-
-<div class="sticky-cta">
-  <div class="p"><b>&#8369;999</b><span>15 Oct &middot; 7PM PHT</span></div>
-  <a class="btn" href="register.html">Save my seat</a>
-</div>
 <script>
-/* Enhancements only. The page is complete and readable without this:
-   the .js class that arms the hidden reveal state is never added unless
-   JS runs and reduced-motion is off. */
 (function () {
   "use strict";
-  var root = document.documentElement;
-  var y = document.querySelector("[data-year]");
-  if (y) y.textContent = String(new Date().getFullYear());
+  var form  = document.getElementById("reg-form");
+  var nameI = document.getElementById("name");
+  var mailI = document.getElementById("email");
 
-  var reduce = window.matchMedia
-    && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  if (reduce || !("IntersectionObserver" in window)) return;
+  // Both values are still placeholders until someone fills them. Rather than
+  // fail silently at the worst possible moment, say so on the page and refuse
+  // to pretend the funnel works.
+  var endpoint = form.getAttribute("action") || "";
+  var next     = form.querySelector('[name="_next"]').value || "";
+  var missing  = [];
+  if (endpoint.indexOf("PASTE_") === 0) missing.push("the form endpoint, so nothing is saved");
+  if (next.indexOf("PASTE_") === 0)     missing.push("the checkout link, so there is nowhere to send people");
+  if (missing.length) {
+    var box = document.getElementById("unwired");
+    document.getElementById("unwired-text").textContent =
+      "This page is still missing " + missing.join(", and ") +
+      ". Fill PASTE_FORM_ENDPOINT_HERE and PASTE_CHECKOUT_URL_HERE in register.html before sending traffic here.";
+    box.hidden = false;
+  }
 
-  root.classList.add("js");
-  var items = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
-  function show(el) { el.classList.add("is-in"); }
+  function setErr(wrapId, errId, msg) {
+    document.getElementById(wrapId).classList.toggle("bad", !!msg);
+    document.getElementById(errId).textContent = msg || "";
+    return !msg;
+  }
+  // Deliberately permissive: something@something.something. Anything stricter
+  // rejects real addresses, and the only real test is whether the mail arrives.
+  function emailLooksReal(v) { return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v); }
 
-  // Anything already on screen reveals immediately, so the first frame
-  // (and any thumbnail or screenshot) is never blank.
-  var fold = window.innerHeight * 1.05;
-  items.forEach(function (el) {
-    if (el.getBoundingClientRect().top < fold) show(el);
+  function validate() {
+    var okName  = setErr("f-name",  "e-name",
+      nameI.value.trim() ? "" : "Please enter your name.");
+    var v = mailI.value.trim();
+    var okEmail = setErr("f-email", "e-email",
+      !v ? "Please enter your email address."
+         : (emailLooksReal(v) ? "" : "That does not look like an email address."));
+    return okName && okEmail;
+  }
+
+  nameI.addEventListener("input", function () { setErr("f-name", "e-name", ""); });
+  mailI.addEventListener("input", function () { setErr("f-email", "e-email", ""); });
+
+  form.addEventListener("submit", function (event) {
+    if (!validate()) {
+      event.preventDefault();
+      (document.querySelector(".field.bad input") || nameI).focus();
+      return;
+    }
+    if (missing.length) {
+      event.preventDefault();
+      document.getElementById("unwired").scrollIntoView({ block: "center" });
+      return;
+    }
+    // Let the POST go. The form service saves the row, then redirects to _next.
   });
-
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (!entry.isIntersecting) return;
-      show(entry.target);
-      io.unobserve(entry.target);
-    });
-  }, { rootMargin: "0px 0px -10% 0px", threshold: 0.05 });
-
-  items.forEach(function (el) {
-    if (!el.classList.contains("is-in")) io.observe(el);
-  });
-
-  // Fallback: nothing can stay invisible even if an observer never fires.
-  setTimeout(function () { items.forEach(show); }, 900);
 })();
 </script>
 </body>

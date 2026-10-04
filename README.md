@@ -7,7 +7,8 @@ no dependencies. Open a file, edit it, refresh the browser.
 
 ```
 index.html            Home
-masterclass.html      Masterclass landing page (15 Oct 2026) — see below
+masterclass.html      Workshop landing page (15 Oct 2026) — see below
+register.html         Registration step: name + email, then on to payment
 services.html         Services
 about.html            About
 contact.html          Contact (form is not wired up yet — see below)
@@ -31,13 +32,26 @@ when the page started on yellow — every rule reads the token, so the name is
 historical only. It is self-contained — all styling and script are
 inline — and reuses the layout system from `index.html`. Images are referenced from `assets/`, not inlined.
 
-**One thing is still unfilled: the registration page.** Every button goes to
-registration first and on to payment from there, so none of them points at the
-Xendit checkout directly. Swap them all at once:
+The funnel is two pages. Every button on `masterclass.html` goes to
+`register.html`, which takes a name and email and then sends people on to
+payment. Nothing links to the checkout directly.
+
+**`register.html` needs two values before it works.** A static page cannot
+store a lead by itself: the form posts to a service, which saves the row and
+then forwards to the checkout URL in its hidden `_next` field.
 
 ```bash
-sed -i 's|PASTE_REGISTRATION_URL_HERE|https://your-funnel/register|g' masterclass.html
+sed -i 's|PASTE_FORM_ENDPOINT_HERE|https://your-form-service/f/xxxx|g;
+        s|PASTE_CHECKOUT_URL_HERE|https://checkout.xendit.co/od/your-link|g' register.html
 ```
+
+Until both are filled the page shows a magenta "Not connected yet" panel and
+refuses to submit, so it cannot be put in front of traffic half-wired. Any
+service that accepts a plain POST works — Systeme.io, Formspree, Basin.
+
+The Systeme.io blocks in `embeds-masterclass/` carry
+`PASTE_REGISTRATION_URL_HERE` instead of linking to `register.html`, because
+there the registration page lives at a URL rather than next door.
 
 Once pushed, the page is live at
 `https://creativetstrategist-mark.github.io/my-business/masterclass.html`.
