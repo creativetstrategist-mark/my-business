@@ -85,20 +85,33 @@ the Zoom link and the CSI follow-up from Systeme.io, the native opt-in element
 is the one that puts them on the list. This block is the right answer when the
 registration page is hosted anywhere else.
 
-## The CTA-free hero block
+## The registration page: two rows
 
-`hero-no-cta.html` is the landing page's hero — badge, title, the line under it
-and the date — with no button. It is for a page that already has its own
-action, such as sitting above the registration form, where a second call to
-action would compete with the one that matters.
+`hero-no-cta.html` and `registration.html` are built as a pair, for a
+registration page made of exactly two rows:
 
-It is scoped to `.csi-hero` rather than `.csi`, so it can sit on the same page
-as `registration.html` without either block's rules reaching into the other.
+| Row | Block | What it holds |
+|---|---|---|
+| 1 | `hero-no-cta.html` | Badge, title, the line under it, and the date. No button. |
+| 2 | `registration.html` | Heading, name, email, and the button through to payment. |
 
-Nothing to fill in: there is no link in it.
+They are tuned to stack, not merely to sit next to each other:
 
-If you use it above `registration.html`, both carry the date line. Delete the
-`<p class="when">...</p>` from whichever one you want rid of.
+- Row 1 has full space above and little below; row 2 has little above and full
+  space below. Stacked they read as one section instead of two bands with a
+  dead gap between them.
+- Both paint the same `#111113`, so with row padding at 0 the seam is invisible.
+- The page's only `<h1>` is the title in row 1. Row 2's "Save your seat" is an
+  `<h2>` a step down, so the hierarchy is right and the page does not carry two
+  competing first-level headings.
+- The date appears once, in row 1.
+
+**Set both rows' padding to 0.** Left at Systeme.io's default this puts a 56px
+white stripe straight through the middle of the dark ground — measured, not
+guessed.
+
+Row 1 is scoped to `.csi-hero` and row 2 to `.csi`, so neither block's rules
+reach into the other. Row 1 has no link, button or form in it at all.
 
 ## Adding one to a Systeme.io page
 
