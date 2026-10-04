@@ -85,6 +85,21 @@ the Zoom link and the CSI follow-up from Systeme.io, the native opt-in element
 is the one that puts them on the list. This block is the right answer when the
 registration page is hosted anywhere else.
 
+## The CTA-free hero block
+
+`hero-no-cta.html` is the landing page's hero — badge, title, the line under it
+and the date — with no button. It is for a page that already has its own
+action, such as sitting above the registration form, where a second call to
+action would compete with the one that matters.
+
+It is scoped to `.csi-hero` rather than `.csi`, so it can sit on the same page
+as `registration.html` without either block's rules reaching into the other.
+
+Nothing to fill in: there is no link in it.
+
+If you use it above `registration.html`, both carry the date line. Delete the
+`<p class="when">...</p>` from whichever one you want rid of.
+
 ## Adding one to a Systeme.io page
 
 1. Edit the page, then **Add element → Raw HTML** (under "Advanced").
