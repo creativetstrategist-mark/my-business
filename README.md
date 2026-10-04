@@ -31,11 +31,12 @@ when the page started on yellow — every rule reads the token, so the name is
 historical only. It is self-contained — all styling and script are
 inline — and reuses the layout system from `index.html`. Images are referenced from `assets/`, not inlined.
 
-**One thing is still unfilled: the checkout link.** Every button points at
-`PASTE_XENDIT_CHECKOUT_URL_HERE`. Swap them all at once:
+**One thing is still unfilled: the registration page.** Every button goes to
+registration first and on to payment from there, so none of them points at the
+Xendit checkout directly. Swap them all at once:
 
 ```bash
-sed -i 's|PASTE_XENDIT_CHECKOUT_URL_HERE|https://checkout.xendit.co/od/your-link|g' masterclass.html
+sed -i 's|PASTE_REGISTRATION_URL_HERE|https://your-funnel/register|g' masterclass.html
 ```
 
 Once pushed, the page is live at

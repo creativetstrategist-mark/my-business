@@ -38,22 +38,27 @@ page — edit whichever one you actually publish, not both.
 
 Add them in this order. Sections are independent — skipping one is fine.
 
-## One value still to fill: the checkout link
+## One value still to fill: the registration page
 
-Every button points at `PASTE_XENDIT_CHECKOUT_URL_HERE`. Fill it in all fifteen
-files at once, then paste:
+Every button goes to the registration page first, and on to payment from
+there. None of them points at the Xendit checkout directly, so the page never
+asks for money before you have the name and email.
+
+Fill it in all fifteen files at once, then paste:
 
 ```bash
-sed -i 's|PASTE_XENDIT_CHECKOUT_URL_HERE|https://checkout.xendit.co/od/your-link|g' *.html
+sed -i 's|PASTE_REGISTRATION_URL_HERE|https://your-funnel/register|g' *.html
 ```
 
 It appears once each in four blocks: `02-hero`, `11-details`, `13-final-cta`
 and `14-sticky-cta`. Until it is filled, the buttons go nowhere.
 
-The seat cap is **already filled in at 25**, in `01-announce.html` and
-`10-seats.html`. It is the only scarcity claim on the page — there is no
-countdown and no "price rises soon" — so if the real cap changes, change it in
-both files.
+The registration step collects name and email, then sends people on to the
+₱999 payment. Set that up as two steps of one Systeme.io funnel: the
+registration page, with the order form as the step after it.
+
+The seat cap is no longer a number anywhere on the page — the bar and the band
+both say "limited seats" — so nothing here commits you to a count.
 
 ## Adding one to a Systeme.io page
 
