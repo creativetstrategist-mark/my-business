@@ -18,23 +18,34 @@ on accent bands.
 These are the Systeme.io version of `../masterclass.html`. The two are the same
 page — edit whichever one you actually publish, not both.
 
-| File | Section | Spec ID |
+| File | Section | Lines |
 |---|---|---|
-| `01-announce.html` | Announcement bar | — |
-| `02-hero.html` | Hero | `#hero` |
-| `03-problem.html` | You can read the dashboard | `#problem` |
-| `04-shift.html` | The shift (dark band) | `#shift` |
-| `05-curriculum.html` | What you'll learn (cards) | `#curriculum` |
-| `06-outcomes.html` | What you leave with | `#outcomes` |
-| `07-for-you.html` | Who it's for | `#for-you` |
-| `08-host.html` | Your host | `#about` |
-| `09-testimonials.html` | Student testimonials (filled) | `#testimonials` |
-| `10-seats.html` | Limited seats band | `#seats` |
-| `11-details.html` | The details + price | `#details` |
-| `12-faq.html` | FAQ (accordion) | `#faq` |
-| `13-final-cta.html` | Final CTA | `#final-cta` |
-| `14-sticky-cta.html` | Sticky mobile price + button bar | — |
-| `15-footer.html` | Footer + disclaimer | — |
+| `00-styles.html` | **Styling for the whole page. Paste first, once.** | 315 |
+| `01-announce.html` | Announcement bar | 7 |
+| `02-hero.html` | Hero | 12 |
+| `03-problem.html` | You can read the dashboard | 20 |
+| `04-shift.html` | The shift | 24 |
+| `05-curriculum.html` | What you'll learn | 48 |
+| `06-outcomes.html` | What you leave with | 22 |
+| `07-for-you.html` | Who it's for | 27 |
+| `08-host.html` | Your host (holds the photos) | 51 |
+| `09-testimonials.html` | Student testimonials (holds the avatars) | 56 |
+| `10-seats.html` | Limited seats | 14 |
+| `11-details.html` | Price card | 22 |
+| `12-faq.html` | FAQ | 35 |
+| `13-final-cta.html` | Final CTA | 17 |
+| `14-sticky-cta.html` | Sticky mobile bar | 7 |
+| `15-footer.html` | Footer | 21 |
+
+`00-styles.html` carries the CSS and the script for every block. The other
+fifteen are markup only, which is why they are short enough to read. The cost
+is that they depend on it: **paste `00-styles.html` as the top row, and do not
+delete it.** Without it the page renders as plain unstyled text.
+
+Previously each block carried its own copy of the design system, which meant
+the same 29K of CSS fifteen times — 445K of duplication against 38K of actual
+markup. That version is in the git history if the independence is worth more
+to you than the size.
 
 Add them in this order. Sections are independent — skipping one is fine.
 
