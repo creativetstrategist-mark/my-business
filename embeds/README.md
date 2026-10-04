@@ -65,7 +65,7 @@ the Xendit checkout.
 | `[YOUTUBE_ID_1..3]`, `[VIDEO_n_NAME_AND_ROLE]` | 14-video |
 
 The checkout link is **already filled in** — every button points at
-`https://checkout.xendit.co/od/csi-earlybirdrate`. That link is the early bird
+`https://checkout.xendit.co/od/csi-earlybird-rate`. That link is the early bird
 offer, so it needs swapping for a regular-rate link once early bird closes on
 13 October 2026.
 
