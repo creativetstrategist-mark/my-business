@@ -60,6 +60,31 @@ registration page, with the order form as the step after it.
 The seat cap is no longer a number anywhere on the page — the bar and the band
 both say "limited seats" — so nothing here commits you to a count.
 
+## The registration page block
+
+`registration.html` is **not** part of the fifteen above and does not go on the
+landing page. It is the whole registration step, for a second Systeme.io page
+that the landing page's buttons point at.
+
+It needs two values of its own, neither of which is the registration URL:
+
+```bash
+sed -i 's|PASTE_FORM_ENDPOINT_HERE|https://your-form-service/f/xxxx|g;
+        s|PASTE_CHECKOUT_URL_HERE|https://checkout.xendit.co/od/your-link|g' registration.html
+```
+
+The form posts the name and email to the endpoint, which saves the row and then
+forwards to the checkout URL in its hidden `_next` field. While either value is
+still a placeholder the block shows a magenta "Not connected yet" panel and
+refuses to submit, so it cannot go in front of traffic half-wired.
+
+**For Systeme.io specifically, consider its own opt-in element instead.** A raw
+HTML form posts wherever you point it, but it will not create a Systeme.io
+contact unless the endpoint is Systeme.io's own. If these people need to get
+the Zoom link and the CSI follow-up from Systeme.io, the native opt-in element
+is the one that puts them on the list. This block is the right answer when the
+registration page is hosted anywhere else.
+
 ## Adding one to a Systeme.io page
 
 1. Edit the page, then **Add element → Raw HTML** (under "Advanced").
