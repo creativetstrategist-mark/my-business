@@ -252,7 +252,6 @@ html{scroll-behavior:smooth!important;-webkit-text-size-adjust:100%!important;}
   .csi .btn,.csi .card{transition:none!important;}
   .csi .tile:hover .card,.csi .tile:focus-within .card{transform:none!important;}
 }
-.csi #details .head{text-align:center!important;}
 .csi .facts{display:grid!important;gap:.85rem!important;margin:1.1rem 0 1.5rem!important;margin-inline:auto!important;text-align:left!important;width:fit-content!important;max-width:100%!important;}
 .csi .facts li{display:grid!important;grid-template-columns:6.5rem 1fr!important;gap:.9rem!important;align-items:baseline!important;font-size:1rem!important;color:var(--slate)!important;}
 .csi .facts .k{font-family:var(--mono)!important;font-size:.74rem!important;font-weight:700!important;letter-spacing:.12em!important;text-transform:uppercase!important;color:var(--ink)!important;}
@@ -286,9 +285,7 @@ html{overflow-x:clip}
 <div class="csi">
 <section class="band band-volt" id="details">
   <div class="wrap">
-    <div class="head reveal">
-      <h2>The details</h2>
-    </div>
+    <h2 class="sr">The details</h2>
     <div class="price-wrap">
       <div class="tile reveal"><article class="card price-card">
         <div class="amount">
@@ -301,8 +298,6 @@ html{overflow-x:clip}
           <li><span class="k">Replay</span><span>Included &mdash; attendees get 7 days of access</span></li>
         </ul>
         <a class="btn btn-lg" href="PASTE_XENDIT_CHECKOUT_URL_HERE">Save my seat &mdash; &#8369;999</a>
-        <p class="under">Bring your own brand or ad account &mdash; the exercises are built around it.</p>
-        <p class="under">Educational workshop &mdash; no guaranteed results. <a href="#disclaimer">Read the full disclaimer</a>.</p>
       </article></div>
     </div>
   </div>
