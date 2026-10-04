@@ -6,7 +6,14 @@ footer. Each file is complete on its own.
 
 There is no nav header: it was cut on review, and the announcement bar took its
 place above the hero. The curriculum is back as a grid of six cards rather than
-the accordion it started as.
+the accordion it started as, and the cards are phrased as what you learn rather
+than numbered modules.
+
+The accent is **purple** (`#a78bfa`), not the CSI yellow. The CSS variable is
+still named `--volt` from the yellow the page started on; every rule reads the
+token, so the name is historical. To re-colour, change `--volt` and
+`--volt-deep` in each block, plus the `#342151` literal used for secondary text
+on accent bands.
 
 These are the Systeme.io version of `../masterclass.html`. The two are the same
 page — edit whichever one you actually publish, not both.
@@ -17,7 +24,7 @@ page — edit whichever one you actually publish, not both.
 | `02-hero.html` | Hero | `#hero` |
 | `03-problem.html` | You can read the dashboard | `#problem` |
 | `04-shift.html` | The shift (dark band) | `#shift` |
-| `05-curriculum.html` | What we'll cover (cards) | `#curriculum` |
+| `05-curriculum.html` | What you'll learn (cards) | `#curriculum` |
 | `06-outcomes.html` | What you leave with | `#outcomes` |
 | `07-for-you.html` | Who it's for | `#for-you` |
 | `08-host.html` | Your host | `#about` |

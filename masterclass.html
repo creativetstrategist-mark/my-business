@@ -3,15 +3,15 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="A one-day live masterclass for media buyers and marketers who want to stop waiting on creative and start directing it. Thursday, October 15, 2026, 7:00 PM PHT, live on Zoom. &#8369;999.">
+<meta name="description" content="The Meta Ads Creative Strategy Workshop &mdash; a one-day live workshop for media buyers and marketers who want to stop waiting on creative and start directing it. Thursday, October 15, 2026, 7:00 PM PHT, live on Zoom. &#8369;999.">
 <meta name="color-scheme" content="light">
-<meta property="og:title" content="Meta Automated the Targeting. The Only Lever Left Is Creative.">
-<meta property="og:description" content="A one-day live masterclass for media buyers and marketers who want to stop waiting on creative and start directing it. 15 October 2026, 7:00 PM PHT, live on Zoom.">
+<meta property="og:title" content="The Meta Ads Creative Strategy Workshop">
+<meta property="og:description" content="The Meta Ads Creative Strategy Workshop &mdash; a one-day live workshop. 15 October 2026, 7:00 PM PHT, live on Zoom.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
-<title>Creative Strategy Masterclass</title>
+<title>The Meta Ads Creative Strategy Workshop</title>
 
 <!-- ===========================================================
      ONE THING LEFT TO FILL: the checkout link.
@@ -27,8 +27,11 @@
 :root{
   --ink:#111113;
   --ink-2:#1d1d20;
-  --volt:#ffe81a;
-  --volt-deep:#e6cf00;
+  /* Named --volt from the yellow this page started on. It now holds the
+     purple, and every rule reads the token, so the name is historical
+     only. Kept so this file and the Systeme.io blocks stay in step. */
+  --volt:#a78bfa;
+  --volt-deep:#8b5cf6;
   --paper:#fbf9f2;
   --paper-2:#f2efe3;
   --slate:#56524a;
@@ -74,9 +77,9 @@ img{max-width:100%;height:auto;display:block}
 .skip:focus{left:12px;top:12px;background:var(--volt);color:var(--ink);padding:.7rem 1.1rem;border:2px solid var(--ink);border-radius:8px;font-weight:700}
 
 /* --------------------------- placeholders ---------------------------- */
-/* The brand ground is already yellow, so a yellow highlight would vanish
-   on half the page. This magenta sits outside the palette instead, so
-   every unfilled value is findable on paper, ink and volt alike. */
+/* An unfilled value has to be findable on paper, ink and the accent
+   alike. This magenta is far darker than the accent and reads as a
+   different thing on every ground the page uses. */
 .ph{
   display:inline-block;max-width:100%;overflow-wrap:anywhere;font-family:var(--mono);font-size:.82em;font-weight:700;
   background:var(--ph);color:#fff;border-radius:6px;
@@ -109,7 +112,7 @@ section[id]{scroll-margin-top:1rem}
 .band-ink .prose p{color:#c9c5b8}
 .prose .emph{font-weight:700}
 .band-ink .prose .emph{color:var(--paper)}
-.band-volt .prose p{color:#3a3416}
+.band-volt .prose p{color:#342151}
 .prose .kicker{font-family:var(--display);font-size:var(--step-2);color:var(--ink);line-height:1.15;max-width:22ch}
 .band-ink .prose .kicker{color:var(--volt)}
 
@@ -135,7 +138,7 @@ section[id]{scroll-margin-top:1rem}
 .under{font-family:var(--mono);font-size:var(--step--1);color:var(--slate);margin-top:.85rem}
 .under a{text-decoration:underline}
 .band-ink .under{color:#8f8b7e}
-.band-volt .under{color:#3a3416}
+.band-volt .under{color:#342151}
 
 /* ------------------------------- header ------------------------------ */
 .top{position:sticky;top:0;z-index:50;background:var(--ink);color:var(--paper);border-bottom:2px solid var(--ink)}
@@ -151,7 +154,7 @@ section[id]{scroll-margin-top:1rem}
 
 /* -------------------------------- hero ------------------------------- */
 .hero{padding-block:clamp(2.75rem,7vw,5rem)}
-.hero h1{font-size:var(--step-4);max-width:16ch;margin-bottom:1.2rem}
+.hero h1{font-size:var(--step-4);max-width:19ch;margin-bottom:0}
 .hero .subhead{font-size:var(--step-1);line-height:1.55;color:#c9c5b8;max-width:58ch}
 .hero .subhead strong{color:var(--paper)}
 .badge{
@@ -206,7 +209,7 @@ section[id]{scroll-margin-top:1rem}
 /* ------------------------------ outcomes ----------------------------- */
 .checks{display:grid;gap:1rem}
 @media (min-width:760px){.checks{grid-template-columns:repeat(2,1fr);gap:1.1rem 2.2rem}}
-.checks li{display:grid;grid-template-columns:auto 1fr;gap:.85rem;align-items:start;font-size:1rem;color:#3a3416}
+.checks li{display:grid;grid-template-columns:auto 1fr;gap:.85rem;align-items:start;font-size:1rem;color:#342151}
 .tick{width:24px;height:24px;flex:none;border-radius:7px;border:2px solid var(--ink);background:var(--paper);display:grid;place-items:center;font-size:.78rem;font-weight:700;margin-top:.2rem}
 
 /* ----------------------------- curriculum ---------------------------- */
@@ -217,10 +220,10 @@ section[id]{scroll-margin-top:1rem}
    phone does not leave a module stuck in the hover colour. */
 @media (hover:hover){
   .mod summary:hover{background:var(--volt)}
-  .mod summary:hover .mod-n,.mod summary:hover .mod-d{color:#3a3416}
+  .mod summary:hover .mod-n,.mod summary:hover .mod-d{color:#342151}
 }
 .mod summary:focus-visible{background:var(--volt)}
-.mod summary:focus-visible .mod-n,.mod summary:focus-visible .mod-d{color:#3a3416}
+.mod summary:focus-visible .mod-n,.mod summary:focus-visible .mod-d{color:#342151}
 .mod summary::-webkit-details-marker{display:none}
 .mod-n{font-family:var(--mono);font-weight:700;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--slate)}
 .mod-t{display:flex;justify-content:space-between;align-items:center;gap:1rem;font-family:var(--display);font-size:var(--step-1);line-height:1.15}
@@ -345,7 +348,7 @@ section[id]{scroll-margin-top:1rem}
 .final h2 span{display:block}
 .final .prose{margin-inline:auto;text-align:center}
 .final p{margin-inline:auto}
-.price-line{font-family:var(--mono);font-weight:700;font-size:var(--step-0);margin-top:1.5rem;color:#3a3416}
+.price-line{font-family:var(--mono);font-weight:700;font-size:var(--step-0);margin-top:1.5rem;color:#342151}
 .price-line s{text-decoration-thickness:2px}
 
 /* ------------------------------- footer ------------------------------ */
@@ -366,7 +369,7 @@ section[id]{scroll-margin-top:1rem}
 .foot-in a{display:inline-block;padding-block:.62rem}
 .foot a{color:#c9c5b8;text-decoration:none}
 .foot a:hover{color:var(--volt)}
-.foot-contact a{color:var(--volt);text-decoration:none;border-bottom:1px solid rgba(255,232,26,.35)}
+.foot-contact a{color:var(--volt);text-decoration:none;border-bottom:1px solid rgba(167,139,250,.35)}
 
 /* --------------------------- sticky mobile CTA ----------------------- */
 .sticky-cta{
@@ -404,7 +407,7 @@ section[id]{scroll-margin-top:1rem}
   .tile:hover .card,.tile:focus-within .card{transform:none}
 }
 
-/* =============== additions for the masterclass page only ==============
+/* ================ additions for the workshop page only ================
    Everything above is the shared design system, lifted from index.html
    so the two pages stay one brand. Only the blocks this page introduces
    are defined below.
@@ -469,6 +472,11 @@ section[id]{scroll-margin-top:1rem}
    The measures stay as they are and the blocks are centred instead, so the
    line lengths that make the copy readable are not touched. */
 .hero{text-align:center}
+/* The title is the headline now, so the old headline sits under it as the
+   thesis. Display face in volt, a step down, so it reads as the second beat
+   rather than competing with the name above it. */
+.hero .hero-line{font-family:var(--display);font-size:var(--step-2);line-height:1.15;
+  color:var(--volt);max-width:26ch;margin:1.15rem auto 0}
 .hero h1,.hero .subhead,.hero .trust{margin-inline:auto}
 
 /* ------------------------------ one-liner ---------------------------- */
@@ -491,8 +499,9 @@ section[id]{scroll-margin-top:1rem}
   <!-- ============================= 1. HERO ============================ -->
   <section class="band band-ink hero" id="hero">
     <div class="wrap">
-      <p class="badge"><span class="dot" aria-hidden="true"></span>Live masterclass &middot; 15 October 2026</p>
-      <h1>Meta automated the targeting. The only lever left is creative.</h1>
+      <p class="badge"><span class="dot" aria-hidden="true"></span>Live workshop &middot; 15 October 2026</p>
+      <h1>The Meta Ads Creative Strategy Workshop</h1>
+      <p class="hero-line">Meta automated the targeting. The only lever left is creative.</p>
       <a class="btn btn-lg" href="PASTE_XENDIT_CHECKOUT_URL_HERE">Save my seat</a>
       <p class="trust">Thursday, October 15, 2026 &middot; 7:00 PM PHT &middot; Live on Zoom</p>
     </div>
@@ -545,43 +554,43 @@ section[id]{scroll-margin-top:1rem}
   <section class="band band-paper-2" id="curriculum">
     <div class="wrap">
       <div class="head reveal">
-        <h2>What we&rsquo;ll cover in one evening</h2>
+        <h2>What you&rsquo;ll learn</h2>
       </div>
       <div class="mod-grid">
         <div class="tile reveal" style="--d:0ms"><article class="card mod-card">
-          <p class="m-n">Module 1</p>
-          <h3>The State of Creative Strategy</h3>
-          <p>Why the role is shifting from media buyer to Creative Operator, and where you stand right now.</p>
-          <p class="m-x"><b>Live exercise</b>Place yourself on the map, and name the one skill gap standing between you and the role.</p>
+          <p class="m-n">01</p>
+          <h3>Where the job is going, and where you stand</h3>
+          <p>The role is shifting from media buyer to Creative Operator. You&rsquo;ll see what that role actually owns, and which parts of it you are already doing without calling it that.</p>
+          <p class="m-x"><b>Live exercise</b>Place yourself on the map, and name the one gap between you and the role.</p>
         </article></div>
         <div class="tile reveal" style="--d:60ms"><article class="card mod-card">
-          <p class="m-n">Module 2</p>
-          <h3>Consumer Psychology</h3>
-          <p>Awareness levels, and why most ad accounts only speak to people who already know the product.</p>
-          <p class="m-x"><b>Live exercise</b>Audit your own ads live, and find the awareness level your account has been ignoring.</p>
+          <p class="m-n">02</p>
+          <h3>Why your ads only speak to people who already know you</h3>
+          <p>Most accounts talk to one kind of buyer and never notice. Awareness levels are how you find the ones you have been skipping.</p>
+          <p class="m-x"><b>Live exercise</b>Audit your own ads live, and find the awareness level your account ignores.</p>
         </article></div>
         <div class="tile reveal" style="--d:120ms"><article class="card mod-card">
-          <p class="m-n">Module 3</p>
-          <h3>Creative Fundamentals</h3>
-          <p>How winning ads are built, piece by piece.</p>
+          <p class="m-n">03</p>
+          <h3>How a winning ad is actually built</h3>
+          <p>Hook, body, offer: the parts a working ad is made of, and how they fit together, so you can rebuild them on purpose instead of by feel.</p>
           <p class="m-x"><b>Live exercise</b>Break down a real ad, so you can model what works instead of copying it.</p>
         </article></div>
         <div class="tile reveal" style="--d:180ms"><article class="card mod-card">
-          <p class="m-n">Module 4</p>
-          <h3>Research: Findings vs. Insights</h3>
-          <p>The difference that separates average strategists from great ones. &ldquo;People like the portability&rdquo; is a finding, and you can&rsquo;t build an ad on a finding.</p>
-          <p class="m-x"><b>Live exercise</b>Take real customer reviews and turn them into an insight you can actually use.</p>
+          <p class="m-n">04</p>
+          <h3>How to turn customer reviews into an insight</h3>
+          <p>&ldquo;People like the portability&rdquo; is a finding, and you cannot build an ad on a finding. This difference is what separates an average strategist from a good one.</p>
+          <p class="m-x"><b>Live exercise</b>Take real customer reviews and turn them into an insight you can use.</p>
         </article></div>
         <div class="tile reveal" style="--d:240ms"><article class="card mod-card">
-          <p class="m-n">Module 5</p>
-          <h3>Ideation</h3>
-          <p>How to turn one insight into multiple ad angles, so you never run out of ideas worth testing.</p>
-          <p class="m-x"><b>Live exercise</b>Spin your insight from Module 4 into a set of angles ready to brief.</p>
+          <p class="m-n">05</p>
+          <h3>How to get a queue of angles from one insight</h3>
+          <p>One insight should give you more than one ad. This is how you turn it into a list worth testing rather than a single idea you hope lands.</p>
+          <p class="m-x"><b>Live exercise</b>Spin the insight you just built into a set of angles ready to brief.</p>
         </article></div>
         <div class="tile reveal" style="--d:300ms"><article class="card mod-card">
-          <p class="m-n">Module 6</p>
-          <h3>KPI Metrics</h3>
-          <p>How to read your numbers and tell whether the hook, the body, or the offer failed, so your next creative fixes the right thing.</p>
+          <p class="m-n">06</p>
+          <h3>How to tell whether the hook, the body or the offer failed</h3>
+          <p>Read the numbers so your next creative fixes the one thing that broke, instead of changing everything at once and learning nothing.</p>
           <p class="m-x"><b>Live exercise</b>Diagnose one of your own underperforming ads and decide what to change first.</p>
         </article></div>
       </div>
@@ -596,7 +605,7 @@ section[id]{scroll-margin-top:1rem}
       </div>
       <div class="prose reveal">
         <p>
-          Every module includes a live exercise using your own brand or ad account.
+          Every section includes a live exercise using your own brand or ad account.
           You'll leave with:
         </p>
       </div>
@@ -746,7 +755,7 @@ section[id]{scroll-margin-top:1rem}
       <div class="reveal">
         <p class="chip"><span class="dot" aria-hidden="true"></span>Limited seats</p>
         <h2>This one is capped at <span class="ph">[SEAT_COUNT]</span> seats.</h2>
-        <p>Every module runs an exercise on your own ads, and that only works in a
+        <p>Every section runs an exercise on your own ads, and that only works in a
           room small enough to get to people. When the seats are gone, the room is
           full &mdash; there is no waitlist for the night.</p>
       </div>
@@ -772,7 +781,7 @@ section[id]{scroll-margin-top:1rem}
           </ul>
           <a class="btn btn-lg" href="PASTE_XENDIT_CHECKOUT_URL_HERE">Save my seat &mdash; &#8369;999</a>
           <p class="under">Bring your own brand or ad account &mdash; the exercises are built around it.</p>
-          <p class="under">Educational masterclass &mdash; no guaranteed results. <a href="#disclaimer">Read the full disclaimer</a>.</p>
+          <p class="under">Educational workshop &mdash; no guaranteed results. <a href="#disclaimer">Read the full disclaimer</a>.</p>
         </article></div>
       </div>
     </div>
@@ -803,7 +812,7 @@ section[id]{scroll-margin-top:1rem}
         </details>
         <details>
           <summary>Is this a sales pitch for something bigger?</summary>
-          <p class="a">To be honest: this masterclass is an overview of CSI (Creative Strategy
+          <p class="a">To be honest: this workshop is an overview of CSI (Creative Strategy
             Intensive), Mark's full program. You'll get real, usable value on the night either
             way. At the end, Mark will share how CSI works for anyone who wants the complete
             system. No pressure, and no bait-and-switch.</p>
@@ -834,7 +843,7 @@ section[id]{scroll-margin-top:1rem}
     <div class="disclaimer" id="disclaimer">
       <b>No results guarantee</b>
       <p>
-        This masterclass is educational. It teaches frameworks, judgment and process &mdash;
+        This workshop is educational. It teaches frameworks, judgment and process &mdash;
         not hacks, and not a promise of specific results. What you get out of it depends on
         your product, your market, your budget and the work you put in. Nothing on this page
         should be read as a guarantee of revenue, ROAS or any other performance outcome.
@@ -843,7 +852,7 @@ section[id]{scroll-margin-top:1rem}
     <div class="foot-in">
       <p>&copy; <span data-year>2026</span> Mark Alvin Magdayo</p>
       <p class="foot-contact">Questions? <a href="mailto:hello@iammarkamagdayo.com">hello@iammarkamagdayo.com</a></p>
-      <nav><a href="#curriculum">What we'll cover</a> &middot; <a href="#outcomes">What you get</a> &middot; <a href="#details">Details</a> &middot; <a href="#faq">FAQ</a></nav>
+      <nav><a href="#curriculum">What you'll learn</a> &middot; <a href="#outcomes">What you get</a> &middot; <a href="#details">Details</a> &middot; <a href="#faq">FAQ</a></nav>
     </div>
   </div>
 </footer>

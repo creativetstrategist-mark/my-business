@@ -21,11 +21,15 @@ assets/img/           Put images here
 
 ## The masterclass landing page
 
-`masterclass.html` is the landing page for the one-evening live masterclass on
-15 October 2026 (₱999). It has no nav header and no curriculum section — both
-were cut on review — and the hero is centred. It is self-contained — all styling and script are
-inline — and reuses the same design system as `index.html`, so the two pages
-read as one brand. Images are referenced from `assets/`, not inlined.
+`masterclass.html` is the landing page for **The Meta Ads Creative Strategy
+Workshop**, one evening live on 15 October 2026 (₱999). The hero is centred and
+has no nav header; an announcement bar sits in its place.
+
+It shares the CSI layout system but **not** the CSI palette: the accent here is
+purple (`--volt: #a78bfa`), not yellow. The token is still called `--volt` from
+when the page started on yellow — every rule reads the token, so the name is
+historical only. It is self-contained — all styling and script are
+inline — and reuses the layout system from `index.html`. Images are referenced from `assets/`, not inlined.
 
 **One thing is still unfilled: the checkout link.** Every button points at
 `PASTE_XENDIT_CHECKOUT_URL_HERE`. Swap them all at once:
