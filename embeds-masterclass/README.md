@@ -38,24 +38,10 @@ page — edit whichever one you actually publish, not both.
 
 Add them in this order. Sections are independent — skipping one is fine.
 
-## Two values still to fill
+## One value still to fill: the checkout link
 
-### 1. The seat count
-
-`01-announce.html` and `10-seats.html` both say `[SEAT_COUNT]`, shown as a
-magenta chip so it cannot be missed. Set it to the real cap:
-
-```bash
-sed -i 's|\[SEAT_COUNT\]|25|g' *.html
-```
-
-Nothing else on the page claims scarcity — no countdown, no "price rises
-soon" — so this number is the only limit stated, and it should be true.
-
-### 2. The checkout link
-
-Every button points at `PASTE_XENDIT_CHECKOUT_URL_HERE`. Fill it in all
-fifteen files at once, then paste:
+Every button points at `PASTE_XENDIT_CHECKOUT_URL_HERE`. Fill it in all fifteen
+files at once, then paste:
 
 ```bash
 sed -i 's|PASTE_XENDIT_CHECKOUT_URL_HERE|https://checkout.xendit.co/od/your-link|g' *.html
@@ -63,6 +49,11 @@ sed -i 's|PASTE_XENDIT_CHECKOUT_URL_HERE|https://checkout.xendit.co/od/your-link
 
 It appears once each in four blocks: `02-hero`, `11-details`, `13-final-cta`
 and `14-sticky-cta`. Until it is filled, the buttons go nowhere.
+
+The seat cap is **already filled in at 25**, in `01-announce.html` and
+`10-seats.html`. It is the only scarcity claim on the page — there is no
+countdown and no "price rises soon" — so if the real cap changes, change it in
+both files.
 
 ## Adding one to a Systeme.io page
 
