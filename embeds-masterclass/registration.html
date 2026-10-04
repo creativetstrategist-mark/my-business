@@ -252,6 +252,7 @@ html{scroll-behavior:smooth!important;-webkit-text-size-adjust:100%!important;}
   .csi .btn,.csi .card{transition:none!important;}
   .csi .tile:hover .card,.csi .tile:focus-within .card{transform:none!important;}
 }
+.csi .band{padding-block:clamp(2.5rem,7vw,4rem)!important;}
 .csi .reg{width:100%!important;max-width:560px!important;margin-inline:auto!important;padding-inline:20px!important;}
 .csi .reg-head{text-align:center!important;margin-bottom:clamp(1.5rem,4vw,2.25rem)!important;}
 .csi .reg-head h1{font-family:var(--display)!important;font-weight:400!important;line-height:1.05!important;letter-spacing:-.015em!important;font-size:var(--step-3)!important;margin:0 0 .9rem!important;color:var(--paper)!important;}
@@ -283,10 +284,8 @@ html{overflow-x:clip}
     </div>
 
     <div class="reg-head">
-      <p class="eyebrow">Live workshop &middot; 15 October 2026</p>
       <h1>Save your seat</h1>
-      <p class="lede">Your details first, then payment on the next step. The Zoom
-        link goes to the email you enter here.</p>
+      <p class="lede">Name and email, then payment on the next step.</p>
     </div>
 
     <form class="card-form" id="reg-form" method="POST"
@@ -311,13 +310,10 @@ html{overflow-x:clip}
       </div>
 
       <button class="btn btn-lg" type="submit">Save my seat</button>
-
-      <p class="fine">Your seat is confirmed once payment goes through.
-        Seats are limited.</p>
     </form>
 
     <p class="when">
-      <span>Thursday, October 15, 2026</span>
+      <span>Thursday, 15 October 2026</span>
       <span aria-hidden="true">&middot;</span>
       <span>7:00 PM PHT</span>
       <span aria-hidden="true">&middot;</span>
