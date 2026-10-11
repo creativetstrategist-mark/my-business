@@ -305,7 +305,10 @@ section[id]{scroll-margin-top:1rem}
 .quote.filled .who-name{font-family:var(--display);font-size:1.02rem;color:var(--ink);line-height:1.2}
 .quote.filled .who-role{font-size:.82rem;color:var(--slate);line-height:1.45;margin-top:.2rem}
 .quote.filled .who-meta{font-family:var(--mono);font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;color:var(--slate);margin-top:.5rem}
-.av{width:38px;height:38px;border-radius:50%;background:#fff0f7;border:2px dashed var(--ph);flex:none}
+/* Empty avatar slot. Same 48px as .av-img, so dropping a photo in is a
+   straight swap with no reflow. Magenta on purpose: an unfilled value has
+   to be impossible to ship by accident. */
+.av{width:48px;height:48px;border-radius:50%;background:#fff0f7;border:2px dashed var(--ph);flex:none}
 
 /* ------------------------- video testimonials ------------------------ */
 .vids{display:grid;gap:calc(var(--plate) + 1rem)}
@@ -701,10 +704,13 @@ section[id]{scroll-margin-top:1rem}
             process improving ad performance and enabling us to scale budgets. He is a hard
             worker able to work autonomously and at a fast pace, always looking to do what's
             best for the brand. Super happy to have him on board and part our team!&rdquo;</p>
-          <div class="who">
-            <p class="who-name">Luka Maric</p>
-            <p class="who-role">Co-Founder at Dog Friendly Co.</p>
-            <p class="who-meta">March 2024 &middot; Client</p>
+          <div class="who who-av">
+            <span class="av" aria-hidden="true"></span>
+            <div>
+              <p class="who-name">Luka Maric</p>
+              <p class="who-role">Co-Founder at Dog Friendly Co.</p>
+              <p class="who-meta">March 2024 &middot; Client</p>
+            </div>
           </div>
         </div>
         <div class="quote filled reveal" style="--d:80ms">
@@ -715,10 +721,13 @@ section[id]{scroll-margin-top:1rem}
             and is becoming a more important part of our team by the day as we pace to hit
             $250M in revenue this year. Thanks for all you do, Mark. We are lucky to have
             you!&rdquo;</p>
-          <div class="who">
-            <p class="who-name">Paige Decker</p>
-            <p class="who-role">Fractional CMO | ex-Meta, AG1, True Classic | Growth &amp; Business Strategy</p>
-            <p class="who-meta">July 2023 &middot; Managed Mark directly</p>
+          <div class="who who-av">
+            <span class="av" aria-hidden="true"></span>
+            <div>
+              <p class="who-name">Paige Decker</p>
+              <p class="who-role">Fractional CMO | ex-Meta, AG1, True Classic | Growth &amp; Business Strategy</p>
+              <p class="who-meta">July 2023 &middot; Managed Mark directly</p>
+            </div>
           </div>
         </div>
         <div class="quote filled reveal" style="--d:160ms">
@@ -728,10 +737,13 @@ section[id]{scroll-margin-top:1rem}
             under the agencies, with higher ROAS to show for it. He just gets things done.
             It's a pleasure working with you Mark, and I'm excited to keep scaling the brand
             alongside you.&rdquo;</p>
-          <div class="who">
-            <p class="who-name">Andy Reymond</p>
-            <p class="who-role">Scaling DTC Brands across English-Speaking Markets &middot; CRO &middot; A/B Testing &middot; Profit Growth</p>
-            <p class="who-meta">August 2026 &middot; Client</p>
+          <div class="who who-av">
+            <span class="av" aria-hidden="true"></span>
+            <div>
+              <p class="who-name">Andy Reymond</p>
+              <p class="who-role">Scaling DTC Brands across English-Speaking Markets &middot; CRO &middot; A/B Testing &middot; Profit Growth</p>
+              <p class="who-meta">August 2026 &middot; Client</p>
+            </div>
           </div>
         </div>
       </div>

@@ -93,6 +93,16 @@ Nothing is left as a placeholder. In particular:
   Maric, Paige Decker, Andy Reymond — word for word, including Paige's
   "$250M in revenue this year". They are quoted, not claimed, but it is the
   only revenue figure anywhere on the page.
+
+  **Their photos are the one thing still missing.** No photo of these three
+  exists in this repo and none ever has — the CSI page runs these same quotes
+  with no pictures either, and `assets/avatars/` holds the four students, not
+  the clients. Each client quote therefore carries an empty 48px slot that
+  renders as a magenta dashed circle, the repo's marker for an unfilled value,
+  so `08b` is the one block that should not go in front of traffic as-is.
+  Drop three square photos into `assets/clients/` and run
+  `scripts/fill-client-photos.sh`, then regenerate the blocks; see
+  `assets/clients/README.md` for the exact filenames.
 - **Student quotes** (`09`) are four real ones with their photos, also carried
   over from CSI.
 - **The host block** has Mark's portrait and both "as featured in" covers
