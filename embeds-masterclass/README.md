@@ -1,7 +1,7 @@
 # Ad Creative Strategy Workshop — section embeds for Systeme.io
 
 Sixteen copy-paste blocks covering every section of the workshop landing page
-(Wednesday 28 October 2026, 5:00 PM PHT, ₱999), plus the announcement bar,
+(Wednesday 28 October 2026, 7:00 PM PHT, ₱999), plus the announcement bar,
 sticky mobile CTA and footer. **Each file is complete on its own** — it carries
 its own CSS and script, so a block renders correctly even if it is the only one
 on the page.
@@ -112,7 +112,7 @@ Nothing is left as a placeholder. In particular:
 - **The seat cap is not a number anywhere** — the bar and the band both say
   "limited seats" — so nothing here commits you to a count.
 
-Date and price are filled throughout: Wednesday 28 October 2026, 5:00 PM PHT,
+Date and price are filled throughout: Wednesday 28 October 2026, 7:00 PM PHT,
 ₱999.
 
 ## The registration page (optional, two rows)
