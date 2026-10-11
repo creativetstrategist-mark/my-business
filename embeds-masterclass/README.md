@@ -74,12 +74,12 @@ html{overflow-x:clip!important;}
 Nothing is left as a placeholder. In particular:
 
 - **Every button goes straight to the Xendit checkout**,
-  `https://checkout.xendit.co/od/csworkshop`. It appears once each in
+  `https://checkout.xendit.co/od/acs-workshop`. It appears once each in
   `02-hero`, `11-details`, `13-final-cta` and `14-sticky-cta` — four buttons,
   one link. To change it:
 
   ```bash
-  sed -i 's|checkout.xendit.co/od/csworkshop|checkout.xendit.co/od/your-link|g' *.html
+  sed -i 's|checkout.xendit.co/od/acs-workshop|checkout.xendit.co/od/your-link|g' *.html
   ```
 
   There is no registration step in front of it, so people who abandon the
@@ -148,7 +148,7 @@ reach into the other. Row 1 has no link, button or form in it at all.
 
 ```bash
 sed -i 's|PASTE_FORM_ENDPOINT_HERE|https://your-form-service/f/xxxx|g;
-        s|PASTE_CHECKOUT_URL_HERE|https://checkout.xendit.co/od/csworkshop|g' registration.html
+        s|PASTE_CHECKOUT_URL_HERE|https://checkout.xendit.co/od/acs-workshop|g' registration.html
 ```
 
 The form posts the name and email to the endpoint, which saves the row and then
