@@ -69,7 +69,7 @@ The checkout link is **already filled in** — every button points at
 offer, so it needs swapping for a regular-rate link once early bird closes on
 13 October 2026.
 
-Dates are **already filled** from what you confirmed: Batch 3 runs 20–22 October
+Dates are **already filled** from what you confirmed: Batch 3 runs 5–7 November
 2026, early bird ends 13 October 2026. Tell me if you'd rather have those back
 as placeholders.
 
