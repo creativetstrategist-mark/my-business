@@ -1,12 +1,14 @@
-# Creative Strategy Masterclass — section embeds for Systeme.io
+# Ad Creative Strategy Workshop — section embeds for Systeme.io
 
-Fifteen copy-paste blocks covering every section of the masterclass landing
-page (15 October 2026, ₱999), plus the announcement bar, sticky mobile CTA and
-footer. Each file is complete on its own.
+Sixteen copy-paste blocks covering every section of the workshop landing page
+(Wednesday 28 October 2026, 5:00 PM PHT, ₱999), plus the announcement bar,
+sticky mobile CTA and footer. **Each file is complete on its own** — it carries
+its own CSS and script, so a block renders correctly even if it is the only one
+on the page.
 
 There is no nav header: it was cut on review, and the announcement bar took its
-place above the hero. The curriculum is back as a grid of six cards rather than
-the accordion it started as, and the cards are phrased as what you learn rather
+place above the hero. The curriculum is a grid of six cards rather than the
+accordion it started as, and the cards are phrased as what you learn rather
 than numbered modules.
 
 The accent is **purple** (`#a78bfa`), not the CSI yellow. The CSS variable is
@@ -18,88 +20,98 @@ on accent bands.
 These are the Systeme.io version of `../masterclass.html`. The two are the same
 page — edit whichever one you actually publish, not both.
 
-| File | Section | Lines |
+## Paste order
+
+| File | Section | Markup lines |
 |---|---|---|
-| `00-styles.html` | **Styling for the whole page. Paste first, once.** | 315 |
-| `01-announce.html` | Announcement bar | 7 |
-| `02-hero.html` | Hero | 12 |
-| `03-problem.html` | You can read the dashboard | 20 |
-| `04-shift.html` | The shift | 24 |
-| `05-curriculum.html` | What you'll learn | 48 |
-| `06-outcomes.html` | What you leave with | 22 |
-| `07-for-you.html` | Who it's for | 27 |
-| `08-host.html` | Your host (holds the photos) | 51 |
-| `09-testimonials.html` | Student testimonials (holds the avatars) | 56 |
-| `10-seats.html` | Limited seats | 14 |
-| `11-details.html` | Price card | 22 |
-| `12-faq.html` | FAQ | 35 |
-| `13-final-cta.html` | Final CTA | 17 |
-| `14-sticky-cta.html` | Sticky mobile bar | 7 |
-| `15-footer.html` | Footer | 21 |
+| `01-announce.html` | Announcement bar | 34 |
+| `02-hero.html` | Hero (CTA) | 39 |
+| `03-problem.html` | You can read the dashboard | 47 |
+| `04-shift.html` | The shift | 51 |
+| `05-curriculum.html` | What you'll learn | 75 |
+| `06-outcomes.html` | What you leave with | 49 |
+| `07-for-you.html` | Who it's for | 54 |
+| `08-host.html` | Your host (holds the photos) | 78 |
+| `08b-client-quotes.html` | What clients say | 78 |
+| `09-testimonials.html` | Student testimonials (holds the avatars) | 83 |
+| `10-seats.html` | Limited seats | 41 |
+| `11-details.html` | The details + price card (CTA) | 49 |
+| `12-faq.html` | FAQ | 62 |
+| `13-final-cta.html` | Final CTA (CTA) | 44 |
+| `14-sticky-cta.html` | Sticky mobile bar (CTA) | 34 |
+| `15-footer.html` | Footer + disclaimer | 48 |
 
-`00-styles.html` carries the CSS and the script for every block. The other
-fifteen are markup only, which is why they are short enough to read. The cost
-is that they depend on it: **paste `00-styles.html` as the top row, and do not
-delete it.** Without it the page renders as plain unstyled text.
+`08b` sits between `08` and `09` on purpose: Mark's bio, then the clients who
+vouch for him, then the students who took the workshop. Sections are
+independent, so skipping one is fine.
 
-Previously each block carried its own copy of the design system, which meant
-the same 29K of CSS fifteen times — 445K of duplication against 38K of actual
-markup. That version is in the git history if the independence is worth more
-to you than the size.
+Every file carries the full design system, which is why each is ~32K before
+images. That duplication is deliberate: a split-out stylesheet block was tried
+and reverted, because losing or reordering that one row left every other block
+rendering as unstyled text.
 
-Add them in this order. Sections are independent — skipping one is fine.
+## Adding one to a Systeme.io page
 
-## One value still to fill: the registration page
+1. Edit the page, then **Add element → Raw HTML** (under "Advanced").
+2. Open the file, select all, copy, paste into that element.
+3. Save, then **Preview** — the builder canvas does not run the code, so a
+   block often looks plain while you are editing. Preview shows the truth.
 
-Every button goes to the registration page first, and on to payment from
-there. None of them points at the Xendit checkout directly, so the page never
-asks for money before you have the name and email.
+**Set each row's top and bottom padding to 0.** Systeme.io's default row padding
+shows as a white stripe between the colour bands.
 
-Fill it in all fifteen files at once, then paste:
+The blocks break out of Systeme.io's centred column on their own, so the bands
+reach the screen edges. To keep a section boxed inside the column instead,
+delete these two lines near the end of its `<style>`:
 
-```bash
-sed -i 's|PASTE_REGISTRATION_URL_HERE|https://your-funnel/register|g' *.html
+```
+html{overflow-x:clip!important;}
+.csi{width:100vw!important;max-width:100vw!important;margin-inline:calc(50% - 50vw)!important;}
 ```
 
-It appears once each in four blocks: `02-hero`, `11-details`, `13-final-cta`
-and `14-sticky-cta`. Until it is filled, the buttons go nowhere.
+## What is already filled
 
-The registration step collects name and email, then sends people on to the
-₱999 payment. Set that up as two steps of one Systeme.io funnel: the
-registration page, with the order form as the step after it.
+Nothing is left as a placeholder. In particular:
 
-The seat cap is no longer a number anywhere on the page — the bar and the band
-both say "limited seats" — so nothing here commits you to a count.
+- **Every button goes straight to the Xendit checkout**,
+  `https://checkout.xendit.co/od/csworkshop`. It appears once each in
+  `02-hero`, `11-details`, `13-final-cta` and `14-sticky-cta` — four buttons,
+  one link. To change it:
 
-## The registration page block
+  ```bash
+  sed -i 's|checkout.xendit.co/od/csworkshop|checkout.xendit.co/od/your-link|g' *.html
+  ```
 
-`registration.html` is **not** part of the fifteen above and does not go on the
-landing page. It is the whole registration step, for a second Systeme.io page
-that the landing page's buttons point at.
+  There is no registration step in front of it, so people who abandon the
+  checkout leave no name or email behind. If you want to capture those, put the
+  two registration blocks below in front of it and point these four buttons at
+  that page instead.
 
-It needs two values of its own, neither of which is the registration URL:
+- **The hero** is centred and its button reads just "Save my seat". The price
+  is shown in the details card, the sticky bar and the final CTA.
+- **Client quotes** (`08b`) are the three real ones from the CSI page — Luka
+  Maric, Paige Decker, Andy Reymond — word for word, including Paige's
+  "$250M in revenue this year". They are quoted, not claimed, but it is the
+  only revenue figure anywhere on the page.
+- **Student quotes** (`09`) are four real ones with their photos, also carried
+  over from CSI.
+- **The host block** has Mark's portrait and both "as featured in" covers
+  inlined, so nothing is loaded from this repo at runtime.
+- **Replay** is stated as included for 7 days, in both `11-details` and the FAQ.
+- **Refunds** follow CSI's wording.
+- **No run time is stated**, so the evening can be tightened on the night
+  without the page contradicting you.
+- **The seat cap is not a number anywhere** — the bar and the band both say
+  "limited seats" — so nothing here commits you to a count.
 
-```bash
-sed -i 's|PASTE_FORM_ENDPOINT_HERE|https://your-form-service/f/xxxx|g;
-        s|PASTE_CHECKOUT_URL_HERE|https://checkout.xendit.co/od/your-link|g' registration.html
-```
+Date and price are filled throughout: Wednesday 28 October 2026, 5:00 PM PHT,
+₱999.
 
-The form posts the name and email to the endpoint, which saves the row and then
-forwards to the checkout URL in its hidden `_next` field. While either value is
-still a placeholder the block shows a magenta "Not connected yet" panel and
-refuses to submit, so it cannot go in front of traffic half-wired.
+## The registration page (optional, two rows)
 
-**For Systeme.io specifically, consider its own opt-in element instead.** A raw
-HTML form posts wherever you point it, but it will not create a Systeme.io
-contact unless the endpoint is Systeme.io's own. If these people need to get
-the Zoom link and the CSI follow-up from Systeme.io, the native opt-in element
-is the one that puts them on the list. This block is the right answer when the
-registration page is hosted anywhere else.
-
-## The registration page: two rows
-
-`hero-no-cta.html` and `registration.html` are built as a pair, for a
-registration page made of exactly two rows:
+`hero-no-cta.html` and `registration.html` are **not** part of the sixteen
+above and do not go on the landing page. They are a separate Systeme.io page,
+for the case where you want name and email before payment.
 
 | Row | Block | What it holds |
 |---|---|---|
@@ -124,43 +136,24 @@ guessed.
 Row 1 is scoped to `.csi-hero` and row 2 to `.csi`, so neither block's rules
 reach into the other. Row 1 has no link, button or form in it at all.
 
-## Adding one to a Systeme.io page
+`registration.html` needs two values of its own:
 
-1. Edit the page, then **Add element → Raw HTML** (under "Advanced").
-2. Open the file, select all, copy, paste into that element.
-3. Save, then **Preview** — the builder canvas does not run the code, so a
-   block often looks plain while you are editing. Preview shows the truth.
-
-**Set each row's top and bottom padding to 0.** Systeme.io's default row padding
-shows as a white stripe between the colour bands.
-
-The blocks break out of Systeme.io's centred column on their own, so the bands
-reach the screen edges. To keep a section boxed inside the column instead,
-delete these two lines near the end of its `<style>`:
-
-```
-html{overflow-x:clip!important;}
-.csi{width:100vw!important;max-width:100vw!important;margin-inline:calc(50% - 50vw)!important;}
+```bash
+sed -i 's|PASTE_FORM_ENDPOINT_HERE|https://your-form-service/f/xxxx|g;
+        s|PASTE_CHECKOUT_URL_HERE|https://checkout.xendit.co/od/csworkshop|g' registration.html
 ```
 
-## What is already filled
+The form posts the name and email to the endpoint, which saves the row and then
+forwards to the checkout URL in its hidden `_next` field. While either value is
+still a placeholder the block shows a magenta "Not connected yet" panel and
+refuses to submit, so it cannot go in front of traffic half-wired.
 
-Everything except the checkout link. In particular:
-
-- **The hero** is centred and its button reads just "Save my seat". The price
-  is shown in the details card, the sticky bar and the final CTA.
-
-- **Testimonials** are four real student quotes with their photos, carried over
-  from the CSI page.
-- **The host block** has Mark's portrait and both "as featured in" covers
-  inlined, so nothing is loaded from this repo at runtime.
-- **Replay** is stated as included for 7 days, in both `11-details` and the FAQ.
-- **The FAQ** names CSI honestly and promises no attendee-only offer.
-- **No run time is stated**, so the evening can be tightened on the night
-  without the page contradicting you.
-
-Dates and price are filled throughout: Thursday 15 October 2026, 7:00 PM PHT,
-₱999.
+**For Systeme.io specifically, consider its own opt-in element instead.** A raw
+HTML form posts wherever you point it, but it will not create a Systeme.io
+contact unless the endpoint is Systeme.io's own. If these people need to get
+the Zoom link from Systeme.io, the native opt-in element is the one that puts
+them on the list. This block is the right answer when the registration page is
+hosted anywhere else.
 
 ## Notes
 
@@ -171,15 +164,17 @@ Dates and price are filled throughout: Thursday 15 October 2026, 7:00 PM PHT,
   Safe on every block; it only initialises a block once. Remove it and
   everything still displays, just without motion.
 - Google Fonts is the only external request. Every image is inlined, which is
-  why `08-host.html` is large (~285K) — that is expected, and it still pastes.
+  why `08-host.html` (~288K) and `09-testimonials.html` (~68K) are large — that
+  is expected, and they still paste.
 - Reduced-motion preferences are respected automatically.
 
 ## One difference from `../embeds`
 
 The CSI blocks reserve room for the sticky bar with
 `.csi{padding-bottom:104px}` inside the `max-width:780px` media query. Because
-that rule lands on *every* block's wrapper, a page built from a dozen blocks gets a dozen gaps — about 1,400px of empty space on a phone. These blocks put the same
-reservation on `body` instead, so it is counted once.
+that rule lands on *every* block's wrapper, a page built from a dozen blocks
+gets a dozen gaps — about 1,400px of empty space on a phone. These blocks put
+the same reservation on `body` instead, so it is counted once.
 
 If the CSI page ever looks oddly long on mobile, that rule is why, and the same
 one-line change fixes it there.
