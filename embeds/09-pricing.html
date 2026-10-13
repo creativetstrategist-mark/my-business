@@ -252,6 +252,14 @@ html{scroll-behavior:smooth!important;-webkit-text-size-adjust:100%!important;}
 }
 html{overflow-x:clip}
 .csi{width:100vw!important;max-width:100vw!important;margin-inline:calc(50% - 50vw)!important;}
+.csi .cd[hidden]{display:none!important;}
+.csi .cd-cap{font-family:var(--mono)!important;font-size:.72rem!important;font-weight:700!important;letter-spacing:.14em!important;text-transform:uppercase!important;color:#8f8b7e!important;margin:0!important;max-width:none!important;}
+.csi .band-volt .cd-cap{color:#3a3416!important;}
+.csi .cd-row{display:flex!important;gap:.5rem!important;flex-wrap:wrap!important;justify-content:center!important;}
+.csi .cd-u{min-width:66px!important;background:var(--ink)!important;border:2px solid var(--volt)!important;border-radius:10px!important;padding:.45rem .55rem!important;display:grid!important;gap:.15rem!important;justify-items:center!important;}
+.csi .cd-n{font-family:var(--display)!important;font-size:1.45rem!important;line-height:1.05!important;color:var(--volt)!important;font-variant-numeric:tabular-nums!important;}
+.csi .cd-l{font-family:var(--mono)!important;font-size:.62rem!important;letter-spacing:.1em!important;text-transform:uppercase!important;color:#8f8b7e!important;}
+.csi .cd-over{font-family:var(--mono)!important;font-size:.8rem!important;letter-spacing:.06em!important;text-transform:uppercase!important;color:var(--no)!important;}
 </style>
 <div class="csi">
 <section class="band band-volt" id="pricing">
@@ -278,6 +286,15 @@ html{overflow-x:clip}
             <li><span>Private community access</span></li>
             <li><span>CSI Toolkit and resources</span></li>
           </ul>
+          <div class="cd" data-deadline="2026-10-20T23:59:59+08:00" hidden>
+            <p class="cd-cap">Early bird extended — ends in</p>
+            <div class="cd-row">
+              <div class="cd-u"><span class="cd-n" data-cd="d">00</span><span class="cd-l">Days</span></div>
+              <div class="cd-u"><span class="cd-n" data-cd="h">00</span><span class="cd-l">Hrs</span></div>
+              <div class="cd-u"><span class="cd-n" data-cd="m">00</span><span class="cd-l">Min</span></div>
+              <div class="cd-u"><span class="cd-n" data-cd="s">00</span><span class="cd-l">Sec</span></div>
+            </div>
+          </div>
           <a class="btn btn-lg" href="https://checkout.xendit.co/od/CSI-EarlyBird-Rate">Reserve my seat</a>
           <p class="under">Seats are limited to keep critique groups small. 15 seats available.</p>
           <p class="under">Educational program — no guaranteed results. <a href="#disclaimer">Read the full disclaimer</a>.</p>
@@ -311,5 +328,46 @@ html{overflow-x:clip}
     });
   }
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",init);else init();
+
+  /* ---- early bird countdown ------------------------------------------------
+     Ticks once a second from the deadline in the markup. Each block carries its
+     own copy of this script, so the init guard keeps a second copy from
+     starting a second interval on the same element. */
+  Array.prototype.forEach.call(document.querySelectorAll(".cd"), function (box) {
+    if (box.getAttribute("data-cd-on")) return;
+    var end = Date.parse(box.getAttribute("data-deadline") || "");
+    if (!end) return;
+    box.setAttribute("data-cd-on", "1");
+
+    var cells = {};
+    Array.prototype.forEach.call(box.querySelectorAll("[data-cd]"), function (el) {
+      cells[el.getAttribute("data-cd")] = el;
+    });
+    var pad = function (n) { return (n < 10 ? "0" : "") + n; };
+
+    function tick() {
+      var left = end - Date.now();
+      if (left <= 0) {
+        var row = box.querySelector(".cd-row");
+        if (row) {
+          var done = document.createElement("p");
+          done.className = "cd-over";
+          done.textContent = "Early bird has ended";
+          row.replaceWith(done);
+        }
+        clearInterval(timer);
+        return;
+      }
+      var s = Math.floor(left / 1000);
+      cells.d.textContent = pad(Math.floor(s / 86400));
+      cells.h.textContent = pad(Math.floor(s / 3600) % 24);
+      cells.m.textContent = pad(Math.floor(s / 60) % 60);
+      cells.s.textContent = pad(s % 60);
+    }
+
+    tick();
+    box.hidden = false;
+    var timer = setInterval(tick, 1000);
+  });
 })();
 </script>

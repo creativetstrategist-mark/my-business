@@ -397,6 +397,22 @@ section[id]{scroll-margin-top:70px}
   .btn,.card{transition:none}
   .tile:hover .card,.tile:focus-within .card{transform:none}
 }
+
+/* --------------------------- early bird countdown -------------------------- */
+/* Hidden until the script fills it, so a no-JS visitor never sees 00:00:00 —
+   the static deadline line beside it carries the same information. */
+.cd{display:grid;justify-items:center;gap:.6rem;margin-block:1.5rem}
+.cd[hidden]{display:none}
+.cd-cap{font-family:var(--mono);font-size:.72rem;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:#8f8b7e;margin:0;max-width:none}
+.band-volt .cd-cap{color:#3a3416}
+.cd-row{display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center}
+.cd-u{min-width:66px;background:var(--ink);border:2px solid var(--volt);border-radius:10px;
+  padding:.45rem .55rem;display:grid;gap:.15rem;justify-items:center}
+.cd-n{font-family:var(--display);font-size:1.45rem;line-height:1.05;color:var(--volt);
+  font-variant-numeric:tabular-nums}
+.cd-l{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:#8f8b7e}
+.cd-over{font-family:var(--mono);font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--no)}
 </style>
 </head>
 <body>
@@ -427,8 +443,17 @@ section[id]{scroll-margin-top:70px}
         and marketers who are ready to own the part of Meta ads that actually moves the
         numbers: <strong>The Creative.</strong>
       </p>
+      <div class="cd" data-deadline="2026-10-20T23:59:59+08:00" hidden>
+        <p class="cd-cap">Early bird extended — ends in</p>
+        <div class="cd-row">
+          <div class="cd-u"><span class="cd-n" data-cd="d">00</span><span class="cd-l">Days</span></div>
+          <div class="cd-u"><span class="cd-n" data-cd="h">00</span><span class="cd-l">Hrs</span></div>
+          <div class="cd-u"><span class="cd-n" data-cd="m">00</span><span class="cd-l">Min</span></div>
+          <div class="cd-u"><span class="cd-n" data-cd="s">00</span><span class="cd-l">Sec</span></div>
+        </div>
+      </div>
       <a class="btn btn-lg" href="https://checkout.xendit.co/od/CSI-EarlyBird-Rate">Reserve my seat</a>
-      <p class="trust">Lifetime access · 12 months of support · Early bird until 20 October</p>
+      <p class="trust">Lifetime access · 12 months of support · Early bird extended until 20 October</p>
     </div>
   </section>
 
@@ -675,6 +700,15 @@ section[id]{scroll-margin-top:70px}
             <li><span>Private community access</span></li>
             <li><span>CSI Toolkit and resources</span></li>
           </ul>
+          <div class="cd" data-deadline="2026-10-20T23:59:59+08:00" hidden>
+            <p class="cd-cap">Early bird extended — ends in</p>
+            <div class="cd-row">
+              <div class="cd-u"><span class="cd-n" data-cd="d">00</span><span class="cd-l">Days</span></div>
+              <div class="cd-u"><span class="cd-n" data-cd="h">00</span><span class="cd-l">Hrs</span></div>
+              <div class="cd-u"><span class="cd-n" data-cd="m">00</span><span class="cd-l">Min</span></div>
+              <div class="cd-u"><span class="cd-n" data-cd="s">00</span><span class="cd-l">Sec</span></div>
+            </div>
+          </div>
           <a class="btn btn-lg" href="https://checkout.xendit.co/od/CSI-EarlyBird-Rate">Reserve my seat</a>
           <p class="under">Seats are limited to keep critique groups small. 15 seats available.</p>
           <p class="under">Educational program — no guaranteed results. <a href="#disclaimer">Read the full disclaimer</a>.</p>
@@ -1095,6 +1129,47 @@ section[id]{scroll-margin-top:70px}
       frame.allowFullscreen = true;
       card.replaceWith(frame);
     });
+  });
+
+  /* ---- early bird countdown ------------------------------------------------
+     Ticks once a second from the deadline in the markup. Each block carries its
+     own copy of this script, so the init guard keeps a second copy from
+     starting a second interval on the same element. */
+  Array.prototype.forEach.call(document.querySelectorAll(".cd"), function (box) {
+    if (box.getAttribute("data-cd-on")) return;
+    var end = Date.parse(box.getAttribute("data-deadline") || "");
+    if (!end) return;
+    box.setAttribute("data-cd-on", "1");
+
+    var cells = {};
+    Array.prototype.forEach.call(box.querySelectorAll("[data-cd]"), function (el) {
+      cells[el.getAttribute("data-cd")] = el;
+    });
+    var pad = function (n) { return (n < 10 ? "0" : "") + n; };
+
+    function tick() {
+      var left = end - Date.now();
+      if (left <= 0) {
+        var row = box.querySelector(".cd-row");
+        if (row) {
+          var done = document.createElement("p");
+          done.className = "cd-over";
+          done.textContent = "Early bird has ended";
+          row.replaceWith(done);
+        }
+        clearInterval(timer);
+        return;
+      }
+      var s = Math.floor(left / 1000);
+      cells.d.textContent = pad(Math.floor(s / 86400));
+      cells.h.textContent = pad(Math.floor(s / 3600) % 24);
+      cells.m.textContent = pad(Math.floor(s / 60) % 60);
+      cells.s.textContent = pad(s % 60);
+    }
+
+    tick();
+    box.hidden = false;
+    var timer = setInterval(tick, 1000);
   });
 })();
 </script>
