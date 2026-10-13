@@ -67,10 +67,10 @@ the Xendit checkout.
 The checkout link is **already filled in** — every button points at
 `https://checkout.xendit.co/od/CSI-EarlyBird-Rate`. That link is the early bird
 offer, so it needs swapping for a regular-rate link once early bird closes on
-13 October 2026.
+20 October 2026.
 
 Dates are **already filled** from what you confirmed: Batch 3 runs 5–7 November
-2026, early bird ends 13 October 2026. Tell me if you'd rather have those back
+2026, early bird ends 20 October 2026. Tell me if you'd rather have those back
 as placeholders.
 
 ## Notes
