@@ -413,6 +413,19 @@ section[id]{scroll-margin-top:70px}
   font-variant-numeric:tabular-nums}
 .cd-l{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;color:#8f8b7e}
 .cd-over{font-family:var(--mono);font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--no)}
+/* ----------------------------- bonus lessons ---------------------------- */
+.bonus{
+  margin-top:1.4rem;background:var(--paper);
+  border:2px solid var(--ink);border-left-width:8px;border-radius:var(--r);
+  padding:1.2rem 1.4rem;
+}
+.bonus-h{font-family:var(--mono);font-size:.78rem;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--slate);margin:0 0 .8rem;max-width:none}
+.bonus-list{display:grid;gap:.6rem}
+.bonus-list li{display:grid;grid-template-columns:auto 1fr;gap:.7rem;
+  font-family:var(--display);font-size:var(--step-1);line-height:1.2;color:var(--ink)}
+.bonus-list li::before{content:"+";font-family:var(--mono);font-weight:700;color:var(--ink);
+  font-size:.8em;line-height:1.5}
 </style>
 </head>
 <body>
@@ -642,6 +655,13 @@ section[id]{scroll-margin-top:70px}
             <li>Creative Sprint Planning Framework</li>
           </ul>
         </details>
+      </div>
+      <div class="bonus reveal">
+        <p class="bonus-h">Bonus lessons</p>
+        <ul class="bonus-list">
+          <li><span>Automated Creative QA</span></li>
+          <li><span>Static Masterclass</span></li>
+        </ul>
       </div>
 
     </div>
